@@ -1,0 +1,10 @@
+<template>
+  <template if.bind="!options">
+    <ux-input value.bind="value"></ux-input>
+  </template>
+  <template else>
+    <ar-select value.bind="value">
+      <ar-option repeat.for="option of options" value.bind="option.value" label.bind="option.label" ignore-dico></ar-option>
+    </ar-select>
+  </template>
+</template>

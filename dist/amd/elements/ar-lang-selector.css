@@ -1,0 +1,39 @@
+ar-lang-selector {
+  position: relative;
+  display: block;
+  padding: 8px;
+}
+
+ar-lang-selector .active-language {
+  min-height: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: inline-flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+}
+
+ar-lang-selector .language-selector {
+  position: absolute;
+  min-width: 200px;
+  background: var(--aurelia-ux--ar-lang-selector-background, #fff);
+  box-shadow: var(--aurelia-ux--ar-lang-selector-elevation, var(--aurelia-ux--design-elevation4dp));
+  z-index: 1;
+}
+
+ar-lang-selector .languages-list {
+  /* background: white; */
+  /* border: #ccc; */
+}
+
+ar-lang-selector .language-item {
+  padding: 8px;
+  color: var(--aurelia-ux--ar-lang-selector-foreground, var(--ux-swatch--grey-p800));
+  border-bottom: 1px solid var(--aurelia-ux--ar-lang-selector-border-color, var(--ux-swatch--grey-p300));
+  cursor:pointer;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+}

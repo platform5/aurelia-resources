@@ -1,0 +1,60 @@
+ar-select .slot-container {
+  display:none;
+}
+
+ar-select .selected-options-container {
+  min-height: 30px;
+  border-bottom: 1px solid #9E9E9E;
+  border-bottom: var(--aurelia-ux--ar-select-border-bottom, 1px solid #9E9E9E);
+}
+
+ar-select.disabled .selected-options-container {
+  border-bottom: var(--aurelia-ux--input-disabled-border-bottom, 1px dashed #A4A4A4);
+}
+
+ar-select .selected-options-container.focused {
+  border-bottom: 2px solid #FF4081;
+  border-bottom: var(--aurelia-ux--ar-select-border-bottom-hover, 1px solid var(--aurelia-ux--design-accent, #FF4081));
+}
+
+ar-select .selected-options-container > span {
+  background: #9E9E9E;
+  background: var(--aurelia-ux--ar-select-selected-option-background, #9E9E9E);
+  padding: 3px;
+  border-radius: 3px;
+  display: inline-block;
+  margin: 5px 5px 5px 0;
+}
+ar-select.disabled .selected-options-container > span {
+  color: var(--ux-swatch--grey-p600);
+  background: var(--ux-swatch--grey-p200);
+}
+ar-select .selected-options-container > span.placeholder {
+  color: var(--ux-swatch--grey-p600);
+  background: var(--ux-swatch--grey-p200);
+}
+
+ar-dialog.ar-select-dialog .ar-select-search-item-container {
+  display: flex;
+  padding: 5px 0;
+  border-bottom: var(--aurelia-ux--ar-select-search-border, 3px solid #333);
+  height: 50px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: -16px;
+  background: var(--aurelia-ux--ar-select-list-background, #fff);
+  padding: 10px 16px;
+  margin-left: -16px;
+  margin-right: -16px;
+  margin-top: -16px;
+}
+ar-dialog.ar-select-dialog .ux-list-item {
+  padding-left: 0;
+  padding-right: 0;
+}
+ar-dialog.ar-select-dialog .ar-select-search-item-container input {
+  width: 100%;
+  padding: 5px;
+  border: none;
+  outline: none;
+}

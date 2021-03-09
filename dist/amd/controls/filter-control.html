@@ -1,0 +1,24 @@
+<template role="select"
+  class="filter-control"
+  disabled.bind="disabled & booleanAttr"
+  readonly.bind="readonly & booleanAttr"
+  aria-disabled.bind="disabled & booleanAttr"
+  aria-readonly.bind="readonly & booleanAttr"
+  click.trigger="focus() || true">
+  <require from="./filter-control.css"></require>
+
+  <div class="filter-control__label">
+    <slot></slot>
+  </div>
+
+  <div class="filter-control__values">
+    <ux-button size="small" type="text" if.bind="!hasValue"><span t="Add"></span></ux-button>
+    <template if.bind="hasValue && multiple && value.length > 0">
+      <ux-chip repeat.for="v of value" show.bind="ready">${computeValueLabel(v, ready)}</ux-chip>
+    </template>
+    <template if.bind="hasValue && !multiple">
+      <ux-chip>${computeValueLabel(value, ready)}</ux-chip>
+    </template>
+  </div>
+
+</template>

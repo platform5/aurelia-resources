@@ -1,0 +1,10 @@
+ar-parallax {
+  display: block;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+ar-parallax.getting-ready img {
+  opacity: 0.2;
+}

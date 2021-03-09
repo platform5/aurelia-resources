@@ -1,0 +1,22 @@
+<template css="width: ${width};font-size:${fontSize};" class="${type}">
+  <require from="./ar-progress.css"></require>
+  <div if.bind="type === 'circle'">
+    <span class="progress-value">${_value}%</span>
+    <svg version="1.1" preserveAspectRatio="xMinYMin meet" viewBox="0 0 ${svgWidth} ${svgWidth}">
+      <path ref="finePath" class="circle" fill="none" style="stroke: var(--ux-theme--arprogress-fine-color, var(--ux-theme--arprogress-color, var(--ux-design--primary)));stroke-width: var(--ux-theme--arprogress-fine-stroke-width, 1);" d=""></path>
+    </svg>
+    <svg version="1.1" preserveAspectRatio="xMinYMin meet" viewBox="0 0 ${svgWidth} ${svgWidth}">
+      <path ref="largePath" class="circle" fill="none" style="stroke: var(--ux-theme--arprogress-large-color, var(--ux-theme--arprogress-color, var(--ux-design--primary)));stroke-width: var(--ux-theme--arprogress-large-stroke-width, 4);" d=""></path>
+    </svg>
+  </div>
+  <div if.bind="type === 'line'" css="font-size:${lineFontSize};">
+    <div class="background">
+      <span if.bind="label" css="width:${elementWidth}px;">${label}</span>
+      <span else css="width:${elementWidth}px;">${_value}%</span>
+    </div>
+    <div class="foreground" if.bind="_value" css="width:${_value}%;">
+      <span if.bind="label" css="width:${elementWidth}px;">${label}</span>
+      <span else css="width:${elementWidth}px;">${_value}%</span>
+    </div>
+  </div>
+</template>

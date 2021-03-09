@@ -1,0 +1,64 @@
+.ar-tags-input {
+  margin-top: 5px;
+}
+.ar-tags-input ux-chip {
+  --ux-theme--chip-background: var(--aurelia-ux--design-primary);
+}
+
+.ar-tags-input ux-chip.disabled {
+  --ux-theme--chip-background: var(--aurelia-ux--design-accent-dark);
+  --ux-theme--chip-background: var(--ux-swatch--grey-p200);
+}
+.ar-tags-input ux-chip.disabled .ux-chip__content {
+  color: var(--ux-swatch--grey-p400)
+}
+
+.ar-tags-input .tags-zone {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.ar-tags-input ux-chip {
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.ar-tags-input .tags-zone-label {
+  font-size: 12px;
+  color: var(--ux-swatch--grey-p600);
+  margin-bottom: 6px;
+}
+
+.ar-tags-input .tags-list {
+
+}
+
+.ar-tags-input .new-tag {
+  max-width: 30px;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+
+.ar-tags-input .new-tag.active {
+  max-width: 600px;
+}
+
+.ar-tags-input .new-tag span.plus {
+  transform: scale(2);
+}
+.ar-tags-input .new-tag input {
+  width: auto;
+  min-width: auto;
+  padding: 0;
+  border-width: 0px;
+  margin-left: 10px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+  display: none;
+}
+
+.ar-tags-input .new-tag.active input {
+  display: initial;
+}

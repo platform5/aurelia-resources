@@ -1,0 +1,19 @@
+.hidden-control {
+  position: absolute;
+}
+
+.hidden-control .ux-input-component {
+  background: transparent!important;
+  pointer-events: none;
+}
+.hidden-control .ux-datepicker__overlay {
+  pointer-events: all;
+}
+
+.hidden-control .ux-input-component__content,
+.hidden-control .ux-datepicker .ux-input-component__trailing,
+.hidden-control .ux-input-component__border {
+  position: absolute;
+  transform: translateX(-1000px);
+  z-index: -10;
+}

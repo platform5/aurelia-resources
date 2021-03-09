@@ -1,0 +1,43 @@
+.select-control {
+  --foreground: var(--aurelia-ux--select-control-foreground, var(--aurelia-ux--design-control-foreground, #212121));
+  --foreground-label: var(--aurelia-ux--select-control-foreground-label, var(--aurelia-ux--design-control-label-color, #757575));
+  --background: var(--aurelia-ux--select-control-background, var(--aurelia-ux--design-control-background, #E0E0E0));
+  --background-hover: var(--aurelia-ux--select-control-background-hover, #00000027);
+  --active-color: var(--aurelia-ux--select-control-active-color, var(--aurelia-ux--design-primary, #3F51B5));
+
+  --font-size: var(--aurelia-ux--select-control-font-size, 16px);
+  --letter-spacing: var(--aurelia-ux--select-control-letter-spacing, inherit);
+  --label-font-size: var(--aurelia-ux--select-control-label-font-size, 12px);
+  --label-letter-spacing: var(--aurelia-ux--select-control-label-letter-spacing, 0.5px);
+  --line-height: var(--aurelia-ux--select-control-line-height, 1.6);
+  --label-line-height: var(--aurelia-ux--select-control-label-line-height, 1.6);
+
+  --border-color: var(--aurelia-ux--select-control-border-color, var(--aurelia-ux--design-control-label-color, #757575));
+  --border-radius: var(--aurelia-ux--select-control-border-radius, 4px);
+  --border-width: var(--aurelia-ux--select-control-border-width, 1px);
+  --border-active-width: var(--aurelia-ux--select-control-border-active-width, 2px);
+
+  --disabled-foreground: var(--aurelia-ux--select-control-disabled-foreground, var(--aurelia-ux--design-disabled-foreground, #9E9E9E));
+  --disabled-background: var(--aurelia-ux--select-control-disabled-background, var(--aurelia-ux--design-disabled-background, #e1e1e1));
+
+  --error: var(--aurelia-ux--select-control-error, var(--aurelia-ux--design-error, #F44336));
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+}
+
+.select-control--chips.ux-input-component--filled .ux-chip {
+  border: 1px solid var(--aurelia-ux--design-control-label-color)
+}
+
+.select-control--chips .ux-choice--selected {
+  border-color: rgba(132, 132, 132, 0.5);
+  border-color: var(--aurelia-ux--chip-active-color, rgba(132, 132, 132, 0.5));
+}
+
+.select-control--chips.ux-input-component--outline {
+  --border-width: 0;
+}
+.select-control--chips.ux-input-component--outline .ux-chip-list {
+  margin-top: 15px;
+}

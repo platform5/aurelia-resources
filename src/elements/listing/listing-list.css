@@ -1,0 +1,68 @@
+/* Styles for page ListingList */
+.listing-list {
+  display: block;
+  margin: 16px;
+  padding: 0px;
+  box-shadow: var(--aurelia-ux--design-elevation2dp);
+}
+
+.listing-list .ux-list--border {
+  border-top-width: 0px;
+}
+
+.listing-list .ux-list-item:last-of-type {
+  border-bottom-width: 0px;
+}
+
+.listing-list .ux-list-item {
+  margin: 0 8px;
+}
+
+.listing-list[dense] .ux-list-item {
+  padding: 8px;
+}
+
+.listing-list .ux-list-item__detail {
+  display: flex;
+  align-items: center;
+}
+
+.ux-list .ux-list-item__text-button {
+  color: var(--aurelia-ux--design-primary);
+  cursor: pointer;
+}
+.listing-list .ux-list-item__text-button:hover {
+  text-decoration: underline;
+}
+
+.listing-list[dense] .ux-list-item__content {
+  font-size: 14px;
+}
+
+.listing-list[dense] .ux-list-item__secondary-content {
+  font-size: 12px;
+}
+
+.listing-list .multiple-toggle ux-icon {
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  display: inline-flex;
+}
+
+
+.ux-list-item--separator {
+  background: var(--ux-swatch--grey-p200);
+  color: var(--ux-swatch--grey-p900);
+  margin: 0!important;
+  font-size: 12px;
+  border-top: 1px solid var(--ux-swatch--grey-p300);
+  margin-top: -1px!important;
+}
+
+
+.ux-list-item--separator:first-of-type {
+  border-top-width: 0;
+  margin-top: 0px!important;
+}

@@ -1,0 +1,11 @@
+<template>
+  <require from="./ar-video.css"></require>
+  <div class="video-container" css="padding-bottom:${(1 / ratio) * 100}%;">
+    <template if.bind="provider === 'youtube'">
+      <iframe src="//www.youtube.com/embed/${videoId}" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </template>
+    <template if.bind="provider === 'vimeo'">
+        <iframe src="//player.vimeo.com/video/${videoId}" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </template>
+  </div>
+</template>

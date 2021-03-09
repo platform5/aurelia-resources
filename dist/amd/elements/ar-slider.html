@@ -1,0 +1,13 @@
+<template class="col-${nbColumns}" css="xpadding-left:${margin}px;xpadding-right:${margin}px;">
+  <require from="./ar-slider.css"></require>
+  <div class="container" ref="container">
+    <slot></slot>
+  </div>
+  <div class="bullets" if.bind="showBullets">
+    <ul>
+      <li class="${$index >= currentSlide && $index < currentSlide + nbColumns ? 'active':''}" repeat.for="slide of slides" click.delegate="slideTo($index)"></li>
+    </ul>
+  </div>
+  <div if.bind="showArrows && currentSlide > 0" class="left" click.delegate="left()"></div>
+  <div if.bind="showArrows && currentSlide < slides.length - nbColumns" class="right"  click.delegate="right()"></div>
+</template>

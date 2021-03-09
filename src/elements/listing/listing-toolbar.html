@@ -1,0 +1,11 @@
+<template class="listing-toolbar">
+  <require from="./listing-toolbar.css"></require>
+  <ux-input class="listing-toolbar__search" type="search" variant="outline" value.bind="search">
+    <ux-icon icon="search" slot="leading-icon"></ux-icon>
+    <span class="muted" slot="trailing-icon" show.bind="currentCount !== undefined">${currentCount}</span>
+  </ux-input>
+  <div class="listing-toolbar__center"><slot name="center"></slot></div>
+  <div class="listing-toolbar__action">
+    <slot></slot>
+  </div>
+</template>

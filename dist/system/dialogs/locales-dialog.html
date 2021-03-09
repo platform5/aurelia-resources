@@ -1,0 +1,26 @@
+<template class="languages-dialog">
+  <ux-card>
+    <ux-card-header>
+      <div class="ux-card__title" t="Select Language"></div>
+    </ux-card-header>
+    <ux-card-content ref="dialogContentElement">
+      <ux-list>
+        <template repeat.for="locale of locales">
+          <ux-list-item click.delegate="selectLocale(locale)" class="click">
+            <div class="ux-list-item__detail">
+              <ux-radio checked.bind="$parent.locale" model.bind="locale"></ux-radio>
+            </div>
+            <div class="ux-list-item__content">${locale | localeName | t}</div>
+            <div class="ux-list-item__action-item">
+              <ux-icon icon="chevron_right"></ux-icon>
+            </div>
+          </ux-list-item>
+        </template>
+      </ux-list>
+    </ux-card-content>
+    <ux-card-footer style="justify-content: flex-end;">
+      <ux-button show.bind="cancelButtonType !== 'none'" type="${cancelButtonType}" click.delegate="dismiss()"><span t="Cancel"></span></ux-button>
+      <ux-button show.bind="okButtonType !== 'none'" type="${okButtonType}" click.delegate="selectLocale(locale)"><span t="OK"></span></ux-button>
+    </ux-card-footer>
+  </ux-card>
+</template>

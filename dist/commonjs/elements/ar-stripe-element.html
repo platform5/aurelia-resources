@@ -1,0 +1,17 @@
+<template class="stripe-${type}" id="${id}">
+  <require from="./ar-stripe-element.css"></require>
+  <div ref="container" class="stripe-element-container">
+    <div id="stripe-${id}" class="stripe-element">
+        
+    </div>
+    <div id="stripe-${id}-errors" class="stripe-errors" if.bind="errorMessage">
+        ${errorMessage}
+    </div>
+    
+    <!--
+    ux 0.11.0 
+    <div class="ux-input__border-bottom"></div>
+    <div class="ux-input__border-bottom-active"></div>
+    -->
+  </div>
+</template>

@@ -1,0 +1,25 @@
+.prompt-select-dialog.with-search ux-card-content {
+  /* padding-top: 80px; */
+  position: relative;
+}
+
+.prompt-select-dialog-search-bar {
+  position: sticky;
+  left: 0;
+  right: 0;
+  top: 0;
+  border-bottom: 2px solid;
+  transform: translate(0, -16px);
+  background: white;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: -17px;
+}
+.prompt-select-dialog-search-bar input {
+  width: 100%;
+  padding: 5px;
+  border: none;
+  outline: none;
+}

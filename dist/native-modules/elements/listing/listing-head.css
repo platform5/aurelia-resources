@@ -1,0 +1,27 @@
+/* Styles for page ListingHead */
+.listing-head {
+  display: flex;
+  padding: 24px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.listing-head--sticky {
+  position: sticky;
+  top: 0;
+  background: var(--ux-swatch--white);
+  z-index: 100;
+}
+
+.listing-head__title h2 {
+  margin: 0;
+}
+
+.listing-head__title p {
+  font-size: 0.8rem;
+  color: var(--ux-swatch--grey-p400);
+}
+
+.listing-head__button {
+
+}

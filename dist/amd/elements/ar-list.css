@@ -1,0 +1,62 @@
+.ar-list .ar-list-item ux-card-content {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ar-list ux-card ux-card-content:last-child {
+  padding-bottom: 16px;
+}
+
+.ar-list .ar-list-item-icon {
+  text-align: center;
+  display: flex;
+}
+
+.ar-list .ar-list-item-icon > * {
+  margin-right: 10px;
+}
+
+.ar-list .ar-list-item-actions {
+  text-align: right;
+  /*display: none;*/
+}
+
+.ar-list .ar-list-item-content {
+  flex-grow: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+}
+
+.ar-list .ar-list-item.expanded {
+  margin-bottom: -20px;
+}
+
+.ar-list .ar-list-item-expanded {
+  display: none;
+}
+
+.ar-list .ar-list-item-expanded.expanded {
+  display: flex;
+}
+
+
+ar-list-item-spacer {
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  top: 100%;
+  margin-top: -7px;
+  background: white;
+  z-index: 1;
+}
+
+.ar-list .ar-list-item-expanded ux-form {
+  margin-left: 0;
+}

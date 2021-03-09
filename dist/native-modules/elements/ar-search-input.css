@@ -1,0 +1,21 @@
+ar-search-input>div {
+  border: 1px solid;
+  border-color: var(--aurelia-ux--ar-search-input-foreground);
+  background: var(--aurelia-ux--ar-search-input-background);
+  display: flex;
+  align-items: center;
+  align-content: center;
+  padding: 5px;
+}
+
+ar-search-input ux-icon {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+ar-search-input input {
+  background: transparent;
+  border: none;
+  width: 100%;
+  outline: none;
+}

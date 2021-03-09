@@ -1,0 +1,39 @@
+<template css="" class="${disabled ? 'disabled':''}">
+  <require from="./ar-select.css"></require>
+  <div class="selected-options-container ${disabled ? '':'click'} ${focused ? 'focused':''}" click.delegate="focus()">
+    <span class="placeholder" if.bind="!selectedOption && !selectedOptions.length && !extraValues.length">${placeholder}</span>
+    <span class="select-option" if.bind="!multiple && selectedOption">${selectedOption.computedLabel}</span>
+    <span class="select-option" repeat.for="extraValue of extraValues">${extraValue}</span>
+    <span class="select-option" repeat.for="option of selectedOptions" if.bind="multiple">${option.computedLabel}</span>
+  </div>
+  <div class="slot-container">
+    <slot></slot>
+  </div>
+  <ar-dialog class="ar-select-dialog" title="${placeholder}" view-model.ref="dialog" ref="dialogElement">
+    <div class="ar-select-search-item-container" show.bind="displaySearch === 'always' || (displaySearch === 'auto' && options.length > searchTrigger)">
+      <ux-icon icon="search"></ux-icon>
+      <input value.bind="filter">
+      <ux-icon icon="arrow_back" click.delegate="filter = ''" if.bind="filter"></ux-icon>
+    </div>
+    <ux-list class="border ${wrap ? 'wrap':''}">
+      <ux-list-item repeat.for="extraValue of extraValues" if.bind="allowAny" class="extra-value">
+        <div class="list-content ux-list-item__content">
+          ${extraValue}
+        </div>
+        <ux-icon icon="check_box" click.delegate="removeExtraValue(extraValue)" if.bind="multiple"></ux-icon>
+        <ux-icon icon="radio_button_checked" click.delegate="removeExtraValue(extraValue)" if.bind="!multiple"></ux-icon>
+      </ux-list-item>
+      <ux-list-item repeat.for="option of options | filterOptions:filter" class="click option" click.delegate="toggleOption(option, $event)">
+        <div class="list-content ux-list-item__content">
+          ${option.computedLabel}
+        </div>
+        <ux-icon if.bind="multiple && !option.checked" icon="check_box_outline_blank"></ux-icon>
+        <ux-icon if.bind="multiple && option.checked" icon="check_box"></ux-icon>
+        <ux-icon if.bind="!multiple && !option.checked" icon="radio_button_unchecked"></ux-icon>
+        <ux-icon if.bind="!multiple && option.checked" icon="radio_button_checked"></ux-icon>
+      </ux-list-item>
+    </ux-list>
+    <ux-button if.bind="allowAny" slot="secondary-button" click.delegate="addExtraValue()" type="text">${addExtraValueButtonText}</ux-button>
+  </ar-dialog>
+</template>  
+  

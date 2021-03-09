@@ -1,0 +1,80 @@
+ar-progress {
+  display: block;
+}
+ar-progress.circle > div {
+  width: 100%;
+  padding-top: 100%; /* 1:1 aspect ratio */
+  position:relative;
+}
+ar-progress.circle svg {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+ar-progress.circle .progress-value {
+  display:block;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  text-align:center;
+  font-size: var(--aurelia-ux--ar-progress-font-size, 1em);
+  color: var(--aurelia-ux--ar-progress-text-color, var(--aurelia-ux--ar-progress-color, var(--aurelia-ux--design-primary)));
+}
+
+ar-progress.line {
+  position: relative;
+  height: var(--aurelia-ux--ar-progress-line-width, 25px);
+}
+
+ar-progress.line > div {
+  position: relative;
+  width: 100%;
+}
+
+ar-progress.line > div > div {
+  position: absolute;
+  height: var(--aurelia-ux--ar-progress-line-width, 25px);
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  white-space: nowrap;
+  font-size: var(--aurelia-ux--ar-progress-font-size, 1em);
+}
+
+ar-progress.line > div > div > span {
+  padding: 0 5px;
+  overflow: hidden;
+  position: absolute;
+  height: var(--aurelia-ux--ar-progress-line-width, 25px);
+  display: flex;
+  justify-content: var(--aurelia-ux--ar-progress-line-text-align, 'flex-start');
+  align-content: center;
+  align-items: center;
+  white-space: nowrap;
+  font-size: var(--aurelia-ux--ar-progress-font-size, 1em);
+}
+
+ar-progress.line .background {
+  width: 100%;
+  border-style: solid;
+  border-width: var(--aurelia-ux--ar-progress-line-border-width, 0);
+  border-color: var(--aurelia-ux--ar-progress-line-border-color, var(--aurelia-ux--ar-progress-color, var(--aurelia-ux--design-primary)));
+  color: var(--aurelia-ux--ar-progress-line-background-text-color, var(--aurelia-ux--design-primary));
+}
+
+ar-progress.line .foreground {
+  border-style: solid;
+  border-width: var(--aurelia-ux--ar-progress-line-border-width, 0);
+  border-color: var(--aurelia-ux--ar-progress-line-border-color, var(--aurelia-ux--ar-progress-color, var(--aurelia-ux--design-primary)));
+  background-color: var(--aurelia-ux--ar-progress-line-background, var(--aurelia-ux--ar-progress-color, var(--aurelia-ux--design-primary)));
+  color: var(--aurelia-ux--ar-progress-line-foreground-text-color, var(--ux-swatch--white, '#fff'));
+  overflow: hidden;
+}

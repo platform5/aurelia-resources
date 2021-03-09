@@ -1,0 +1,80 @@
+/* Styles for page ArDialog */
+ar-dialog.transient {
+  display: block;
+}
+ar-dialog.permanent {
+  display: none;
+}
+ar-dialog.permanent.visible {
+  display: block;
+}
+
+ar-dialog .overlay {
+  position: absolute;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0);
+  transition: background 250ms ease-in;
+}
+
+ar-dialog.visible .overlay {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+ar-dialog ux-card.dialog-card {
+  box-shadow: var(--aurelia-ux--design-elevation24dp);
+}
+ar-dialog ux-card.dialog-card.hidden {
+  display: none;
+}
+ar-dialog ux-card.dialog-card > ux-card-header {
+  border-bottom: 1px solid var(--ux-swatch--grey-p200);
+}
+ar-dialog ux-card.dialog-card > ux-card-content {
+  overflow: auto;
+}
+ar-dialog ux-card.dialog-card > ux-card-footer {
+  border-top: 1px solid var(--ux-swatch--grey-p200);
+  justify-content: flex-end;
+}
+
+ar-dialog-prompt {
+  display: block;
+  padding-top: 16px;
+}
+
+ar-dialog ux-list.remove-padding ux-list-item {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+
+/* Dialog Sizing */
+ar-dialog ux-card.dialog-card {
+  /* min-width: 300px;
+  max-width: 80%; */
+
+  min-width: 100%;
+  min-height: 100%;
+}
+
+@media screen and (min-width: 480px) {
+  ar-dialog ux-card.dialog-card {
+    min-height: auto;
+    min-width: 400px;
+    max-width: 80%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  ar-dialog ux-card.dialog-card {
+    max-width: 800px;
+  }
+}

@@ -1,0 +1,22 @@
+.filter-control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 4px 0;
+}
+.filter-control__label {
+
+}
+.filter-control__values {
+  display: flex;
+  margin-left: 8px;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+.filter-control__values .ux-chip {
+  white-space: nowrap;
+  font-size: 12px;
+  height: 25px;
+  margin-left: 8px;
+}

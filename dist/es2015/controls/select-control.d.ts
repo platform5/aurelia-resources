@@ -1,0 +1,52 @@
+import { StyleEngine, UxInputComponent, InputVariant } from '@aurelia-ux/core';
+import { SelectControlTheme } from './select-control-theme';
+import { SelectControlDefaultConfiguration } from './select-control-default-configuration';
+import { UxModalService } from '@aurelia-ux/modal';
+import '@aurelia-ux/core/components/ux-input-component.css';
+import '@aurelia-ux/core/components/ux-input-component--outline.css';
+interface UxInputElement extends HTMLElement {
+    value: any;
+}
+export declare class SelectControl implements UxInputComponent {
+    private element;
+    styleEngine: StyleEngine;
+    modalService: UxModalService;
+    disabled: any;
+    readonly: any;
+    theme: SelectControlTheme;
+    label: string;
+    placeholder: string;
+    type: 'chips' | 'modal' | 'dropdown';
+    variant: InputVariant;
+    dense: any;
+    multiple: any;
+    options: Array<any>;
+    value: any;
+    labelKey: string;
+    valueKey: string;
+    icon: string;
+    showSearch: 'auto' | boolean;
+    focused: boolean;
+    valuebox: HTMLSpanElement;
+    constructor(element: UxInputElement, styleEngine: StyleEngine, modalService: UxModalService, defaultConfiguration: SelectControlDefaultConfiguration);
+    bind(): void;
+    denseChanged(): void;
+    multipleChanged(): void;
+    attached(): void;
+    detached(): void;
+    getValue(): any;
+    setValue(value: any): void;
+    validateValueAgainsAvailableOptions(originalValue: any): any;
+    computeLabel(option: any): string;
+    computeValue(option: any): any;
+    themeChanged(newValue: any): void;
+    focusedChanged(focused: boolean): void;
+    private serializedCurrentValue;
+    valueChanged(): void;
+    focus(): Promise<void>;
+    blur(): void;
+    variantChanged(newValue: string): void;
+    get placeholderMode(): boolean;
+    get displayedValue(): string;
+}
+export {};

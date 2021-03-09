@@ -1,0 +1,79 @@
+ar-stripe-element {
+    display: block;
+    width: 100%;
+    padding-bottom: 5px;
+    box-sizing: border-box;
+    position: relative;
+    color: inherit;
+    color: var(--aurelia-ux--ar-stripe-element-foreground, inherit);
+    background: transparent;
+    /*
+    ux 0.11.0
+    background-color: #00000011;
+    background-color: var(--aurelia-ux--ar-stripe-element-background, #00000011);
+    border-radius: 4px 4px 0 0;
+    border-radius: var(--aurelia-ux--ar-stripe-element-border-radius, 4px 4px 0 0);
+    */
+    
+}
+
+/* ux 0.10.1 */
+ar-stripe-element .stripe-element {
+    border-bottom: 1px solid #9E9E9E; /* ux 0.10.1 */
+    border-bottom: var(--aurelia-ux--ar-stripe-element-border-bottom, 1px solid #9E9E9E); /* ux 0.10.1 */
+}
+ar-stripe-element .stripe-element:hover,
+ar-stripe-element .stripe-element:focus {
+    border-bottom: 1px solid #FF4081;
+    border-bottom: var(--aurelia-ux--ar-stripe-element-border-bottom-hover, 1px solid var(--aurelia-ux--design-accent, #FF4081));
+}
+
+ar-stripe-element .stripe-element:focus {
+    border-bottom-width: 2px;
+    padding-bottom: 3px;
+}
+
+/*
+ux 0.11.0
+ar-stripe-element:hover {
+    background-color: #00000027;
+    background-color: var(--aurelia-ux--ar-stripe-element-background-hover, #00000027);
+}
+
+.ar-stripe-element__border-bottom {
+    height: 1px;
+    background-color: #00000066;
+    background-color: var(--aurelia-ux--ar-stripe-element-border-bottom, #00000066);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+ar-stripe-element:hover .ar-stripe-element__border-bottom {
+    background-color: #00000066;
+    background-color: var(--aurelia-ux--ar-stripe-element-border-bottom-hover, #00000066);
+}
+
+.ar-stripe-element__border-bottom-active {
+    height: 2px;
+    background-color: #4043ff;
+    background-color: var(--aurelia-ux--ar-stripe-element-border-bottom-focus, var(--aurelia-ux--design-primary, #4043ff));
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: scalex(0);
+    transition: transform ease 150ms;
+}
+
+ar-stripe-element input:focus~.ar-stripe-element__border-bottom-active {
+    transform: scaleX(1);
+}
+*/
+
+ar-stripe-element .stripe-errors {
+    padding: 5px 0;
+    font-size: 14px;
+    color: var(--aurelia-ux--input-info-error, #F44336);
+}

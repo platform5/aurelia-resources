@@ -1,0 +1,39 @@
+<template class="${overlayVisible ? 'visible':''} ${transient ? 'transient':'permanent'}">
+  <require from="./ar-dialog.css"></require>
+  <div class="overlay" click.delegate="clickOnOverlay($event)" ref="overlay" css="z-index:${zIndex};height:${window.innerHeight}px;">
+    <ux-card class="dialog-card" click.delegate="clickOnCard($event)" show.bind="dialogVisible" class="aurelia-hide au-animate animate-${animation}" theme.bind="theme">
+      <ux-card-header show.bind="title" ref="header" css="${title ? '':'height:0;overflow:hidden;'}">
+        <ux-card-title class="ux-card__title">${title}</ux-card-title>
+      </ux-card-header>
+      <ux-card-content css="max-height:${overlay.offsetHeight - header.offsetHeight - footer.offsetHeight - 50}px;">
+        <p if.bind="content" innerhtml="${content}"></p>
+        <template if.bind="contentViewModelPath">
+          <compose view-model="${contentViewModelPath}"></compose>
+        </template>
+        <slot></slot>
+        <div ref="promptContainer"></div>
+        <template if.bind="type === 'edition' && editionViewModelPath">
+          <compose view-model.bind="editionViewModelPath" model.bind="editionModel"></compose>
+        </template>
+      </ux-card-content>
+      <ux-card-footer ref="footer">
+        <slot name="secondary-button"></slot>
+        <template if.bind="type === 'alert'">
+          <ux-button type="raised" click.delegate="dismiss()"><span t="OK"></span></ux-button>
+        </template>
+        <template if.bind="type === 'prompt'">
+          <ux-button type="text" click.delegate="dismiss()"><span t="Cancel"></span></ux-button>
+          <ux-button type="raised" click.delegate="returnPromptValue()"><span t="OK"></span></ux-button>
+        </template>
+        <template if.bind="type === 'confirmation'">
+          <ux-button type="text" click.delegate="returnAgree(false)"><span t="Cancel"></span></ux-button>
+          <ux-button type="raised" click.delegate="returnAgree(true)"><span t="Agree"></span></ux-button>
+        </template>
+        <template if.bind="type === 'edition'">
+          <ux-button type="text" click.delegate="dismiss()"><span t="Cancel"></span></ux-button>
+          <ux-button type="raised" click.delegate="processSaving()"><span t="Save"></span></ux-button>
+        </template>
+      </ux-card-footer>
+    </ux-card>
+    </div>
+</template>

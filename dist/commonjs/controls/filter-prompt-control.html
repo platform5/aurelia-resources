@@ -1,0 +1,25 @@
+<template role="select"
+  class="filter-control filter-prompt-control"
+  disabled.bind="disabled & booleanAttr"
+  readonly.bind="readonly & booleanAttr"
+  aria-disabled.bind="disabled & booleanAttr"
+  aria-readonly.bind="readonly & booleanAttr"
+  
+  >
+  <require from="./filter-control.css"></require>
+
+  <div class="filter-control__label">
+    <slot></slot>
+  </div>
+
+  <div class="filter-control__values">
+    <ux-chip-list>
+      <ux-chip repeat.for="v of value">
+        <ux-icon icon="clear" slot="thumbnail" click.delegate="removeValue(v, $event)"></ux-icon>
+        <span>${v}</span>
+      </ux-chip>
+    </ux-chip-list>
+    <ux-button size="small" type="text" click.delegate="focus() || true"><span t="Add"></span></ux-button>
+  </div>
+
+</template>

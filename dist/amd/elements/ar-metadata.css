@@ -1,0 +1,52 @@
+ar-metadata .slot-container {
+  display:none;
+}
+
+ar-metadata .value-container {
+  min-height: 30px;
+  margin-bottom: 16px;
+  /*border-bottom: var(--aurelia-ux--ar-metadata-border-bottom, 1px solid #9E9E9E);*/
+}
+
+ar-metadata .value-container.empty {
+  border-bottom: var(--aurelia-ux--ar-metadata-border-bottom, 1px solid #9E9E9E);
+  color: var(--aurelia-ux--design-primary);
+}
+
+ar-metadata .value-container ux-grid {
+  border-bottom: 1px solid #ccc;
+}
+
+ar-metadata .value-container ux-grid > ux-grid-cell {
+  padding: 8px 16px;
+}
+
+ar-metadata .value-container ux-grid > ux-grid-cell label {
+  font-size: 12px;
+  font-weight: bold;
+}
+ar-metadata .value-container ux-grid > ux-grid-cell span {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+ar-dialog.ar-dialog-metadata .metadata-list {
+  margin-bottom: 20px;
+}
+
+ar-dialog.ar-dialog-metadata .metadata-list > ux-card {
+  margin: 15px;
+  background: white;
+}
+
+
+ar-dialog.ar-dialog-metadata ux-card-content {
+  position: relative;
+}
+
+ar-dialog.ar-dialog-metadata ux-card-content > ux-icon[icon=delete]{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+

@@ -1,0 +1,7 @@
+<template>
+  <require from="./ar-search-input.css"></require>
+  <div click.delegate="focus()">
+    <ux-icon icon="search"></ux-icon>
+    <input ref="inputbox" type="search" value.bind="value" placeholder="${placeholder}" search.delegate="value = ''">
+  </div>
+</template>

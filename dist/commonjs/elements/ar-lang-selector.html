@@ -1,0 +1,13 @@
+<template>
+  <require from="./ar-lang-selector.css"></require>
+  <span class="active-language click" ref="langValueElement" click.delegate="showSelector = !showSelector">
+    ${dicoPrefix + locale | translate}
+  </span>
+  <div class="language-selector" css="top:${langValueElement.offsetHeight}px;" if.bind="showSelector && locales.length > 1">
+    <div class="languages-list">
+      <div class="language-item" repeat.for="_locale of locales" click.delegate="setLocale(_locale)">
+        ${dicoPrefix + _locale | translate}
+      </div>
+    </div>
+  </div>
+</template>

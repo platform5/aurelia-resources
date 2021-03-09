@@ -1,0 +1,38 @@
+body.fix-ux-b-to-a ar-smart-toolbar {
+  --aurelia-ux--ar-smart-toolbar-background: var(--ux-theme--ar-smart-toolbar-background);
+  --aurelia-ux--ar-smart-toolbar-foreground: var(--ux-theme--ar-smart-toolbar-foreground);
+  --aurelia-ux--ar-smart-toolbar-elevation: var(--ux-theme--ar-smart-toolbar-elevation);
+  --aurelia-ux--ar-smart-toolbar-font-size: var(--ux-theme--ar-smart-toolbar-font-size);
+}
+
+ar-smart-toolbar {
+  background: var(--aurelia-ux--ar-smart-toolbar-background, var(--aurelia-ux--design--primary));
+  color: var(--aurelia-ux--ar-smart-toolbar-foreground, var(--aurelia-ux--design--primary-foreground));
+}
+
+ar-smart-toolbar > div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: var(--aurelia-ux--ar-smart-toolbar-elevation, var(--aurelia-ux--design-elevation2dp));
+}
+
+ar-smart-toolbar > div > span {
+  font-size: var(--aurelia-ux--ar-smart-toolbar-font-size, 14px);
+  padding: 10px;
+  text-overflow: ellipsis;
+}
+
+ar-smart-toolbar > div > span.left {
+  width: 100px;
+  justify-content: flex-start;
+}
+ar-smart-toolbar > div > span.center {
+  max-width: calc(100% - 200px);
+  text-align: center;
+}
+ar-smart-toolbar > div > span.right {
+  width: 100px;
+  justify-content: flex-end;
+}

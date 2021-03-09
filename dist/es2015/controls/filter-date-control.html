@@ -1,0 +1,29 @@
+<template role="select"
+  class="filter-control filter-prompt-control"
+  disabled.bind="disabled & booleanAttr"
+  readonly.bind="readonly & booleanAttr"
+  aria-disabled.bind="disabled & booleanAttr"
+  aria-readonly.bind="readonly & booleanAttr"
+  >
+  <require from="./filter-control.css"></require>
+  <require from="./filter-date-control.css"></require>
+
+  <div class="filter-control__label">
+    <slot></slot>
+  </div>
+
+  <div class="filter-control__values">
+    <ux-chip-list if.bind="value">
+      <ux-chip>
+        <ux-icon icon="clear" slot="thumbnail" click.trigger="value = undefined"></ux-icon>
+        <span click.trigger="focus()">${value | date:format}</span>
+      </ux-chip>
+    </ux-chip-list>
+    <ux-button if.bind="!value" size="small" type="text" click.trigger="focus() || true"><span t="Add"></span></ux-button>
+  </div>
+
+  <div class="hidden-control">
+    <ux-datepicker value.bind="value" type="date" ref="datepickerControl"></ux-datepicker>
+  </div>
+
+</template>

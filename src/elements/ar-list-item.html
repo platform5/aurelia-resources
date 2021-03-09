@@ -1,0 +1,24 @@
+<template role="listitem">
+  <require from="./ar-list.css"></require>
+  <ux-card xsm="6" xmd="4" class="ar-list-item ${collapsed ? 'collapsed':'expanded'}">
+    <ux-card-content class="click">
+      <div class="ar-list-item-icon" click.delegate="clickOnIcon()">
+        <slot name="icon"></slot>
+      </div>
+      <div class="ar-list-item-content" click.delegate="clickOnContent()">
+        <slot></slot>
+      </div>
+      <div class="ar-list-item-actions" click.delegate="clickOnActions()">
+        <slot name="actions"></slot>
+      </div>
+    </ux-card-content>
+    <ar-list-item-spacer></ar-list-item-spacer>
+  </ux-card>
+
+  <ux-card xs="12" class="ar-list-item-expanded ${collapsed ? 'collapsed':'expanded'}">
+    <ux-card-content>
+      <slot name="more"></slot>
+    </ux-card-content>
+  </ux-card>
+
+</template>

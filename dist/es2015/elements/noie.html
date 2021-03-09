@@ -1,0 +1,22 @@
+<template class="${isIE ? 'isie':'isnotie'}">
+  <require from="./noie.css"></require>
+  <div id="noie-message">
+    <h1 t="Get a fast web browser!">${title}</h1>
+    <p t="Your choice in all modern browser !">${text}</p>
+    <p>&nbsp;</p>
+    <ux-grid>
+      <ux-grid-cell md="4">
+        <ux-button type="outline" click.delegate="openLink('https://www.mozilla.org/firefox/')" ignore-dico>Firefox</ux-button>
+      </ux-grid-cell>
+      <ux-grid-cell md="4">
+        <ux-button type="outline" click.delegate="openLink('https://www.google.com/chrome/')" ignore-dico>Chrome</ux-button>
+      </ux-grid-cell>
+      <ux-grid-cell md="4">
+        <ux-button type="outline" click.delegate="openLink('https://www.microsoft.com/edge/')" ignore-dico>Microsoft Edge</ux-button>
+      </ux-grid-cell>
+    </ux-grid>
+    
+    <p>&nbsp;</p>
+    <p class="small" t="Internet Explorer is not a fast web browser">${bottomText}</p>
+  </div>
+</template>

@@ -1,0 +1,35 @@
+import { StyleEngine, UxComponent } from '@aurelia-ux/core';
+import { ArTagsInputTheme } from './ar-tags-input-theme';
+import { EventAggregator } from 'aurelia-event-aggregator';
+export declare class ArTagsInput implements UxComponent {
+    private element;
+    styleEngine: StyleEngine;
+    private eventAggregator;
+    value: Array<string>;
+    availableTagsList: Array<string>;
+    allowEmptyTag: boolean;
+    allowNewTag: boolean;
+    private visibles;
+    private log;
+    theme: ArTagsInputTheme;
+    constructor(element: HTMLElement, styleEngine: StyleEngine, eventAggregator: EventAggregator);
+    bind(): void;
+    valueChanged(): void;
+    availableTagsListChanged(): void;
+    get remainingTags(): string[];
+    attached(): void;
+    detached(): void;
+    private sort;
+    selectTag(tag: string): void;
+    removeTag(tag: string): void;
+    newTag: string;
+    newTagActive: boolean;
+    inputBox: HTMLInputElement;
+    activeNewTag(): void;
+    newTagChanged(): void;
+    blur(): void;
+    keyDown(event: any): boolean;
+    themeChanged(newValue: any): void;
+    dispatchChangeEvent(): void;
+    dispatchListChangeEvent(): void;
+}

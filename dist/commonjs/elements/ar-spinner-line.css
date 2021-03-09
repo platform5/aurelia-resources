@@ -1,0 +1,64 @@
+ar-spinner-line {
+  display: inline-block;
+  width: 100%;
+  height: var(--aurelia-ux--ar-spinner-line-height, 2px);
+  background-color: transparent;
+  overflow: hidden;
+  position: relative;
+}
+
+body.fix-ux-b-t-a ar-spinner-line {
+  --aurelia-ux--ar-spinner-line-primary-color: var(--aurelia-ux--ar-spinner-line-primary-color);
+  --aurelia-ux--ar-spinner-line-accent-color: var(--aurelia-ux--ar-spinner-line-accent-color);
+}
+
+ar-spinner-line.active {
+  background-color: var(--aurelia-ux--ar-spinner-line-primary-color, var(--aurelia-ux--design-primary));
+}
+
+ar-spinner-line > div {
+  display: none;
+}
+
+ar-spinner-line.active > div {
+  display: block;
+}
+
+ar-spinner-line > div {
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  background-color: var(--aurelia-ux--ar-spinner-line-accent-color, var(--aurelia-ux--design-accent));
+  -webkit-animation: moveit 1.3s linear infinite;
+  -moz-animation: moveit 1.3s linear infinite;
+  animation: moveit 1.3s linear infinite;
+}
+
+ar-spinner-line > div:nth-child(1) {
+  left: -100%;
+}
+
+@-webkit-keyframes moveit {
+    from {
+         -webkit-transform: translate3d(0, 0, 0);
+    }
+    to {
+         -webkit-transform: translate3d(500%, 0, 0);
+    }
+}
+@-moz-keyframes moveit {
+    from {
+         -moz-transform: translate3d(0, 0, 0);
+    }
+    to {
+         -moz-transform: translate3d(500%, 0, 0);
+    }
+}
+@keyframes moveit {
+    from {
+         transform: translate3d(0, 0, 0);
+    }
+    to {
+         transform: translate3d(500%, 0, 0);
+    }
+}

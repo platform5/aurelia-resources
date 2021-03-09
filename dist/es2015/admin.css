@@ -1,0 +1,20 @@
+.admin-breadcrumb {
+  padding: 20px 40px 0;
+  color: var(--ux-swatch--grey-p400);
+  font-size: 12px;
+}
+/*.admin-breadcrumb > span {
+
+}*/
+.admin-breadcrumb > span::after {
+  content: '>';
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.admin-breadcrumb > span:last-child::after {
+  display: none;
+}
+.admin-dashboard-grid ux-grid-cell {
+  background-color: white;
+  padding: 15px;
+}

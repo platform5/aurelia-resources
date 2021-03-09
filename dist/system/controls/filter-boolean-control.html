@@ -1,0 +1,33 @@
+<template role="select"
+  class="filter-control filter-boolean-control"
+  disabled.bind="disabled & booleanAttr"
+  readonly.bind="readonly & booleanAttr"
+  aria-disabled.bind="disabled & booleanAttr"
+  aria-readonly.bind="readonly & booleanAttr"
+  >
+  <require from="./filter-control.css"></require>
+
+  <div class="filter-control__label">
+    <slot></slot>
+  </div>
+
+  <div class="filter-control__values">
+    <ux-chip-list ux-choice-container.bind="value">
+      <ux-chip click.delegate="click(true)" class="${value === true ? 'ux-chip--selected':''}">
+        <span t="True" if.bind="labelType === 'true'"></span>
+        <span t="Active" if.bind="labelType === 'active'"></span>
+        <span t="Yes" if.bind="labelType === 'yes'"></span>
+        <span t="On" if.bind="labelType === 'on'"></span>
+        <span if.bind="labelType === 'custom'">${labelYes}</span>
+      </ux-chip>
+      <ux-chip click.delegate="click(false)" class="${value === false ? 'ux-chip--selected':''}">
+        <span t="False" if.bind="labelType === 'true'"></span>
+        <span t="Inactive" if.bind="labelType === 'active'"></span>
+        <span t="No" if.bind="labelType === 'yes'"></span>
+        <span t="Off" if.bind="labelType === 'on'"></span>
+        <span if.bind="labelType === 'custom'">${labelNo}</span>
+      </ux-chip>
+    </ux-chip-list>
+  </div>
+
+</template>

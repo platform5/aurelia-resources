@@ -1,0 +1,85 @@
+<template>
+  <require from="./ar-metadata.css"></require>
+  <div if.bind="value && value.length" class="value-container click ${focused ? 'focused':''}" click.delegate="focus()">
+    <template repeat.for="data of value">
+      <ux-grid class="remove-padding">
+        <ux-grid-cell sm="4">
+          <label>${data.key}</label>
+        </ux-grid-cell>
+        <ux-grid-cell sm="8">
+          <span>${data.value}</span>
+        </ux-grid-cell>
+      </ux-grid>
+    </template>
+  </div>
+  <div class="value-container click empty" if.bind="!value || !value.length" click.delegate="focus()" t="Edit metadata"></div>
+  <div class="slot-container">
+    <slot></slot>
+  </div>
+
+  <ar-dialog class="ar-dialog-metadata" title="Edit Metadata" view-model.ref="dialog">
+    <div class="metadata-list">
+      <ux-card show.bind="!value">
+        <ux-card-content t="No metadata yet"></ux-card-content>
+      </ux-card>
+      <ux-card show.bind="value" click.delegate="stopPropagation($event)" reorderable-repeat.for="data of (value || fakeValue)">
+        <ux-card-content>
+          <ux-icon icon="delete" click.delegate="removeItem($index, $event)"></ux-icon>
+          <ux-form>
+            <ux-grid class="remove-padding">
+              <ux-grid-cell sm="4">
+                <ux-field label="Key" ignore-dico>
+                  <ux-input value.bind="data.key"></ux-input>
+                </ux-field>
+              </ux-grid-cell>
+              <ux-grid-cell sm="8">
+                <ux-field label="Value" ignore-dico>
+                  <ux-input value.bind="data.value"></ux-input>
+                </ux-field>
+              </ux-grid-cell>
+            </ux-grid>
+          </ux-form>
+        </ux-card-content>
+      </ux-card>
+    </div>
+    <div>
+      <ux-button type="text" click.delegate="addItem($event)"><ux-icon icon="add"></ux-icon><span t="Add Item"></span></ux-button>
+    </div>
+  </ar-dialog>
+
+
+  <!-- <div class="ar-metadata-editor-container abs-full click" ref="editorContainer" show.bind="focused" click.delegate="closeEditor()">
+    <ux-icon icon="clear" click.delegate="closeEditor()"></ux-icon>
+
+    <div class="metadata-list">
+      <ux-card if.bind="!value">
+        <ux-card-content>
+          No metadata yet
+        </ux-card-content>
+      </ux-card>
+      <ux-card if.bind="value" click.delegate="stopPropagation($event)" reorderable-repeat.for="data of value">
+        <ux-card-content>
+          <ux-icon icon="delete" click.delegate="removeItem($index, $event)"></ux-icon>
+          <ux-form>
+            <ux-grid class="remove-padding">
+              <ux-grid-cell sm="4">
+                <ux-field label="Key">
+                  <ux-input value.bind="data.key"></ux-input>
+                </ux-field>
+              </ux-grid-cell>
+              <ux-grid-cell sm="8">
+                <ux-field label="Value">
+                  <ux-input value.bind="data.value"></ux-input>
+                </ux-field>
+              </ux-grid-cell>
+            </ux-grid>
+          </ux-form>
+        </ux-card-content>
+      </ux-card>
+    </div>
+    <div>
+      <ux-button click.delegate="addItem($event)">Add Item</ux-button> <ux-button type="text" click.delegate="closeEditor()">Close</ux-button>
+    </div>
+  </div> -->
+</template>  
+  

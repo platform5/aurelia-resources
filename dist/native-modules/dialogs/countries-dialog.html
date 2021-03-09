@@ -1,0 +1,26 @@
+<template class="languages-dialog">
+  <ux-card>
+    <ux-card-header>
+      <div class="ux-card__title" t="Select Language"></div>
+    </ux-card-header>
+    <ux-card-content ref="dialogContentElement">
+      <ux-list>
+        <template repeat.for="country of countries">
+          <ux-list-item click.delegate="selectCountry(country)" class="click">
+            <div class="ux-list-item__detail">
+              <ux-radio checked.bind="$parent.country" model.bind="country"></ux-radio>
+            </div>
+            <div class="ux-list-item__content">${country | countryname:prefix | t}</div>
+            <div class="ux-list-item__action-item">
+              <ux-icon icon="chevron_right"></ux-icon>
+            </div>
+          </ux-list-item>
+        </template>
+      </ux-list>
+    </ux-card-content>
+    <ux-card-footer style="justify-content: flex-end;">
+      <ux-button show.bind="cancelButtonType !== 'none'" type="${cancelButtonType}" click.delegate="dismiss()"><span t="Cancel"></span></ux-button>
+      <ux-button show.bind="okButtonType !== 'none'" type="${okButtonType}" click.delegate="selectCountry(country)"><span t="OK"></span></ux-button>
+    </ux-card-footer>
+  </ux-card>
+</template>

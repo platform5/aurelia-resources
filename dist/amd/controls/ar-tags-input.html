@@ -1,0 +1,26 @@
+<template class="ar-tags-input">
+  <require from="./ar-tags-input.css"></require>
+  <template if.bind="false">
+    <div class="tags-zone selected-tags" if.bind="value.length">
+      <div class="tags-list">
+        <ux-chip class="click" repeat.for="tag of value" click.delegate="removeTag(tag)">${tag}</ux-chip>
+      </div>
+    </div>
+    <div class="tags-zone remaining-tags">
+      <div class="tags-list">
+        <ux-chip class="click disabled" repeat.for="tag of remainingTags" click.delegate="selectTag(tag)">${tag}</ux-chip>
+        <ux-chip show.bind="allowNewTag" class="click disabled new-tag ${newTagActive ? 'active':''}" click.delegate="activeNewTag()"><span class="plus" ignore-dico>+</span><input size="4" ref="inputBox" value.bind="newTag" keydown.delegate="keyDown($event)" blur.trigger="blur($event)"></ux-chip>
+      </div>
+    </div>
+  </template>
+
+  <div class="tags-zone remaining-tags">
+    <div class="tags-list">
+      <template repeat.for="tag of availableTagsList">
+        <ux-chip class="click" click.delegate="removeTag(tag)" if.bind="visibles[tag]">${tag}</ux-chip>
+        <ux-chip class="click disabled" click.delegate="selectTag(tag)"  if.bind="!visibles[tag]">${tag}</ux-chip>
+      </template>
+      <ux-chip if.bind="allowNewTag" class="click disabled new-tag ${newTagActive ? 'active':''}" click.delegate="activeNewTag()"><span class="plus" ignore-dico>+</span><input size="4" ref="inputBox" value.bind="newTag" keydown.delegate="keyDown($event)" blur.trigger="blur($event)"></ux-chip>
+    </div>
+  </div>
+</template>

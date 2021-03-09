@@ -1,0 +1,55 @@
+ar-main-header {
+  display: block;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+ar-main-header > .background,
+ar-main-header > .content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+ar-main-header > .background-color {
+  background: var(--aurelia-ux--ar-main-header-background, var(--aurelia-ux--design-primary));
+  color: var(--aurelia-ux--ar-main-header-foreground, var(--aurelia-ux--design-primary-foreground));
+}
+
+ar-main-header > .background-image {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+ar-main-header > .background-video {
+  object-fit: cover;
+  min-width: 100%;
+}
+
+ar-main-header > .content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  color: var(--ux-swatch--white);
+}
+
+ar-main-header > .content h1,
+ar-main-header > .content h2,
+ar-main-header > .content h3,
+ar-main-header > .content h4,
+ar-main-header > .content h5,
+ar-main-header > .content h6 {
+  color: var(--ux-swatch--white);
+}
+
+
+ar-main-header > .content > * {
+  margin: 20px;
+}

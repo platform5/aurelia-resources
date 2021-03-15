@@ -91,9 +91,6 @@
   "dependencies": {
     "@sentry/browser": "^6.1.0",
     "@sentry/tracing": "^6.1.0",
-    "@aurelia-ux/core": "^0.25.0",
-    "@aurelia-ux/modal": "^0.25.0",
-    "@aurelia-ux/datepicker": "^0.25.0",
     "aurelia-binding": "^2.1.4",
     "aurelia-dependency-injection": "^1.5.2",
     "aurelia-dialog": "^2.0.0",
@@ -143,5 +140,10 @@
     "ts-jest": "^24.3.0",
     "tslint": "^5.8.0",
     "typescript": "^3.7.4"
+  },
+  "peerDependencies": {
+    "@aurelia-ux/core": "^0.20.0",
+    "@aurelia-ux/datepicker": "^0.25.0",
+    "@aurelia-ux/modal": "^0.25.0"
   }
 }

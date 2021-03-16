@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 define(["require", "exports", "./../helpers/dom", "aurelia-framework", "aurelia-dialog"], function (require, exports, dom_1, aurelia_framework_1, aurelia_dialog_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.LanguagesDialog = void 0;
     var LanguagesDialog = /** @class */ (function () {
         function LanguagesDialog(controller) {
             this.controller = controller;

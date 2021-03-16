@@ -43,6 +43,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 define(["require", "exports", "@aurelia-ux/modal", "aurelia-framework", "../helpers/notify", "remove-accents"], function (require, exports, modal_1, aurelia_framework_1, notify_1, removeAccents) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.PromptSelectDialogFilterOptionsValueConverter = exports.PromptSelectDialog = void 0;
     var PromptSelectDialog = /** @class */ (function () {
         function PromptSelectDialog(modalService) {
             this.modalService = modalService;
@@ -178,7 +179,7 @@ define(["require", "exports", "@aurelia-ux/modal", "aurelia-framework", "../help
                     ? this.options.length > 10
                     : this.showSearch;
             },
-            enumerable: true,
+            enumerable: false,
             configurable: true
         });
         __decorate([

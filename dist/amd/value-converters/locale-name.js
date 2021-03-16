@@ -1,6 +1,7 @@
 define(["require", "exports", "../helpers/locales"], function (require, exports, locales_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.LocaleNameValueConverter = void 0;
     var LocaleNameValueConverter = /** @class */ (function () {
         function LocaleNameValueConverter() {
         }

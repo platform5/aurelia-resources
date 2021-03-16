@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 define(["require", "exports", "aurelia-templating", "aurelia-dependency-injection", "@aurelia-ux/core", "aurelia-logging", "aurelia-event-aggregator", "aurelia-framework"], function (require, exports, aurelia_templating_1, aurelia_dependency_injection_1, core_1, aurelia_logging_1, aurelia_event_aggregator_1, aurelia_framework_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.onDrawerStatusChanged = exports.toggleDrawer = exports.closeDrawer = exports.openDrawer = exports.ArDrawerCloseAttribute = exports.ArDrawerOpenAttribute = exports.ArDrawerToggleAttribute = exports.ArDrawer = void 0;
     var ArDrawer = /** @class */ (function () {
         function ArDrawer(element, styleEngine, eventAggregator) {
             this.element = element;

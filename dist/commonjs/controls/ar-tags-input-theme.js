@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.ArTagsInputTheme = void 0;
 var ArTagsInputTheme = /** @class */ (function () {
     function ArTagsInputTheme() {
         this.themeKey = 'ar-tags-input';

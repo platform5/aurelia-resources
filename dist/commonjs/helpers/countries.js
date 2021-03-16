@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.countries = void 0;
 exports.countries = [
     { countryCode: 'AFG', name: 'Afghanistan', countryCode2: 'AF' },
     { countryCode: 'ALA', name: 'Åland', countryCode2: 'AX' },

@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 define(["require", "exports", "aurelia-framework", "moment", "aurelia-logging"], function (require, exports, aurelia_framework_1, moment, aurelia_logging_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.ArTimelineItem = void 0;
     var ArTimelineItem = /** @class */ (function () {
         function ArTimelineItem() {
             this.date = null;

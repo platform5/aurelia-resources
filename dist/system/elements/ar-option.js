@@ -34,7 +34,7 @@ System.register(["aurelia-framework"], function (exports_1, context_1) {
                             return this.value.toString();
                         return '';
                     },
-                    enumerable: true,
+                    enumerable: false,
                     configurable: true
                 });
                 __decorate([

@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 define(["require", "exports", "aurelia-templating"], function (require, exports, aurelia_templating_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.ArListItem = void 0;
     //@containerless
     var ArListItem = /** @class */ (function () {
         function ArListItem() {

@@ -29,7 +29,7 @@ System.register(["aurelia-event-aggregator", "aurelia-framework"], function (exp
                                 var lifeCycleEvent = _a[_i];
                                 _loop_1(lifeCycleEvent);
                             }
-                            resolve();
+                            resolve(null);
                         });
                     });
                 };

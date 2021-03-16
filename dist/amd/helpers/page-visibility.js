@@ -1,6 +1,7 @@
 define(["require", "exports", "aurelia-event-aggregator", "aurelia-framework", "aurelia-logging"], function (require, exports, aurelia_event_aggregator_1, aurelia_framework_1, aurelia_logging_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.PageVisibilityHelpers = void 0;
     var eventAggregator = aurelia_framework_1.Container.instance.get(aurelia_event_aggregator_1.EventAggregator);
     var log = aurelia_logging_1.getLogger('page-visiblity');
     var PageVisibilityHelpers = /** @class */ (function () {

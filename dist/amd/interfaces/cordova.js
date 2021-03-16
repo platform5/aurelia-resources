@@ -1,6 +1,7 @@
 define(["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.initialContacts = exports.initialNotifications = exports.initialNetwork = void 0;
     exports.initialNetwork = {
         connected: false,
         type: 'unknown'

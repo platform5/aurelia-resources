@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.AnalyticsGoogle = void 0;
 var aurelia_event_aggregator_1 = require("aurelia-event-aggregator");
 var aurelia_framework_1 = require("aurelia-framework");
 var aurelia_router_1 = require("aurelia-router");
@@ -59,7 +60,7 @@ var AnalyticsGoogle = /** @class */ (function () {
         get: function () {
             return window.ga;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     AnalyticsGoogle.prototype.start = function () {

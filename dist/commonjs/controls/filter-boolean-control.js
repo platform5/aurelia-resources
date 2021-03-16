@@ -6,6 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.FilterBooleanControl = void 0;
 var aurelia_templating_1 = require("aurelia-templating");
 var aurelia_pal_1 = require("aurelia-pal");
 var aurelia_binding_1 = require("aurelia-binding");
@@ -44,7 +45,7 @@ var FilterBooleanControl = /** @class */ (function () {
         get: function () {
             return this.value !== undefined;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     FilterBooleanControl.prototype.click = function (value) {

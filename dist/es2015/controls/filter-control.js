@@ -197,7 +197,7 @@ var FilterControl = /** @class */ (function () {
             }
             return false;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     __decorate([

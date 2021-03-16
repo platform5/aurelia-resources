@@ -39,7 +39,7 @@ var AnalyticEntry = /** @class */ (function () {
         get: function () {
             return this._isSaved;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     AnalyticEntry.prototype.saved = function () {

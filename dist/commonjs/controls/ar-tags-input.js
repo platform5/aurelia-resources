@@ -6,6 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.ArTagsInput = void 0;
 var aurelia_templating_1 = require("aurelia-templating");
 var aurelia_pal_1 = require("aurelia-pal");
 var aurelia_binding_1 = require("aurelia-binding");
@@ -66,7 +67,7 @@ var ArTagsInput = /** @class */ (function () {
             }
             return tags;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     ArTagsInput.prototype.attached = function () {

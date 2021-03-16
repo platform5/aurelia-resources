@@ -1,6 +1,7 @@
 define(["require", "exports", "./string", "moment", "aurelia-event-aggregator", "aurelia-framework", "aurelia-router", "aurelia-logging"], function (require, exports, string_1, moment, aurelia_event_aggregator_1, aurelia_framework_1, aurelia_router_1, aurelia_logging_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.Analytics = exports.AnalyticEntry = void 0;
     var log = aurelia_logging_1.getLogger('analytics');
     var AnalyticEntry = /** @class */ (function () {
         function AnalyticEntry(type, path) {
@@ -36,7 +37,7 @@ define(["require", "exports", "./string", "moment", "aurelia-event-aggregator", 
             get: function () {
                 return this._isSaved;
             },
-            enumerable: true,
+            enumerable: false,
             configurable: true
         });
         AnalyticEntry.prototype.saved = function () {

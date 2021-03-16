@@ -64,7 +64,7 @@ var ArTagsInput = /** @class */ (function () {
             }
             return tags;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     ArTagsInput.prototype.attached = function () {

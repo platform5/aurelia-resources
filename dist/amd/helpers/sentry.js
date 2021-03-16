@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 define(["require", "exports", "@sentry/browser", "@sentry/tracing", "aurelia-framework"], function (require, exports, Sentry, tracing_1, aurelia_framework_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.SentryHelper = void 0;
     var SentryHelper = /** @class */ (function () {
         function SentryHelper(container) {
             this.container = container;

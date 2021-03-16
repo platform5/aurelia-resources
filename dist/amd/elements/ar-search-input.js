@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 define(["require", "exports", "aurelia-framework", "aurelia-templating", "@aurelia-ux/core", "aurelia-pal", "aurelia-binding"], function (require, exports, aurelia_framework_1, aurelia_templating_1, core_1, aurelia_pal_1, aurelia_binding_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.ArSearchInput = void 0;
     var ArSearchInput = /** @class */ (function () {
         function ArSearchInput(element, styleEngine) {
             this.element = element;

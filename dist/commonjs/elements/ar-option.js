@@ -6,6 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.ArOption = void 0;
 var aurelia_framework_1 = require("aurelia-framework");
 var ArOption = /** @class */ (function () {
     function ArOption() {
@@ -26,7 +27,7 @@ var ArOption = /** @class */ (function () {
                 return this.value.toString();
             return '';
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     __decorate([

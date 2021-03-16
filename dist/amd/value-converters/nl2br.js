@@ -1,6 +1,7 @@
 define(["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.Nl2brValueConverter = void 0;
     var Nl2brValueConverter = /** @class */ (function () {
         function Nl2brValueConverter() {
         }

@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.arDialog = exports.ArDialog = void 0;
 var aurelia_framework_1 = require("aurelia-framework");
 var aurelia_logging_1 = require("aurelia-logging");
 var aurelia_pal_1 = require("aurelia-pal");

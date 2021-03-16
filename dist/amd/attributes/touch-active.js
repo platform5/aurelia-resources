@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 define(["require", "exports", "aurelia-framework"], function (require, exports, aurelia_framework_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.TouchActiveCustomAttribute = void 0;
     var TouchActiveCustomAttribute = /** @class */ (function () {
         function TouchActiveCustomAttribute(element) {
             var _this = this;

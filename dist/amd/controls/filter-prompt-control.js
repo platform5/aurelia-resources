@@ -43,6 +43,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 define(["require", "exports", "aurelia-templating", "aurelia-pal", "aurelia-binding", "aurelia-dependency-injection", "@aurelia-ux/modal", "../dialogs/prompt-text-dialog"], function (require, exports, aurelia_templating_1, aurelia_pal_1, aurelia_binding_1, aurelia_dependency_injection_1, modal_1, prompt_text_dialog_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.FilterPromptControl = void 0;
     var FilterPromptControl = /** @class */ (function () {
         function FilterPromptControl(element, modalService) {
             this.element = element;
@@ -78,7 +79,7 @@ define(["require", "exports", "aurelia-templating", "aurelia-pal", "aurelia-bind
             get: function () {
                 return this.value && Array.isArray(this.value) && this.value.length > 0;
             },
-            enumerable: true,
+            enumerable: false,
             configurable: true
         });
         FilterPromptControl.prototype.focus = function () {

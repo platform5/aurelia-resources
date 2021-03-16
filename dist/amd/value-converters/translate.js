@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 define(["require", "exports", "aurelia-binding", "aurelia-framework"], function (require, exports, aurelia_binding_1, aurelia_framework_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.TranslateValueConverter = void 0;
     // This valueConverter will be registered if no other t valueConverter are registered
     var TranslateValueConverter = /** @class */ (function () {
         function TranslateValueConverter(container) {

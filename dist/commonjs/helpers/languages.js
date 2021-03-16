@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.languages = void 0;
 // TODO: this file is now deprecated: use translation
 exports.languages = [
     { name: 'Afar', fr: 'afar', de: 'Danakil-Sprache', languageCode: 'aar' },

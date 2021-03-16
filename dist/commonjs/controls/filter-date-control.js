@@ -42,6 +42,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.FilterDateControl = void 0;
 var aurelia_templating_1 = require("aurelia-templating");
 var aurelia_pal_1 = require("aurelia-pal");
 var aurelia_binding_1 = require("aurelia-binding");
@@ -78,7 +79,7 @@ var FilterDateControl = /** @class */ (function () {
         get: function () {
             return this.value && moment(this.value).isValid();
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     FilterDateControl.prototype.focus = function () {

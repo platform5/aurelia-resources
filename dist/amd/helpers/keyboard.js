@@ -1,6 +1,7 @@
 define(["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.KeybordHelper = void 0;
     var KeybordHelper = /** @class */ (function () {
         function KeybordHelper() {
             this.keydowns = {};

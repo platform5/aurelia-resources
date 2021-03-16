@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 define(["require", "exports", "aurelia-templating", "aurelia-pal", "aurelia-binding", "aurelia-dependency-injection", "@aurelia-ux/modal"], function (require, exports, aurelia_templating_1, aurelia_pal_1, aurelia_binding_1, aurelia_dependency_injection_1, modal_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.FilterBooleanControl = void 0;
     var FilterBooleanControl = /** @class */ (function () {
         function FilterBooleanControl(element, modalService) {
             this.element = element;
@@ -40,7 +41,7 @@ define(["require", "exports", "aurelia-templating", "aurelia-pal", "aurelia-bind
             get: function () {
                 return this.value !== undefined;
             },
-            enumerable: true,
+            enumerable: false,
             configurable: true
         });
         FilterBooleanControl.prototype.click = function (value) {

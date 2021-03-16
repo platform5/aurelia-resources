@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 define(["require", "exports", "aurelia-templating", "aurelia-framework", "aurelia-logging"], function (require, exports, aurelia_templating_1, aurelia_framework_1, aurelia_logging_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.ListingList = void 0;
     var log = aurelia_logging_1.getLogger('comp:listing-list');
     var ListingList = /** @class */ (function () {
         function ListingList(element) {

@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 define(["require", "exports", "aurelia-framework", "aurelia-logging", "../helpers/countries", "awesome-phonenumber"], function (require, exports, aurelia_framework_1, aurelia_logging_1, countries_1, awesome_phonenumber_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.UxInputIntPhone = void 0;
     //import { DOM } from 'aurelia-pal';
     var UxInputIntPhone = /** @class */ (function () {
         function UxInputIntPhone(element) {
@@ -35,7 +36,7 @@ define(["require", "exports", "aurelia-framework", "aurelia-logging", "../helper
                     return countries_1.default;
                 return countries_1.default.filter(function (i) { return _this.countriesFilter.indexOf(i.countryCode2) !== -1; });
             },
-            enumerable: true,
+            enumerable: false,
             configurable: true
         });
         UxInputIntPhone.prototype.attached = function () {

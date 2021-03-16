@@ -51,7 +51,7 @@ System.register(["aurelia-framework", "aurelia-logging", "../helpers/countries",
                             return countries_1.default;
                         return countries_1.default.filter(function (i) { return _this.countriesFilter.indexOf(i.countryCode2) !== -1; });
                     },
-                    enumerable: true,
+                    enumerable: false,
                     configurable: true
                 });
                 UxInputIntPhone.prototype.attached = function () {

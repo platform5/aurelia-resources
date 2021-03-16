@@ -43,6 +43,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 define(["require", "exports", "aurelia-templating", "aurelia-pal", "aurelia-binding", "aurelia-dependency-injection", "@aurelia-ux/core", "./select-control-default-configuration", "@aurelia-ux/modal", "../dialogs/prompt-select-dialog", "@aurelia-ux/core/components/ux-input-component.css", "@aurelia-ux/core/components/ux-input-component--outline.css"], function (require, exports, aurelia_templating_1, aurelia_pal_1, aurelia_binding_1, aurelia_dependency_injection_1, core_1, select_control_default_configuration_1, modal_1, prompt_select_dialog_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.SelectControl = void 0;
     var SelectControl = /** @class */ (function () {
         function SelectControl(element, styleEngine, modalService, defaultConfiguration) {
             this.element = element;
@@ -217,7 +218,7 @@ define(["require", "exports", "aurelia-templating", "aurelia-pal", "aurelia-bind
             get: function () {
                 return typeof this.label !== 'string' || this.label.length === 0;
             },
-            enumerable: true,
+            enumerable: false,
             configurable: true
         });
         Object.defineProperty(SelectControl.prototype, "displayedValue", {
@@ -247,7 +248,7 @@ define(["require", "exports", "aurelia-templating", "aurelia-pal", "aurelia-bind
                 this.element.classList.toggle('ux-input-component--has-value', hasValue);
                 return result;
             },
-            enumerable: true,
+            enumerable: false,
             configurable: true
         });
         __decorate([

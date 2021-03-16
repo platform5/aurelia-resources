@@ -261,7 +261,7 @@ System.register(["./../helpers/dom", "aurelia-templating", "aurelia-dependency-i
                         }
                         return null;
                     },
-                    enumerable: true,
+                    enumerable: false,
                     configurable: true
                 });
                 Object.defineProperty(ArSelect.prototype, "selectedOptions", {
@@ -283,7 +283,7 @@ System.register(["./../helpers/dom", "aurelia-templating", "aurelia-dependency-i
                         }
                         return options;
                     },
-                    enumerable: true,
+                    enumerable: false,
                     configurable: true
                 });
                 ArSelect.prototype.addExtraValue = function () {

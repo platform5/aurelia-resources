@@ -96,7 +96,7 @@ System.register(["aurelia-templating", "aurelia-pal", "aurelia-binding", "aureli
                     get: function () {
                         return this.value && moment(this.value).isValid();
                     },
-                    enumerable: true,
+                    enumerable: false,
                     configurable: true
                 });
                 FilterDateControl.prototype.focus = function () {

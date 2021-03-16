@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 define(["require", "exports", "aurelia-templating", "aurelia-dependency-injection", "@aurelia-ux/core", "aurelia-logging", "aurelia-event-aggregator"], function (require, exports, aurelia_templating_1, aurelia_dependency_injection_1, core_1, aurelia_logging_1, aurelia_event_aggregator_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.ArSmartToolbar = void 0;
     var ArSmartToolbar = /** @class */ (function () {
         function ArSmartToolbar(element, styleEngine, eventAggregator) {
             this.element = element;

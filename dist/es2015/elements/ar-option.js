@@ -24,7 +24,7 @@ var ArOption = /** @class */ (function () {
                 return this.value.toString();
             return '';
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     __decorate([

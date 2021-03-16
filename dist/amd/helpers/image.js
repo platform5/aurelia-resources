@@ -1,6 +1,7 @@
 define(["require", "exports", "aurelia-logging"], function (require, exports, aurelia_logging_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.ImageHelpers = exports.ImageUtils = void 0;
     var log;
     log = aurelia_logging_1.getLogger('helpers:image');
     var ImageUtils = /** @class */ (function () {

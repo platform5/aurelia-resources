@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.errorifyTo = exports.errorify = exports.notify = exports.notifaction = exports.setNotifyDefaults = exports.addNotifyContainerAlias = void 0;
 var aurelia_framework_1 = require("aurelia-framework");
 var aurelia_notify_1 = require("aurelia-notify");
 var aurelia_logging_1 = require("aurelia-logging");

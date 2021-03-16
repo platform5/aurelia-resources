@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 define(["require", "exports", "aurelia-framework", "aurelia-templating", "@aurelia-ux/core"], function (require, exports, aurelia_framework_1, aurelia_templating_1, core_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.ArMainHeader = void 0;
     var ArMainHeader = /** @class */ (function () {
         function ArMainHeader(element, styleEngine) {
             var _this = this;

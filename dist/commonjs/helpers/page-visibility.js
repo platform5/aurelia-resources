@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.PageVisibilityHelpers = void 0;
 var aurelia_event_aggregator_1 = require("aurelia-event-aggregator");
 var aurelia_framework_1 = require("aurelia-framework");
 var aurelia_logging_1 = require("aurelia-logging");

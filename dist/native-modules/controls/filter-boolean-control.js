@@ -42,7 +42,7 @@ var FilterBooleanControl = /** @class */ (function () {
         get: function () {
             return this.value !== undefined;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     FilterBooleanControl.prototype.click = function (value) {

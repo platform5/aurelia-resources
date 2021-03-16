@@ -6,6 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.FilterOptionsValueConverter = exports.ArSelect = void 0;
 var dom_1 = require("./../helpers/dom");
 var aurelia_templating_1 = require("aurelia-templating");
 var aurelia_dependency_injection_1 = require("aurelia-dependency-injection");
@@ -235,7 +236,7 @@ var ArSelect = /** @class */ (function () {
             }
             return null;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(ArSelect.prototype, "selectedOptions", {
@@ -257,7 +258,7 @@ var ArSelect = /** @class */ (function () {
             }
             return options;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     ArSelect.prototype.addExtraValue = function () {

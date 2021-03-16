@@ -1,6 +1,7 @@
 define(["require", "exports", "moment"], function (require, exports, moment) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.DateValueConverter = void 0;
     var DateValueConverter = /** @class */ (function () {
         function DateValueConverter() {
         }

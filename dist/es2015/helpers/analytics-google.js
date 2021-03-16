@@ -57,7 +57,7 @@ var AnalyticsGoogle = /** @class */ (function () {
         get: function () {
             return window.ga;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     AnalyticsGoogle.prototype.start = function () {

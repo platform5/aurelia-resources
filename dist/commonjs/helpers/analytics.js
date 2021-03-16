@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Analytics = exports.AnalyticEntry = void 0;
 var string_1 = require("./string");
 var moment = require("moment");
 var aurelia_event_aggregator_1 = require("aurelia-event-aggregator");
@@ -41,7 +42,7 @@ var AnalyticEntry = /** @class */ (function () {
         get: function () {
             return this._isSaved;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     AnalyticEntry.prototype.saved = function () {

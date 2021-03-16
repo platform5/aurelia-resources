@@ -6,6 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.SentryHelper = void 0;
 var Sentry = require("@sentry/browser");
 var tracing_1 = require("@sentry/tracing");
 var aurelia_framework_1 = require("aurelia-framework");

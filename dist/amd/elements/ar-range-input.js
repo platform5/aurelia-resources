@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 define(["require", "exports", "multirange", "aurelia-templating", "aurelia-pal", "aurelia-binding", "aurelia-dependency-injection", "@aurelia-ux/core", "aurelia-logging"], function (require, exports, multirange, aurelia_templating_1, aurelia_pal_1, aurelia_binding_1, aurelia_dependency_injection_1, core_1, aurelia_logging_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.ArRangeInput = void 0;
     var log = aurelia_logging_1.getLogger('ar-range-input');
     var ArRangeInput = /** @class */ (function () {
         function ArRangeInput(element, styleEngine) {

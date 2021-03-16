@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 define(["require", "exports", "./../helpers/dom", "aurelia-templating", "aurelia-dependency-injection", "@aurelia-ux/core", "aurelia-logging", "aurelia-event-aggregator", "aurelia-framework", "aurelia-pal", "remove-accents", "./ar-dialog"], function (require, exports, dom_1, aurelia_templating_1, aurelia_dependency_injection_1, core_1, aurelia_logging_1, aurelia_event_aggregator_1, aurelia_framework_1, aurelia_pal_1, removeAccents, ar_dialog_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.FilterOptionsValueConverter = exports.ArSelect = void 0;
     var ArSelect = /** @class */ (function () {
         function ArSelect(element, styleEngine, eventAggregator) {
             this.element = element;
@@ -226,7 +227,7 @@ define(["require", "exports", "./../helpers/dom", "aurelia-templating", "aurelia
                 }
                 return null;
             },
-            enumerable: true,
+            enumerable: false,
             configurable: true
         });
         Object.defineProperty(ArSelect.prototype, "selectedOptions", {
@@ -248,7 +249,7 @@ define(["require", "exports", "./../helpers/dom", "aurelia-templating", "aurelia
                 }
                 return options;
             },
-            enumerable: true,
+            enumerable: false,
             configurable: true
         });
         ArSelect.prototype.addExtraValue = function () {

@@ -1,6 +1,7 @@
 define(["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.ConfirmDialog = void 0;
     var ConfirmDialog = /** @class */ (function () {
         function ConfirmDialog() {
         }

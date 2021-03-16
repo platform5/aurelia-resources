@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 define(["require", "exports", "aurelia-framework", "aurelia-templating", "@aurelia-ux/core", "aurelia-logging", "aurelia-event-aggregator"], function (require, exports, aurelia_framework_1, aurelia_templating_1, core_1, aurelia_logging_1, aurelia_event_aggregator_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.ArLangSelector = void 0;
     var ArLangSelector = /** @class */ (function () {
         function ArLangSelector(element, styleEngine, ea) {
             this.element = element;

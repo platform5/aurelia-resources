@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 define(["require", "exports", "aurelia-event-aggregator", "../helpers/string", "aurelia-framework", "@aurelia-ux/core"], function (require, exports, aurelia_event_aggregator_1, string_1, aurelia_framework_1, core_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.ArAutoLastCustomAttribute = exports.ArAutoFirstCustomAttribute = exports.ArAutoPrevCustomAttribute = exports.ArAutoNextCustomAttribute = exports.ArBackCustomAttribute = exports.ArPrevCustomAttribute = exports.ArNextCustomAttribute = exports.ArNext = void 0;
     var ArNext = /** @class */ (function () {
         function ArNext(element, styleEngine, eventAggregator) {
             this.element = element;

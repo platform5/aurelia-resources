@@ -43,6 +43,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 define(["require", "exports", "@aurelia-ux/modal", "aurelia-framework", "../helpers/notify"], function (require, exports, modal_1, aurelia_framework_1, notify_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.PromptBooleanDialog = void 0;
     var PromptBooleanDialog = /** @class */ (function () {
         function PromptBooleanDialog(modalService) {
             this.modalService = modalService;

@@ -6,6 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.UxInputIntPhone = void 0;
 var aurelia_framework_1 = require("aurelia-framework");
 var aurelia_logging_1 = require("aurelia-logging");
 var countries_1 = require("../helpers/countries");
@@ -38,7 +39,7 @@ var UxInputIntPhone = /** @class */ (function () {
                 return countries_1.default;
             return countries_1.default.filter(function (i) { return _this.countriesFilter.indexOf(i.countryCode2) !== -1; });
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     UxInputIntPhone.prototype.attached = function () {

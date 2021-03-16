@@ -21,7 +21,7 @@ export class CordovaHelpers {
           }, false);
         }
 
-        resolve();
+        resolve(null);
       });
     });
   }

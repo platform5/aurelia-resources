@@ -233,7 +233,7 @@ var ArSelect = /** @class */ (function () {
             }
             return null;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     Object.defineProperty(ArSelect.prototype, "selectedOptions", {
@@ -255,7 +255,7 @@ var ArSelect = /** @class */ (function () {
             }
             return options;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     ArSelect.prototype.addExtraValue = function () {

@@ -76,7 +76,7 @@ var FilterDateControl = /** @class */ (function () {
         get: function () {
             return this.value && moment(this.value).isValid();
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     FilterDateControl.prototype.focus = function () {

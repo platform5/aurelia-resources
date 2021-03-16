@@ -195,7 +195,7 @@ System.register(["@aurelia-ux/modal", "aurelia-framework", "../helpers/notify", 
                             ? this.options.length > 10
                             : this.showSearch;
                     },
-                    enumerable: true,
+                    enumerable: false,
                     configurable: true
                 });
                 __decorate([

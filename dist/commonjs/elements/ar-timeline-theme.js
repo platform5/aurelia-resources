@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.ArTimelineTheme = void 0;
 var ArTimelineTheme = /** @class */ (function () {
     function ArTimelineTheme() {
         this.themeKey = 'ar-timeline';

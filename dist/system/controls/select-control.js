@@ -250,7 +250,7 @@ System.register(["aurelia-templating", "aurelia-pal", "aurelia-binding", "aureli
                     get: function () {
                         return typeof this.label !== 'string' || this.label.length === 0;
                     },
-                    enumerable: true,
+                    enumerable: false,
                     configurable: true
                 });
                 Object.defineProperty(SelectControl.prototype, "displayedValue", {
@@ -280,7 +280,7 @@ System.register(["aurelia-templating", "aurelia-pal", "aurelia-binding", "aureli
                         this.element.classList.toggle('ux-input-component--has-value', hasValue);
                         return result;
                     },
-                    enumerable: true,
+                    enumerable: false,
                     configurable: true
                 });
                 __decorate([

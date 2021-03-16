@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 define(["require", "exports", "aurelia-templating", "aurelia-pal", "aurelia-binding", "aurelia-dependency-injection", "@aurelia-ux/core", "aurelia-logging", "aurelia-event-aggregator", "remove-accents"], function (require, exports, aurelia_templating_1, aurelia_pal_1, aurelia_binding_1, aurelia_dependency_injection_1, core_1, aurelia_logging_1, aurelia_event_aggregator_1, removeAccents) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.ArTagsInput = void 0;
     var ArTagsInput = /** @class */ (function () {
         function ArTagsInput(element, styleEngine, eventAggregator) {
             this.element = element;
@@ -59,7 +60,7 @@ define(["require", "exports", "aurelia-templating", "aurelia-pal", "aurelia-bind
                 }
                 return tags;
             },
-            enumerable: true,
+            enumerable: false,
             configurable: true
         });
         ArTagsInput.prototype.attached = function () {

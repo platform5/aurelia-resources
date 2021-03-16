@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.CordovaHelpers = void 0;
 var aurelia_event_aggregator_1 = require("aurelia-event-aggregator");
 var aurelia_framework_1 = require("aurelia-framework");
 var eventAggregator = aurelia_framework_1.Container.instance.get(aurelia_event_aggregator_1.EventAggregator);
@@ -19,7 +20,7 @@ var CordovaHelpers = /** @class */ (function () {
                     var lifeCycleEvent = _a[_i];
                     _loop_1(lifeCycleEvent);
                 }
-                resolve();
+                resolve(null);
             });
         });
     };

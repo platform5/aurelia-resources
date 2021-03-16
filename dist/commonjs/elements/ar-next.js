@@ -6,6 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.ArAutoLastCustomAttribute = exports.ArAutoFirstCustomAttribute = exports.ArAutoPrevCustomAttribute = exports.ArAutoNextCustomAttribute = exports.ArBackCustomAttribute = exports.ArPrevCustomAttribute = exports.ArNextCustomAttribute = exports.ArNext = void 0;
 var aurelia_event_aggregator_1 = require("aurelia-event-aggregator");
 var string_1 = require("../helpers/string");
 var aurelia_framework_1 = require("aurelia-framework");

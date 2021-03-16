@@ -1,6 +1,7 @@
 define(["require", "exports", "numeral", "numeral/locales/fr-ch"], function (require, exports, numeral) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.CurrencyValueConverter = void 0;
     //numeral.register('locale', 'fr-ch', locale);
     numeral.locale('fr-ch');
     var CurrencyValueConverter = /** @class */ (function () {

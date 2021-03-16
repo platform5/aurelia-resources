@@ -43,6 +43,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 define(["require", "exports", "aurelia-templating", "aurelia-pal", "aurelia-binding", "aurelia-dependency-injection", "@aurelia-ux/modal", "moment"], function (require, exports, aurelia_templating_1, aurelia_pal_1, aurelia_binding_1, aurelia_dependency_injection_1, modal_1, moment) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.FilterDatesControl = void 0;
     var FilterDatesControl = /** @class */ (function () {
         function FilterDatesControl(element, modalService) {
             this.element = element;

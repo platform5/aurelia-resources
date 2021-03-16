@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 define(["require", "exports", "aurelia-framework", "aurelia-notify", "@aurelia-ux/core"], function (require, exports, aurelia_framework_1, aurelia_notify_1, core_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.ArNotification = void 0;
     var ArNotification = /** @class */ (function () {
         function ArNotification(controller, element, styleEngine) {
             this.controller = controller;

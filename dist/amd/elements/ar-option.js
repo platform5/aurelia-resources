@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 define(["require", "exports", "aurelia-framework"], function (require, exports, aurelia_framework_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.ArOption = void 0;
     var ArOption = /** @class */ (function () {
         function ArOption() {
             this.label = '';
@@ -26,7 +27,7 @@ define(["require", "exports", "aurelia-framework"], function (require, exports, 
                     return this.value.toString();
                 return '';
             },
-            enumerable: true,
+            enumerable: false,
             configurable: true
         });
         __decorate([

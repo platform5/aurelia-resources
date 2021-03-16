@@ -36,7 +36,7 @@ var UxInputIntPhone = /** @class */ (function () {
                 return countries;
             return countries.filter(function (i) { return _this.countriesFilter.indexOf(i.countryCode2) !== -1; });
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     UxInputIntPhone.prototype.attached = function () {

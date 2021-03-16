@@ -6,6 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.ArRangeInput = void 0;
 var multirange = require("multirange");
 // https://www.w3schools.com/howto/howto_js_rangeslider.asp
 var aurelia_templating_1 = require("aurelia-templating");

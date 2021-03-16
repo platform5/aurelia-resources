@@ -42,6 +42,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.PromptSelectDialogFilterOptionsValueConverter = exports.PromptSelectDialog = void 0;
 var modal_1 = require("@aurelia-ux/modal");
 var aurelia_framework_1 = require("aurelia-framework");
 var notify_1 = require("../helpers/notify");
@@ -181,7 +182,7 @@ var PromptSelectDialog = /** @class */ (function () {
                 ? this.options.length > 10
                 : this.showSearch;
         },
-        enumerable: true,
+        enumerable: false,
         configurable: true
     });
     __decorate([

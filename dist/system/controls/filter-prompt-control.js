@@ -101,7 +101,7 @@ System.register(["aurelia-templating", "aurelia-pal", "aurelia-binding", "aureli
                     get: function () {
                         return this.value && Array.isArray(this.value) && this.value.length > 0;
                     },
-                    enumerable: true,
+                    enumerable: false,
                     configurable: true
                 });
                 FilterPromptControl.prototype.focus = function () {

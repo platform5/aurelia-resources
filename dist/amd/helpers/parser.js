@@ -1,6 +1,7 @@
 define(["require", "exports", "./number", "moment"], function (require, exports, number_1, moment) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.Parser = void 0;
     var Parser = /** @class */ (function () {
         function Parser() {
         }

@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 define(["require", "exports", "aurelia-framework", "aurelia-templating", "@aurelia-ux/core"], function (require, exports, aurelia_framework_1, aurelia_templating_1, core_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.ArBreadcrumb = void 0;
     var ArBreadcrumb = /** @class */ (function () {
         function ArBreadcrumb(element, styleEngine) {
             this.element = element;

@@ -88,7 +88,7 @@ System.register(["aurelia-templating", "aurelia-pal", "aurelia-binding", "aureli
                         }
                         return tags;
                     },
-                    enumerable: true,
+                    enumerable: false,
                     configurable: true
                 });
                 ArTagsInput.prototype.attached = function () {

@@ -217,7 +217,7 @@ System.register(["aurelia-templating", "aurelia-pal", "aurelia-binding", "aureli
                         }
                         return false;
                     },
-                    enumerable: true,
+                    enumerable: false,
                     configurable: true
                 });
                 __decorate([

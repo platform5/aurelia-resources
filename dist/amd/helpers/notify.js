@@ -1,6 +1,7 @@
 define(["require", "exports", "aurelia-framework", "aurelia-notify", "aurelia-logging", "../elements/ar-notification", "./sentry"], function (require, exports, aurelia_framework_1, aurelia_notify_1, aurelia_logging_1, ar_notification_1, sentry_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.errorifyTo = exports.errorify = exports.notify = exports.notifaction = exports.setNotifyDefaults = exports.addNotifyContainerAlias = void 0;
     var serviceReady = false;
     var notificationService;
     var log;

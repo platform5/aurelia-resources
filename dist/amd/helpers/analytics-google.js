@@ -1,6 +1,7 @@
 define(["require", "exports", "aurelia-event-aggregator", "aurelia-framework", "aurelia-router", "aurelia-logging"], function (require, exports, aurelia_event_aggregator_1, aurelia_framework_1, aurelia_router_1, aurelia_logging_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.AnalyticsGoogle = void 0;
     var criteria = {
         isElement: function (e) {
             return e instanceof HTMLElement;
@@ -56,7 +57,7 @@ define(["require", "exports", "aurelia-event-aggregator", "aurelia-framework", "
             get: function () {
                 return window.ga;
             },
-            enumerable: true,
+            enumerable: false,
             configurable: true
         });
         AnalyticsGoogle.prototype.start = function () {

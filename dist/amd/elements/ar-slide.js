@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 define(["require", "exports", "aurelia-dependency-injection"], function (require, exports, aurelia_dependency_injection_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.ArSlide = void 0;
     var ArSlide = /** @class */ (function () {
         function ArSlide(element) {
             this.element = element;

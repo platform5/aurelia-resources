@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.locales = exports.countries = exports.languages = exports.list = void 0;
 // list extracted from https://stackoverflow.com/a/28357857
 // better list might be found somewhere else, this is just a start
 exports.list = [

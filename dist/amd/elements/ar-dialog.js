@@ -8,6 +8,7 @@ define(["require", "exports", "aurelia-framework", "aurelia-logging", "aurelia-p
     "use strict";
     var _this = this;
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.arDialog = exports.ArDialog = void 0;
     var ArDialog = /** @class */ (function () {
         function ArDialog(element, styleEngine, templatingEngine) {
             this.element = element;

@@ -42,6 +42,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.PromptTextDialog = void 0;
 var modal_1 = require("@aurelia-ux/modal");
 var aurelia_framework_1 = require("aurelia-framework");
 var notify_1 = require("../helpers/notify");

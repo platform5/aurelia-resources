@@ -73,7 +73,7 @@ System.register(["aurelia-event-aggregator", "aurelia-framework", "aurelia-route
                     get: function () {
                         return window.ga;
                     },
-                    enumerable: true,
+                    enumerable: false,
                     configurable: true
                 });
                 AnalyticsGoogle.prototype.start = function () {

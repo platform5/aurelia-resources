@@ -9,8 +9,8 @@ import { valueConverter } from 'aurelia-framework';
 var NumStringValueConverter = /** @class */ (function () {
     function NumStringValueConverter() {
     }
-    NumStringValueConverter.prototype.toView = function (value) {
-        return NumberHelper.numString(value);
+    NumStringValueConverter.prototype.toView = function (value, nbDecimals, separator) {
+        return NumberHelper.numString(value, nbDecimals, separator);
     };
     NumStringValueConverter = __decorate([
         valueConverter('numString')
@@ -21,8 +21,8 @@ export { NumStringValueConverter };
 var RoundValueConverter = /** @class */ (function () {
     function RoundValueConverter() {
     }
-    RoundValueConverter.prototype.toView = function (value) {
-        return NumberHelper.round(value).toString();
+    RoundValueConverter.prototype.toView = function (value, nbDecimal) {
+        return NumberHelper.round(value, nbDecimal).toString();
     };
     RoundValueConverter = __decorate([
         valueConverter('round')
@@ -33,8 +33,8 @@ export { RoundValueConverter };
 var AddZeroDecimalValueConverter = /** @class */ (function () {
     function AddZeroDecimalValueConverter() {
     }
-    AddZeroDecimalValueConverter.prototype.toView = function (value) {
-        return NumberHelper.addZeroDecimals(value);
+    AddZeroDecimalValueConverter.prototype.toView = function (value, nbDecimal) {
+        return NumberHelper.addZeroDecimals(value, nbDecimal);
     };
     AddZeroDecimalValueConverter = __decorate([
         valueConverter('addZeroDecimals')

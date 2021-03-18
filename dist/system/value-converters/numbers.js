@@ -21,8 +21,8 @@ System.register(["../helpers/number", "aurelia-framework"], function (exports_1,
             NumStringValueConverter = /** @class */ (function () {
                 function NumStringValueConverter() {
                 }
-                NumStringValueConverter.prototype.toView = function (value) {
-                    return number_1.NumberHelper.numString(value);
+                NumStringValueConverter.prototype.toView = function (value, nbDecimals, separator) {
+                    return number_1.NumberHelper.numString(value, nbDecimals, separator);
                 };
                 NumStringValueConverter = __decorate([
                     aurelia_framework_1.valueConverter('numString')
@@ -33,8 +33,8 @@ System.register(["../helpers/number", "aurelia-framework"], function (exports_1,
             RoundValueConverter = /** @class */ (function () {
                 function RoundValueConverter() {
                 }
-                RoundValueConverter.prototype.toView = function (value) {
-                    return number_1.NumberHelper.round(value).toString();
+                RoundValueConverter.prototype.toView = function (value, nbDecimal) {
+                    return number_1.NumberHelper.round(value, nbDecimal).toString();
                 };
                 RoundValueConverter = __decorate([
                     aurelia_framework_1.valueConverter('round')
@@ -45,8 +45,8 @@ System.register(["../helpers/number", "aurelia-framework"], function (exports_1,
             AddZeroDecimalValueConverter = /** @class */ (function () {
                 function AddZeroDecimalValueConverter() {
                 }
-                AddZeroDecimalValueConverter.prototype.toView = function (value) {
-                    return number_1.NumberHelper.addZeroDecimals(value);
+                AddZeroDecimalValueConverter.prototype.toView = function (value, nbDecimal) {
+                    return number_1.NumberHelper.addZeroDecimals(value, nbDecimal);
                 };
                 AddZeroDecimalValueConverter = __decorate([
                     aurelia_framework_1.valueConverter('addZeroDecimals')

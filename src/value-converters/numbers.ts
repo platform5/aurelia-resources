@@ -4,6 +4,9 @@ import { valueConverter } from 'aurelia-framework';
 @valueConverter('numString')
 export class NumStringValueConverter {
   public toView(value: number, nbDecimals?: number, separator?: string ): string {
+    if (typeof value !== 'number') {
+      return value;
+    }
     return NumberHelper.numString(value, nbDecimals, separator);
   }
 }
@@ -11,6 +14,9 @@ export class NumStringValueConverter {
 @valueConverter('round')
 export class RoundValueConverter {
   public toView(value: number, nbDecimal?: number): string {
+    if (typeof value !== 'number') {
+      return value;
+    }
     return NumberHelper.round(value, nbDecimal).toString();
   }
 }
@@ -18,6 +24,9 @@ export class RoundValueConverter {
 @valueConverter('addZeroDecimals')
 export class AddZeroDecimalValueConverter {
   public toView(value: number, nbDecimal?: number): string {
+    if (typeof value !== 'number') {
+      return value;
+    }
     return NumberHelper.addZeroDecimals(value, nbDecimal);
   }
 }

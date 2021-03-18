@@ -12,6 +12,9 @@ define(["require", "exports", "../helpers/number", "aurelia-framework"], functio
         function NumStringValueConverter() {
         }
         NumStringValueConverter.prototype.toView = function (value, nbDecimals, separator) {
+            if (typeof value !== 'number') {
+                return value;
+            }
             return number_1.NumberHelper.numString(value, nbDecimals, separator);
         };
         NumStringValueConverter = __decorate([
@@ -24,6 +27,9 @@ define(["require", "exports", "../helpers/number", "aurelia-framework"], functio
         function RoundValueConverter() {
         }
         RoundValueConverter.prototype.toView = function (value, nbDecimal) {
+            if (typeof value !== 'number') {
+                return value;
+            }
             return number_1.NumberHelper.round(value, nbDecimal).toString();
         };
         RoundValueConverter = __decorate([
@@ -36,6 +42,9 @@ define(["require", "exports", "../helpers/number", "aurelia-framework"], functio
         function AddZeroDecimalValueConverter() {
         }
         AddZeroDecimalValueConverter.prototype.toView = function (value, nbDecimal) {
+            if (typeof value !== 'number') {
+                return value;
+            }
             return number_1.NumberHelper.addZeroDecimals(value, nbDecimal);
         };
         AddZeroDecimalValueConverter = __decorate([

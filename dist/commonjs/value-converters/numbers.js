@@ -13,6 +13,9 @@ var NumStringValueConverter = /** @class */ (function () {
     function NumStringValueConverter() {
     }
     NumStringValueConverter.prototype.toView = function (value, nbDecimals, separator) {
+        if (typeof value !== 'number') {
+            return value;
+        }
         return number_1.NumberHelper.numString(value, nbDecimals, separator);
     };
     NumStringValueConverter = __decorate([
@@ -25,6 +28,9 @@ var RoundValueConverter = /** @class */ (function () {
     function RoundValueConverter() {
     }
     RoundValueConverter.prototype.toView = function (value, nbDecimal) {
+        if (typeof value !== 'number') {
+            return value;
+        }
         return number_1.NumberHelper.round(value, nbDecimal).toString();
     };
     RoundValueConverter = __decorate([
@@ -37,6 +43,9 @@ var AddZeroDecimalValueConverter = /** @class */ (function () {
     function AddZeroDecimalValueConverter() {
     }
     AddZeroDecimalValueConverter.prototype.toView = function (value, nbDecimal) {
+        if (typeof value !== 'number') {
+            return value;
+        }
         return number_1.NumberHelper.addZeroDecimals(value, nbDecimal);
     };
     AddZeroDecimalValueConverter = __decorate([

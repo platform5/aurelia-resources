@@ -385,7 +385,7 @@ img.circle {
 
 /* Content can wrap in list content */
 .ux-list-item__content {
-	white-space: wrap;
+	white-space: initial;
 	width: 100%;
 }
 /* Add a drop shadow to all dialog */

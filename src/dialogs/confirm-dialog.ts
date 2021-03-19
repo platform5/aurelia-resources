@@ -4,7 +4,7 @@ export class  ConfirmDialog {
   public text: string;
 
   public canActivate(params: any) {
-    if (!params.title || !params.text) {
+    if (!params.title && !params.text) {
       throw new Error('Missing title or text');
     }
   }

@@ -27,6 +27,10 @@
   flex-wrap: wrap;
 }
 
+.select-control > .ux-list {
+  width: 100%;
+}
+
 .select-control--chips.ux-input-component--filled .ux-chip {
   border: 1px solid var(--aurelia-ux--design-control-label-color)
 }

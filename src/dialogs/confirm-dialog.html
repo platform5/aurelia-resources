@@ -1,10 +1,10 @@
 <template>
   <ux-card>
-    <ux-card-header>
+    <ux-card-header if.bind="title">
       <h2>${title}</h2>
     </ux-card-header>
-    <ux-card-separator class="ux-card__separator--no-margin"></ux-card-separator>
-    <ux-card-content>
+    <ux-card-separator if.bind="title && text" class="ux-card__separator--no-margin"></ux-card-separator>
+    <ux-card-content if.bind="text">
       <p innerhtml="${text}"></p>
     </ux-card-content>
     <ux-card-separator class="ux-card__separator--no-margin"></ux-card-separator>

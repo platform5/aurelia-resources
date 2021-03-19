@@ -366,3 +366,20 @@ img.circle {
   /* without this fix, the disabled color in outline component is too light */
   --aurelia-ux--design-disabled-background: var(--ux-swatch--grey-p400);
 }
+
+/* Content can wrap in list content */
+.ux-list-item__content {
+	white-space: wrap;
+	width: 100%;
+}
+
+/* Dialog box in desktop do not take full width */
+.ux-modal--desktop .ux-modal__content > .ux-card, 
+.ux-modal--desktop > compose > .ux-modal__content > .ux-card {
+  max-width: 90vw;
+}
+.ux-modal--desktop .ux-modal__content {
+  max-width: 90vw;
+  max-height: 90vh;
+}
+

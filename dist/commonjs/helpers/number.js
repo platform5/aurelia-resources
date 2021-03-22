@@ -25,7 +25,7 @@ var NumberHelper = /** @class */ (function () {
         var stringValue = value.toString();
         var dotIndex = stringValue.indexOf('.');
         var zeros = new Array(nbDecimal).fill('0', 0, nbDecimal).join('');
-        if (dotIndex === -1) {
+        if (dotIndex === -1 && nbDecimal != 0) {
             return stringValue + "." + zeros;
         }
         var diff = stringValue.length - dotIndex;

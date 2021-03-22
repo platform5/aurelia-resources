@@ -25,7 +25,7 @@ export class NumberHelper {
   
     const zeros = new Array(nbDecimal).fill('0', 0, nbDecimal).join('');
   
-    if (dotIndex === -1) {
+    if (dotIndex === -1 && nbDecimal != 0) {
       return `${stringValue}.${zeros}`;
     }
     const diff = stringValue.length - dotIndex;

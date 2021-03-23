@@ -67,20 +67,24 @@ export class FilterChipsControl {
         this.fixValue();
       }
       const index = this.value.indexOf(value);
+      const originalValue = [].concat(...this.value);
       if (index === -1) {
         this.value.push(value);
       } else {
         this.value.splice(index, 1);
       }
+      this.valueChanged(this.value, originalValue);
     } else {
       if (Array.isArray(value)) {
         this.fixValue();
       }
+      const originalValue = this.value;
       if (this.value === value) {
         this.value = undefined;
       } else {
         this.value = value;
       }
+      this.valueChanged(this.value, originalValue);
     }
   }
 

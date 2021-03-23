@@ -61,23 +61,27 @@ var FilterChipsControl = /** @class */ (function () {
                 this.fixValue();
             }
             var index = this.value.indexOf(value);
+            var originalValue = [].concat.apply([], this.value);
             if (index === -1) {
                 this.value.push(value);
             }
             else {
                 this.value.splice(index, 1);
             }
+            this.valueChanged(this.value, originalValue);
         }
         else {
             if (Array.isArray(value)) {
                 this.fixValue();
             }
+            var originalValue = this.value;
             if (this.value === value) {
                 this.value = undefined;
             }
             else {
                 this.value = value;
             }
+            this.valueChanged(this.value, originalValue);
         }
     };
     FilterChipsControl.prototype.isSelected = function (v) {

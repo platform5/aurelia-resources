@@ -22,6 +22,7 @@ function configure(config, pluginConfig) {
     config.globalResources([
         aurelia_framework_1.PLATFORM.moduleName('./controls/ar-tags-input'),
         aurelia_framework_1.PLATFORM.moduleName('./controls/filter-boolean-control'),
+        aurelia_framework_1.PLATFORM.moduleName('./controls/filter-chips-control'),
         aurelia_framework_1.PLATFORM.moduleName('./controls/filter-date-control'),
         aurelia_framework_1.PLATFORM.moduleName('./controls/filter-dates-control'),
         aurelia_framework_1.PLATFORM.moduleName('./controls/filter-prompt-control'),
@@ -126,6 +127,7 @@ __exportStar(require("./helpers/number"), exports);
 __exportStar(require("./helpers/ux-form-renderer"), exports);
 /* Expose Controls */
 __exportStar(require("./controls/filter-boolean-control"), exports);
+__exportStar(require("./controls/filter-chips-control"), exports);
 __exportStar(require("./controls/filter-date-control"), exports);
 __exportStar(require("./controls/filter-dates-control"), exports);
 __exportStar(require("./controls/filter-prompt-control"), exports);

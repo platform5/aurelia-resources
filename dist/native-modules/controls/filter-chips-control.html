@@ -1,0 +1,22 @@
+<template role="select"
+  class="filter-control filter-chips-control"
+  disabled.bind="disabled & booleanAttr"
+  readonly.bind="readonly & booleanAttr"
+  aria-disabled.bind="disabled & booleanAttr"
+  aria-readonly.bind="readonly & booleanAttr"
+  >
+  <require from="./filter-control.css"></require>
+
+  <div class="filter-control__label">
+    <slot></slot>
+  </div>
+
+  <div class="filter-control__values">
+    <ux-chip-list ux-choice-container.bind="value">
+      <ux-chip repeat.for="option of options" click.delegate="toggle(option[valueKey])" class="${isSelected(option[valueKey], value.length) ? 'ux-chip--selected':''}">
+        <span>${option[labelKey]}</span>
+      </ux-chip>
+    </ux-chip-list>
+  </div>
+
+</template>

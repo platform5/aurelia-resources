@@ -28,6 +28,7 @@ export * from './helpers/notify';
 export * from './helpers/number';
 export * from './helpers/ux-form-renderer';
 export * from './controls/filter-boolean-control';
+export * from './controls/filter-chips-control';
 export * from './controls/filter-date-control';
 export * from './controls/filter-dates-control';
 export * from './controls/filter-prompt-control';

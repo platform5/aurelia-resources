@@ -29,6 +29,7 @@ const aliases = [
 const resources = [
   './controls/ar-tags-input.html',
   './controls/filter-boolean-control.html',
+  './controls/filter-chips-control.html',
   './controls/filter-date-control.html',
   './controls/filter-dates-control.html',
   './controls/filter-prompt-control.html',

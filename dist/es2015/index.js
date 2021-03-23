@@ -8,6 +8,7 @@ export function configure(config, pluginConfig) {
     config.globalResources([
         PLATFORM.moduleName('./controls/ar-tags-input'),
         PLATFORM.moduleName('./controls/filter-boolean-control'),
+        PLATFORM.moduleName('./controls/filter-chips-control'),
         PLATFORM.moduleName('./controls/filter-date-control'),
         PLATFORM.moduleName('./controls/filter-dates-control'),
         PLATFORM.moduleName('./controls/filter-prompt-control'),
@@ -96,6 +97,7 @@ export * from './helpers/number';
 export * from './helpers/ux-form-renderer';
 /* Expose Controls */
 export * from './controls/filter-boolean-control';
+export * from './controls/filter-chips-control';
 export * from './controls/filter-date-control';
 export * from './controls/filter-dates-control';
 export * from './controls/filter-prompt-control';

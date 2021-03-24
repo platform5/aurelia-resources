@@ -36,6 +36,15 @@ define(["require", "exports", "moment"], function (require, exports, moment) {
                     m = moment(date);
                 }
             }
+            else if (!moment.isMoment(date)) {
+                m = moment(date);
+                if (!m.isValid) {
+                    return '';
+                }
+            }
+            else {
+                m = date;
+            }
             if (format === 'nice') {
                 var diff = m.diff(moment(), 'days');
                 if (diff < 14) {

@@ -22,8 +22,15 @@ export class DateValueConverter {
       } else {
         m = moment(date);
       }
+    } else if (!moment.isMoment(date)) {
+      m = moment(date);
+      if (!m.isValid) {
+        return '';
+      }
+    } else {
+      m = date;
     }
-    
+
 
     if (format === 'nice') {
       let diff = m.diff(moment(), 'days');

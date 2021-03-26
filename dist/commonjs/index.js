@@ -122,6 +122,7 @@ Object.defineProperty(exports, "languages", { enumerable: true, get: function ()
 var locales_1 = require("./helpers/locales");
 Object.defineProperty(exports, "locales", { enumerable: true, get: function () { return locales_1.locales; } });
 __exportStar(require("./helpers/notify"), exports);
+__exportStar(require("./helpers/date"), exports);
 __exportStar(require("./helpers/number"), exports);
 __exportStar(require("./helpers/ux-form-renderer"), exports);
 /* Expose Controls */

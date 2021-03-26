@@ -25,6 +25,7 @@ export { countries } from './helpers/countries';
 export { languages } from './helpers/languages';
 export { locales } from './helpers/locales';
 export * from './helpers/notify';
+export * from './helpers/date';
 export * from './helpers/number';
 export * from './helpers/ux-form-renderer';
 export * from './controls/filter-boolean-control';

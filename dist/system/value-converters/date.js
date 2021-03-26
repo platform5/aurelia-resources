@@ -1,11 +1,14 @@
-System.register(["moment"], function (exports_1, context_1) {
+System.register(["moment", "../helpers/date"], function (exports_1, context_1) {
     "use strict";
-    var moment, DateValueConverter;
+    var moment, date_1, DateValueConverter;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
             function (moment_1) {
                 moment = moment_1;
+            },
+            function (date_1_1) {
+                date_1 = date_1_1;
             }
         ],
         execute: function () {
@@ -14,43 +17,9 @@ System.register(["moment"], function (exports_1, context_1) {
                 }
                 DateValueConverter.prototype.toView = function (date, format) {
                     if (format === void 0) { format = 'DD.MM.YYYY'; }
-                    if (!date)
+                    var m = date_1.DateHelper.moment(date);
+                    if (!m) {
                         return '';
-                    var m;
-                    if (typeof date === 'string') {
-                        if (date.length === 10 && date.substr(2, 1) === '-' && date.substr(5, 1) === '-') {
-                            m = moment(date, 'DD-MM-YYYY');
-                        }
-                        else if (date.length === 8 && date.substr(2, 1) === '-' && date.substr(5, 1) === '-') {
-                            m = moment(date, 'DD-MM-YY');
-                        }
-                        else if (date.length === 10 && date.substr(2, 1) === '/' && date.substr(5, 1) === '/') {
-                            m = moment(date, 'DD/MM/YYYY');
-                        }
-                        else if (date.length === 8 && date.substr(2, 1) === '/' && date.substr(5, 1) === '/') {
-                            m = moment(date, 'DD/MM/YY');
-                        }
-                        else if (date.length === 10 && date.substr(2, 1) === '.' && date.substr(5, 1) === '.') {
-                            m = moment(date, 'DD.MM.YYYY');
-                        }
-                        else if (date.length === 8 && date.substr(2, 1) === '.' && date.substr(5, 1) === '.') {
-                            m = moment(date, 'DD.MM.YY');
-                        }
-                        else if (date.length > 10 && date.indexOf('T') !== -1 && date.indexOf('+') !== -1) {
-                            m = moment(date);
-                        }
-                        else {
-                            m = moment(date);
-                        }
-                    }
-                    else if (!moment.isMoment(date)) {
-                        m = moment(date);
-                        if (!m.isValid) {
-                            return '';
-                        }
-                    }
-                    else {
-                        m = date;
                     }
                     if (format === 'nice') {
                         var diff = m.diff(moment(), 'days');

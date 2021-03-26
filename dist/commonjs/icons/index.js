@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Supplyorder = exports.Supplier = exports.Stock = exports.Shops = exports.Restocking = exports.Delivery = exports.Cube = void 0;
 var cube_1 = require("./cube");
 Object.defineProperty(exports, "Cube", { enumerable: true, get: function () { return cube_1.default; } });
 var delivery_1 = require("./delivery");

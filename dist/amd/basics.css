@@ -11,6 +11,11 @@ ux-icon {
   cursor: pointer;
 }
 
+.text-click {
+  color: var(--aurelia-ux--design-primary);
+  cursor: pointer;
+}
+
 /** BLOCK POSITIONNING **/
 .abs-full {
   display: block;

@@ -10,6 +10,7 @@ export class PromptSelectDialog {
   public options: Array<any> = [];
   public value: any;
   public labelKey: string = '';
+  public secondaryKey: string = '';
   public valueKey: string = '';
   public title: string = 'Select an option';
   public required: boolean = false;
@@ -42,6 +43,7 @@ export class PromptSelectDialog {
     this.title = params.title ? params.title : 'Select an option';
     this.options = Array.isArray(params.options) ? params.options : [];
     this.labelKey = params.labelKey || undefined;
+    this.secondaryKey = params.secondaryKey || undefined;
     this.valueKey = params.valueKey || undefined;
 
     const options = this.options.map(o => this.getValue(o));
@@ -89,6 +91,13 @@ export class PromptSelectDialog {
   public getLabel(option: any): string {
     if (typeof option === 'object' && this.labelKey) {
       return option[this.labelKey];
+    }
+    return option;
+  }
+
+  public getSecondary(option: any): string {
+    if (typeof option === 'object' && this.secondaryKey) {
+      return option[this.secondaryKey];
     }
     return option;
   }
@@ -143,16 +152,18 @@ export class PromptSelectDialog {
 
 
 export class PromptSelectDialogFilterOptionsValueConverter {
-  toView (list: Array<any>, filter: string = '', labelKey: string | undefined, valueKey: string | undefined): Array<any> {
+  toView (list: Array<any>, filter: string = '', labelKey: string | undefined, secondaryKey: string | undefined, valueKey: string | undefined): Array<any> {
     if (!filter) return list;
     let newList: Array<any> = [];
     filter = removeAccents(filter.toLowerCase());
     for (let item of list) {
       const label = typeof item === 'object' && labelKey ? item[labelKey] : item;
+      const secondary = typeof item === 'object' && secondaryKey ? item[secondaryKey] : item;
       const value = typeof item === 'object' && valueKey ? item[valueKey] : item;
       const l = typeof label === 'string' ? removeAccents(label.toLowerCase()) : '';
+      const s = typeof secondary === 'string' ? removeAccents(secondary.toLowerCase()) : '';
       const v = typeof value === 'string' ? removeAccents(value.toLowerCase()) : '';
-      if (l.indexOf(filter) !== -1 || v.indexOf(filter) !== -1) {
+      if (l.indexOf(filter) !== -1 || s.indexOf(filter) !== -1 || v.indexOf(filter) !== -1) {
         newList.push(item);
       }
     }

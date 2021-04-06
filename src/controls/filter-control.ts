@@ -21,6 +21,7 @@ export class FilterControl {
   @bindable public options: Array<any> = [];
   @bindable({defaultBindingMode: bindingMode.twoWay}) public value: any;
   @bindable public labelKey: string = '';
+  @bindable public secondaryKey: string = '';
   @bindable public valueKey: string = '';
   @bindable public icon: string = '';
   @bindable public showSearch: 'auto' | boolean = 'auto';
@@ -103,6 +104,13 @@ export class FilterControl {
     return option || '';
   }
 
+  public computeSecondary(option: any): string {
+    if (typeof option === 'object' && this.secondaryKey) {
+      return option[this.secondaryKey] || '';
+    }
+    return option || '';
+  }
+
   public computeValue(option: any): any {
     if (typeof option === 'object' && this.valueKey) {
       return option[this.valueKey];
@@ -136,6 +144,7 @@ export class FilterControl {
       model: {
         options: this.options,
         labelKey: this.labelKey,
+        secondaryKey: this.secondaryKey,
         valueKey: this.valueKey,
         mode: this.multiple ? 'multiple' : 'single',
         value: this.value,

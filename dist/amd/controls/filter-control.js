@@ -53,6 +53,7 @@ define(["require", "exports", "aurelia-templating", "aurelia-pal", "aurelia-bind
             this.multiple = false;
             this.options = [];
             this.labelKey = '';
+            this.secondaryKey = '';
             this.valueKey = '';
             this.icon = '';
             this.showSearch = 'auto';
@@ -131,6 +132,12 @@ define(["require", "exports", "aurelia-templating", "aurelia-pal", "aurelia-bind
             }
             return option || '';
         };
+        FilterControl.prototype.computeSecondary = function (option) {
+            if (typeof option === 'object' && this.secondaryKey) {
+                return option[this.secondaryKey] || '';
+            }
+            return option || '';
+        };
         FilterControl.prototype.computeValue = function (option) {
             if (typeof option === 'object' && this.valueKey) {
                 return option[this.valueKey];
@@ -164,6 +171,7 @@ define(["require", "exports", "aurelia-templating", "aurelia-pal", "aurelia-bind
                                 model: {
                                     options: this.options,
                                     labelKey: this.labelKey,
+                                    secondaryKey: this.secondaryKey,
                                     valueKey: this.valueKey,
                                     mode: this.multiple ? 'multiple' : 'single',
                                     value: this.value,
@@ -219,6 +227,9 @@ define(["require", "exports", "aurelia-templating", "aurelia-pal", "aurelia-bind
         __decorate([
             aurelia_templating_1.bindable
         ], FilterControl.prototype, "labelKey", void 0);
+        __decorate([
+            aurelia_templating_1.bindable
+        ], FilterControl.prototype, "secondaryKey", void 0);
         __decorate([
             aurelia_templating_1.bindable
         ], FilterControl.prototype, "valueKey", void 0);

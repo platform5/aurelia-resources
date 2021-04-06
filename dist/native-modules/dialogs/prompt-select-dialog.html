@@ -13,11 +13,16 @@
         <ux-icon icon="arrow_back" click.delegate="search = ''" if.bind="search"></ux-icon>
       </div>
       <ux-list class="ux-list--border">
-        <ux-list-item repeat.for="option of options | promptSelectDialogFilterOptions:search:labelKey:valueKey" class="click" click.delegate="toggleOption(option, $event)">
+        <ux-list-item repeat.for="option of options | promptSelectDialogFilterOptions:search:labelKey:secondaryKey;valueKey" class="click" click.delegate="toggleOption(option, $event)">
           <div class="ux-list-item__detail">
             <ux-icon icon="${icon}" if.bind="icon"></ux-icon>
           </div>
-          <div class="ux-list-item__content">${getLabel(option)}</div>
+          <div class="ux-list-item__content">
+            ${getLabel(option)}
+            <div class="ux-list-item__secondary-content" if.bind="getSecondary(option)">
+              ${getSecondary(option)}
+            </div>
+          </div>
           <div class="ux-list-item__action-item">
             <ux-icon if.bind="mode === 'multiple' && !isSelected(option, value, value.length)" icon="check_box_outline_blank"></ux-icon>
             <ux-icon if.bind="mode === 'multiple' && isSelected(option, value, value.length)" icon="check_box"></ux-icon>

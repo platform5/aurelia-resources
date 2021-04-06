@@ -75,6 +75,7 @@ System.register(["aurelia-templating", "aurelia-pal", "aurelia-binding", "aureli
                     this.multiple = false;
                     this.options = [];
                     this.labelKey = '';
+                    this.secondaryKey = '';
                     this.valueKey = '';
                     this.icon = '';
                     this.showSearch = 'auto';
@@ -153,6 +154,12 @@ System.register(["aurelia-templating", "aurelia-pal", "aurelia-binding", "aureli
                     }
                     return option || '';
                 };
+                FilterControl.prototype.computeSecondary = function (option) {
+                    if (typeof option === 'object' && this.secondaryKey) {
+                        return option[this.secondaryKey] || '';
+                    }
+                    return option || '';
+                };
                 FilterControl.prototype.computeValue = function (option) {
                     if (typeof option === 'object' && this.valueKey) {
                         return option[this.valueKey];
@@ -186,6 +193,7 @@ System.register(["aurelia-templating", "aurelia-pal", "aurelia-binding", "aureli
                                         model: {
                                             options: this.options,
                                             labelKey: this.labelKey,
+                                            secondaryKey: this.secondaryKey,
                                             valueKey: this.valueKey,
                                             mode: this.multiple ? 'multiple' : 'single',
                                             value: this.value,
@@ -241,6 +249,9 @@ System.register(["aurelia-templating", "aurelia-pal", "aurelia-binding", "aureli
                 __decorate([
                     aurelia_templating_1.bindable
                 ], FilterControl.prototype, "labelKey", void 0);
+                __decorate([
+                    aurelia_templating_1.bindable
+                ], FilterControl.prototype, "secondaryKey", void 0);
                 __decorate([
                     aurelia_templating_1.bindable
                 ], FilterControl.prototype, "valueKey", void 0);

@@ -5,6 +5,7 @@ export declare class PromptSelectDialog {
     options: Array<any>;
     value: any;
     labelKey: string;
+    secondaryKey: string;
     valueKey: string;
     title: string;
     required: boolean;
@@ -15,11 +16,12 @@ export declare class PromptSelectDialog {
     activate(params: any): void;
     canDeactivate(result: UxModalServiceResult): Promise<boolean>;
     getLabel(option: any): string;
+    getSecondary(option: any): string;
     getValue(option: any): any;
     toggleOption(option: any, event: MouseEvent): void;
     isSelected(option: any, value: any): boolean;
     get shouldShowSearch(): boolean;
 }
 export declare class PromptSelectDialogFilterOptionsValueConverter {
-    toView(list: Array<any>, filter: string, labelKey: string | undefined, valueKey: string | undefined): Array<any>;
+    toView(list: Array<any>, filter: string, labelKey: string | undefined, secondaryKey: string | undefined, valueKey: string | undefined): Array<any>;
 }

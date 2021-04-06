@@ -55,6 +55,7 @@ var FilterControl = /** @class */ (function () {
         this.multiple = false;
         this.options = [];
         this.labelKey = '';
+        this.secondaryKey = '';
         this.valueKey = '';
         this.icon = '';
         this.showSearch = 'auto';
@@ -133,6 +134,12 @@ var FilterControl = /** @class */ (function () {
         }
         return option || '';
     };
+    FilterControl.prototype.computeSecondary = function (option) {
+        if (typeof option === 'object' && this.secondaryKey) {
+            return option[this.secondaryKey] || '';
+        }
+        return option || '';
+    };
     FilterControl.prototype.computeValue = function (option) {
         if (typeof option === 'object' && this.valueKey) {
             return option[this.valueKey];
@@ -166,6 +173,7 @@ var FilterControl = /** @class */ (function () {
                             model: {
                                 options: this.options,
                                 labelKey: this.labelKey,
+                                secondaryKey: this.secondaryKey,
                                 valueKey: this.valueKey,
                                 mode: this.multiple ? 'multiple' : 'single',
                                 value: this.value,
@@ -221,6 +229,9 @@ var FilterControl = /** @class */ (function () {
     __decorate([
         bindable
     ], FilterControl.prototype, "labelKey", void 0);
+    __decorate([
+        bindable
+    ], FilterControl.prototype, "secondaryKey", void 0);
     __decorate([
         bindable
     ], FilterControl.prototype, "valueKey", void 0);

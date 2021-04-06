@@ -12,6 +12,7 @@ export declare class FilterControl {
     options: Array<any>;
     value: any;
     labelKey: string;
+    secondaryKey: string;
     valueKey: string;
     icon: string;
     showSearch: 'auto' | boolean;
@@ -25,6 +26,7 @@ export declare class FilterControl {
     validateValueAgainsAvailableOptions(originalValue: any): any;
     computeValueLabel(value: any): string;
     computeLabel(option: any): string;
+    computeSecondary(option: any): string;
     computeValue(option: any): any;
     focusedChanged(focused: boolean): void;
     private serializedCurrentValue;

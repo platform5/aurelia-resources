@@ -66,6 +66,7 @@ System.register(["@aurelia-ux/modal", "aurelia-framework", "../helpers/notify", 
                     this.mode = 'single';
                     this.options = [];
                     this.labelKey = '';
+                    this.secondaryKey = '';
                     this.valueKey = '';
                     this.title = 'Select an option';
                     this.required = false;
@@ -96,6 +97,7 @@ System.register(["@aurelia-ux/modal", "aurelia-framework", "../helpers/notify", 
                     this.title = params.title ? params.title : 'Select an option';
                     this.options = Array.isArray(params.options) ? params.options : [];
                     this.labelKey = params.labelKey || undefined;
+                    this.secondaryKey = params.secondaryKey || undefined;
                     this.valueKey = params.valueKey || undefined;
                     var options = this.options.map(function (o) { return _this.getValue(o); });
                     if (this.mode === 'multiple') {
@@ -146,6 +148,12 @@ System.register(["@aurelia-ux/modal", "aurelia-framework", "../helpers/notify", 
                 PromptSelectDialog.prototype.getLabel = function (option) {
                     if (typeof option === 'object' && this.labelKey) {
                         return option[this.labelKey];
+                    }
+                    return option;
+                };
+                PromptSelectDialog.prototype.getSecondary = function (option) {
+                    if (typeof option === 'object' && this.secondaryKey) {
+                        return option[this.secondaryKey];
                     }
                     return option;
                 };
@@ -210,7 +218,7 @@ System.register(["@aurelia-ux/modal", "aurelia-framework", "../helpers/notify", 
             PromptSelectDialogFilterOptionsValueConverter = /** @class */ (function () {
                 function PromptSelectDialogFilterOptionsValueConverter() {
                 }
-                PromptSelectDialogFilterOptionsValueConverter.prototype.toView = function (list, filter, labelKey, valueKey) {
+                PromptSelectDialogFilterOptionsValueConverter.prototype.toView = function (list, filter, labelKey, secondaryKey, valueKey) {
                     if (filter === void 0) { filter = ''; }
                     if (!filter)
                         return list;
@@ -219,10 +227,12 @@ System.register(["@aurelia-ux/modal", "aurelia-framework", "../helpers/notify", 
                     for (var _i = 0, list_1 = list; _i < list_1.length; _i++) {
                         var item = list_1[_i];
                         var label = typeof item === 'object' && labelKey ? item[labelKey] : item;
+                        var secondary = typeof item === 'object' && secondaryKey ? item[secondaryKey] : item;
                         var value = typeof item === 'object' && valueKey ? item[valueKey] : item;
                         var l = typeof label === 'string' ? removeAccents(label.toLowerCase()) : '';
+                        var s = typeof secondary === 'string' ? removeAccents(secondary.toLowerCase()) : '';
                         var v = typeof value === 'string' ? removeAccents(value.toLowerCase()) : '';
-                        if (l.indexOf(filter) !== -1 || v.indexOf(filter) !== -1) {
+                        if (l.indexOf(filter) !== -1 || s.indexOf(filter) !== -1 || v.indexOf(filter) !== -1) {
                             newList.push(item);
                         }
                     }

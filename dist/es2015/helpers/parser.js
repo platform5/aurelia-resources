@@ -49,6 +49,9 @@ var Parser = /** @class */ (function () {
         if (parts[0] === 'numString') {
             replace = NumberHelper.numString(parseFloat(replace));
         }
+        if (parts[0] === 'join' && parts[1] && Array.isArray(replace)) {
+            replace = replace.join(parts[1]);
+        }
         return replace;
     };
     Parser.parseDate = function (text) {

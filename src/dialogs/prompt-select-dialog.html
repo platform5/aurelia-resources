@@ -19,7 +19,7 @@
           </div>
           <div class="ux-list-item__content">
             ${getLabel(option)}
-            <div class="ux-list-item__secondary-content" if.bind="getSecondary(option)">
+            <div class="ux-list-item__secondary-content" if.bind="secondaryKey && getSecondary(option)">
               ${getSecondary(option)}
             </div>
           </div>

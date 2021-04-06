@@ -13,7 +13,7 @@
         <ux-icon icon="arrow_back" click.delegate="search = ''" if.bind="search"></ux-icon>
       </div>
       <ux-list class="ux-list--border">
-        <ux-list-item repeat.for="option of options | promptSelectDialogFilterOptions:search:labelKey:secondaryKey;valueKey" class="click" click.delegate="toggleOption(option, $event)">
+        <ux-list-item repeat.for="option of options | promptSelectDialogFilterOptions:search:labelKey:secondaryKey:valueKey" class="click" click.delegate="toggleOption(option, $event)">
           <div class="ux-list-item__detail">
             <ux-icon icon="${icon}" if.bind="icon"></ux-icon>
           </div>

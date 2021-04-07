@@ -28,6 +28,7 @@ export function configure(config, pluginConfig) {
         PLATFORM.moduleName('./dialogs/languages-dialog'),
         PLATFORM.moduleName('./dialogs/locales-dialog'),
         PLATFORM.moduleName('./dialogs/prompt-boolean-dialog'),
+        PLATFORM.moduleName('./dialogs/prompt-date-dialog'),
         PLATFORM.moduleName('./dialogs/prompt-select-dialog'),
         PLATFORM.moduleName('./dialogs/prompt-text-dialog'),
         PLATFORM.moduleName('./elements/ar-breadcrumb'),
@@ -112,6 +113,7 @@ export * from './dialogs/countries-dialog';
 export * from './dialogs/languages-dialog';
 export * from './dialogs/locales-dialog';
 export * from './dialogs/prompt-boolean-dialog';
+export * from './dialogs/prompt-date-dialog';
 export * from './dialogs/prompt-select-dialog';
 export * from './dialogs/prompt-text-dialog';
 /* Expose elements */

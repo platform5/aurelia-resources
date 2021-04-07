@@ -46,6 +46,7 @@ const resources = [
   './dialogs/locales-dialog.html',
   './dialogs/prompt-boolean-dialog.html',
   './dialogs/prompt-select-dialog.html',
+  './dialogs/prompt-date-dialog.html',
   './dialogs/prompt-text-dialog.html',
   './elements/ar-breadcrumb-item.html',
   './elements/ar-breadcrumb.html',

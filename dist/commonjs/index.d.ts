@@ -41,6 +41,7 @@ export * from './dialogs/countries-dialog';
 export * from './dialogs/languages-dialog';
 export * from './dialogs/locales-dialog';
 export * from './dialogs/prompt-boolean-dialog';
+export * from './dialogs/prompt-date-dialog';
 export * from './dialogs/prompt-select-dialog';
 export * from './dialogs/prompt-text-dialog';
 export { ArBreadcrumb } from './elements/ar-breadcrumb';

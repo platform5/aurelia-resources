@@ -42,6 +42,7 @@ function configure(config, pluginConfig) {
         aurelia_framework_1.PLATFORM.moduleName('./dialogs/languages-dialog'),
         aurelia_framework_1.PLATFORM.moduleName('./dialogs/locales-dialog'),
         aurelia_framework_1.PLATFORM.moduleName('./dialogs/prompt-boolean-dialog'),
+        aurelia_framework_1.PLATFORM.moduleName('./dialogs/prompt-date-dialog'),
         aurelia_framework_1.PLATFORM.moduleName('./dialogs/prompt-select-dialog'),
         aurelia_framework_1.PLATFORM.moduleName('./dialogs/prompt-text-dialog'),
         aurelia_framework_1.PLATFORM.moduleName('./elements/ar-breadcrumb'),
@@ -142,6 +143,7 @@ __exportStar(require("./dialogs/countries-dialog"), exports);
 __exportStar(require("./dialogs/languages-dialog"), exports);
 __exportStar(require("./dialogs/locales-dialog"), exports);
 __exportStar(require("./dialogs/prompt-boolean-dialog"), exports);
+__exportStar(require("./dialogs/prompt-date-dialog"), exports);
 __exportStar(require("./dialogs/prompt-select-dialog"), exports);
 __exportStar(require("./dialogs/prompt-text-dialog"), exports);
 /* Expose elements */

@@ -28,6 +28,7 @@ function configure(config, pluginConfig) {
         aurelia_framework_1.PLATFORM.moduleName('./controls/filter-prompt-control'),
         aurelia_framework_1.PLATFORM.moduleName('./controls/filter-control'),
         aurelia_framework_1.PLATFORM.moduleName('./controls/select-control'),
+        aurelia_framework_1.PLATFORM.moduleName('./controls/ux-date-time-picker'),
     ]);
     config.globalResources([
         aurelia_framework_1.PLATFORM.moduleName('./elements/listing/listing-head'),
@@ -134,6 +135,7 @@ __exportStar(require("./controls/filter-dates-control"), exports);
 __exportStar(require("./controls/filter-prompt-control"), exports);
 __exportStar(require("./controls/filter-control"), exports);
 __exportStar(require("./controls/select-control"), exports);
+__exportStar(require("./controls/ux-date-time-picker"), exports);
 /* Expose Dialogs */
 __exportStar(require("./dialogs/confirm-dialog"), exports);
 __exportStar(require("./dialogs/countries-dialog"), exports);

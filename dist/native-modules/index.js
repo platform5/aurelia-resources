@@ -14,6 +14,7 @@ export function configure(config, pluginConfig) {
         PLATFORM.moduleName('./controls/filter-prompt-control'),
         PLATFORM.moduleName('./controls/filter-control'),
         PLATFORM.moduleName('./controls/select-control'),
+        PLATFORM.moduleName('./controls/ux-date-time-picker'),
     ]);
     config.globalResources([
         PLATFORM.moduleName('./elements/listing/listing-head'),
@@ -104,6 +105,7 @@ export * from './controls/filter-dates-control';
 export * from './controls/filter-prompt-control';
 export * from './controls/filter-control';
 export * from './controls/select-control';
+export * from './controls/ux-date-time-picker';
 /* Expose Dialogs */
 export * from './dialogs/confirm-dialog';
 export * from './dialogs/countries-dialog';

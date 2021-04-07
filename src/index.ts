@@ -29,6 +29,7 @@ export function configure(config: FrameworkConfiguration, pluginConfig?: Aurelia
     PLATFORM.moduleName('./controls/filter-prompt-control'),
     PLATFORM.moduleName('./controls/filter-control'),
     PLATFORM.moduleName('./controls/select-control'),
+    PLATFORM.moduleName('./controls/ux-date-time-picker'),
   ]);
 
   config.globalResources([
@@ -147,6 +148,7 @@ export * from './controls/filter-dates-control';
 export * from './controls/filter-prompt-control';
 export * from './controls/filter-control';
 export * from './controls/select-control';
+export * from './controls/ux-date-time-picker';
 
 /* Expose Dialogs */
 export * from './dialogs/confirm-dialog';

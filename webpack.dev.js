@@ -35,6 +35,7 @@ const resources = [
   './controls/filter-prompt-control.html',
   './controls/filter-control.html',
   './controls/select-control.html',
+  './controls/ux-date-time-picker.html',
   './elements/listing/listing-head.html',
   './elements/listing/listing-list-item.html',
   './elements/listing/listing-list.html',

@@ -35,6 +35,7 @@ export * from './controls/filter-dates-control';
 export * from './controls/filter-prompt-control';
 export * from './controls/filter-control';
 export * from './controls/select-control';
+export * from './controls/ux-date-time-picker';
 export * from './dialogs/confirm-dialog';
 export * from './dialogs/countries-dialog';
 export * from './dialogs/languages-dialog';

@@ -13,17 +13,26 @@ define(["require", "exports", "moment"], function (require, exports, moment) {
                 if (date.length === 10 && date.substr(2, 1) === '-' && date.substr(5, 1) === '-') {
                     m = moment(date, 'DD-MM-YYYY');
                 }
+                else if (date.length === 16 && date.substr(2, 1) === '-' && date.substr(5, 1) === '-' && date.substr(10, 1) === ' ' && date.substr(13, 1) === ':') {
+                    m = moment(date, 'DD-MM-YYYY HH:mm');
+                }
                 else if (date.length === 8 && date.substr(2, 1) === '-' && date.substr(5, 1) === '-') {
                     m = moment(date, 'DD-MM-YY');
                 }
                 else if (date.length === 10 && date.substr(2, 1) === '/' && date.substr(5, 1) === '/') {
                     m = moment(date, 'DD/MM/YYYY');
                 }
+                else if (date.length === 16 && date.substr(2, 1) === '/' && date.substr(5, 1) === '/' && date.substr(10, 1) === ' ' && date.substr(13, 1) === ':') {
+                    m = moment(date, 'DD/MM/YYYY HH:mm');
+                }
                 else if (date.length === 8 && date.substr(2, 1) === '/' && date.substr(5, 1) === '/') {
                     m = moment(date, 'DD/MM/YY');
                 }
                 else if (date.length === 10 && date.substr(2, 1) === '.' && date.substr(5, 1) === '.') {
                     m = moment(date, 'DD.MM.YYYY');
+                }
+                else if (date.length === 16 && date.substr(2, 1) === '.' && date.substr(5, 1) === '.' && date.substr(10, 1) === ' ' && date.substr(13, 1) === ':') {
+                    m = moment(date, 'DD.MM.YYYY HH:mm');
                 }
                 else if (date.length === 8 && date.substr(2, 1) === '.' && date.substr(5, 1) === '.') {
                     m = moment(date, 'DD.MM.YY');

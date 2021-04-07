@@ -10,6 +10,7 @@ export declare class FilterDatesControl {
     from: Date | undefined;
     to: Date | undefined;
     format: string;
+    autoSetSiblingIfEmpty: boolean;
     datepickerControlFrom: HTMLElement;
     datepickerControlTo: HTMLElement;
     constructor(element: UxInputElement, modalService: UxModalService);

@@ -20,6 +20,7 @@ export class FilterDatesControl {
   @bindable({defaultBindingMode: bindingMode.twoWay, changeHandler: 'valueChanged'}) public from: Date | undefined;
   @bindable({defaultBindingMode: bindingMode.twoWay, changeHandler: 'valueChanged'}) public to: Date | undefined;
   @bindable public format = 'DD-MM-YYYY';
+  @bindable autoSetSiblingIfEmpty: boolean = true;
 
   public datepickerControlFrom: HTMLElement;
   public datepickerControlTo: HTMLElement;
@@ -45,14 +46,24 @@ export class FilterDatesControl {
   }
 
   public valueChanged() {
-    if (!this.isValid(this.from)) {
+    if (this.from && !this.isValid(this.from)) {
       this.from = undefined;
-    } else if (!this.isValid(this.to)) {
-      this.to = undefined;
-    } else {
-      this.element.dispatchEvent(DOM.createCustomEvent('change', { bubbles: true }));
-      this.element.dispatchEvent(DOM.createCustomEvent('input', { bubbles: true }));
+      return; // will come back due to valueChanged
     }
+    if (this.to && !this.isValid(this.to)) {
+      this.to = undefined;
+      return; // will come back due to valueChanged
+    }
+    if (this.from && !this.to && this.autoSetSiblingIfEmpty) {
+      this.to = moment(this.from).toDate(); // clone
+      return; // will come back due to valueChanged
+    }
+    if (this.to && !this.from && this.autoSetSiblingIfEmpty) {
+      this.from = moment(this.to).toDate(); // clone
+      return; // will come back due to valueChanged
+    }
+    this.element.dispatchEvent(DOM.createCustomEvent('change', { bubbles: true }));
+    this.element.dispatchEvent(DOM.createCustomEvent('input', { bubbles: true }));
   }
 
   public async selectFrom() {

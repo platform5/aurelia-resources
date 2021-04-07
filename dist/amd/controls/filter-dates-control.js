@@ -51,6 +51,7 @@ define(["require", "exports", "aurelia-templating", "aurelia-pal", "aurelia-bind
             this.disabled = false;
             this.readonly = false;
             this.format = 'DD-MM-YYYY';
+            this.autoSetSiblingIfEmpty = true;
             // defineFilterDatesControlElementApis(element);
         }
         // public getValue() {
@@ -67,16 +68,24 @@ define(["require", "exports", "aurelia-templating", "aurelia-pal", "aurelia-bind
             return value === undefined || (value && moment(value).isValid());
         };
         FilterDatesControl.prototype.valueChanged = function () {
-            if (!this.isValid(this.from)) {
+            if (this.from && !this.isValid(this.from)) {
                 this.from = undefined;
+                return; // will come back due to valueChanged
             }
-            else if (!this.isValid(this.to)) {
+            if (this.to && !this.isValid(this.to)) {
                 this.to = undefined;
+                return; // will come back due to valueChanged
             }
-            else {
-                this.element.dispatchEvent(aurelia_pal_1.DOM.createCustomEvent('change', { bubbles: true }));
-                this.element.dispatchEvent(aurelia_pal_1.DOM.createCustomEvent('input', { bubbles: true }));
+            if (this.from && !this.to && this.autoSetSiblingIfEmpty) {
+                this.to = moment(this.from).toDate(); // clone
+                return; // will come back due to valueChanged
             }
+            if (this.to && !this.from && this.autoSetSiblingIfEmpty) {
+                this.from = moment(this.to).toDate(); // clone
+                return; // will come back due to valueChanged
+            }
+            this.element.dispatchEvent(aurelia_pal_1.DOM.createCustomEvent('change', { bubbles: true }));
+            this.element.dispatchEvent(aurelia_pal_1.DOM.createCustomEvent('input', { bubbles: true }));
         };
         FilterDatesControl.prototype.selectFrom = function () {
             return __awaiter(this, void 0, void 0, function () {
@@ -124,6 +133,9 @@ define(["require", "exports", "aurelia-templating", "aurelia-pal", "aurelia-bind
         __decorate([
             aurelia_templating_1.bindable
         ], FilterDatesControl.prototype, "format", void 0);
+        __decorate([
+            aurelia_templating_1.bindable
+        ], FilterDatesControl.prototype, "autoSetSiblingIfEmpty", void 0);
         FilterDatesControl = __decorate([
             aurelia_dependency_injection_1.inject(Element, modal_1.UxModalService),
             aurelia_templating_1.customElement('filter-dates-control'),

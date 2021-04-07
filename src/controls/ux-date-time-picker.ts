@@ -21,8 +21,13 @@ export class UxDateTimePicker {
     this.applyDateToTime();
   }
 
-  public valueChanged() {
+  public setValueAndTime(newValue: Date | undefined) {
+    this.value = newValue;
     this.applyDateToTime();
+  }
+
+  public valueChanged() {
+    this.requestApplyTimeToDate();
   }
 
   public timeChanged(newValue: string, oldValue: string) {
@@ -42,6 +47,14 @@ export class UxDateTimePicker {
       return;
     }
     this.time = m.format('HH:mm');
+  }
+
+  private timeout;
+  private requestApplyTimeToDate() {
+    clearTimeout(this.timeout);
+    this.timeout = setTimeout(() => {
+      this.applyTimeToDate();
+    }, 50);
   }
 
   private preventApply = false;
@@ -68,8 +81,6 @@ export class UxDateTimePicker {
     if (m.hour() === hour && m.minute() === minutes) {
       return; // time is correct
     }
-
-
 
     this.preventApply = true;
     m.hour(hour).minute(minutes);

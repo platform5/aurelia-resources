@@ -17,8 +17,12 @@ define(["require", "exports", "aurelia-framework", "moment"], function (require,
         UxDateTimePicker.prototype.bind = function () {
             this.applyDateToTime();
         };
-        UxDateTimePicker.prototype.valueChanged = function () {
+        UxDateTimePicker.prototype.setValueAndTime = function (newValue) {
+            this.value = newValue;
             this.applyDateToTime();
+        };
+        UxDateTimePicker.prototype.valueChanged = function () {
+            this.requestApplyTimeToDate();
         };
         UxDateTimePicker.prototype.timeChanged = function (newValue, oldValue) {
             if (newValue !== oldValue) {
@@ -36,6 +40,13 @@ define(["require", "exports", "aurelia-framework", "moment"], function (require,
                 return;
             }
             this.time = m.format('HH:mm');
+        };
+        UxDateTimePicker.prototype.requestApplyTimeToDate = function () {
+            var _this = this;
+            clearTimeout(this.timeout);
+            this.timeout = setTimeout(function () {
+                _this.applyTimeToDate();
+            }, 50);
         };
         UxDateTimePicker.prototype.applyTimeToDate = function () {
             var _this = this;

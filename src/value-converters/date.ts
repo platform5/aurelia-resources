@@ -3,7 +3,7 @@ import { DateHelper } from '../helpers/date';
 
 export class DateValueConverter {
   toView(date: string | moment.Moment, format: string = 'DD.MM.YYYY') {
-    const m = DateHelper.moment(date);
+    const m = DateHelper.moment(date, format);
     if (!m) {
       return '';
     }

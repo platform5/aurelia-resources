@@ -5,11 +5,22 @@ var moment = require("moment");
 var DateHelper = /** @class */ (function () {
     function DateHelper() {
     }
-    DateHelper.moment = function (date) {
+    DateHelper.moment = function (date, suggestedFormat) {
         if (!date)
             return undefined;
         var m;
         if (typeof date === 'string') {
+            if (suggestedFormat) {
+                var formats = Array.isArray(suggestedFormat) ? suggestedFormat : [suggestedFormat];
+                for (var _i = 0, formats_1 = formats; _i < formats_1.length; _i++) {
+                    var format = formats_1[_i];
+                    m = moment(date, format);
+                    if (m.isValid()) {
+                        return m;
+                    }
+                    m = undefined;
+                }
+            }
             if (date.length === 10 && date.substr(2, 1) === '-' && date.substr(5, 1) === '-') {
                 m = moment(date, 'DD-MM-YYYY');
             }

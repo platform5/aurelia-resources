@@ -1,10 +1,22 @@
 import * as moment from 'moment';
 
 export class DateHelper {
-  public static moment(date: string | moment.Moment): undefined | moment.Moment {
+  public static moment(date: string | moment.Moment, suggestedFormat?: string | string[]): undefined | moment.Moment {
     if (!date) return undefined;
     let m: moment.Moment;
     if (typeof date === 'string') {
+
+      if (suggestedFormat) {
+        const formats = Array.isArray(suggestedFormat) ? suggestedFormat : [suggestedFormat];
+        for (const format of formats) {
+          m = moment(date, format);
+          if (m.isValid()) {
+            return m;
+          }
+          m = undefined;
+        }
+      }
+
       if (date.length === 10 && date.substr(2, 1) === '-' && date.substr(5, 1) === '-') {
         m = moment(date, 'DD-MM-YYYY');
       } else if (date.length === 16 && date.substr(2, 1) === '-' && date.substr(5, 1) === '-' && date.substr(10, 1) === ' ' && date.substr(13, 1) === ':') {

@@ -5,7 +5,7 @@ var DateValueConverter = /** @class */ (function () {
     }
     DateValueConverter.prototype.toView = function (date, format) {
         if (format === void 0) { format = 'DD.MM.YYYY'; }
-        var m = DateHelper.moment(date);
+        var m = DateHelper.moment(date, format);
         if (!m) {
             return '';
         }

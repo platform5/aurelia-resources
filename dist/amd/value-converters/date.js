@@ -7,7 +7,7 @@ define(["require", "exports", "moment", "../helpers/date"], function (require, e
         }
         DateValueConverter.prototype.toView = function (date, format) {
             if (format === void 0) { format = 'DD.MM.YYYY'; }
-            var m = date_1.DateHelper.moment(date);
+            var m = date_1.DateHelper.moment(date, format);
             if (!m) {
                 return '';
             }

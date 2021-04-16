@@ -67,7 +67,7 @@ define(["require", "exports", "aurelia-templating", "aurelia-pal", "aurelia-bind
         FilterDatesControl.prototype.isValid = function (value) {
             return value === undefined || (value && moment(value).isValid());
         };
-        FilterDatesControl.prototype.valueChanged = function () {
+        FilterDatesControl.prototype.valueChanged = function (newValue) {
             if (this.from && !this.isValid(this.from)) {
                 this.from = undefined;
                 return; // will come back due to valueChanged
@@ -76,11 +76,11 @@ define(["require", "exports", "aurelia-templating", "aurelia-pal", "aurelia-bind
                 this.to = undefined;
                 return; // will come back due to valueChanged
             }
-            if (this.from && !this.to && this.autoSetSiblingIfEmpty) {
+            if (this.from && !this.to && newValue && this.autoSetSiblingIfEmpty) {
                 this.to = moment(this.from).toDate(); // clone
                 return; // will come back due to valueChanged
             }
-            if (this.to && !this.from && this.autoSetSiblingIfEmpty) {
+            if (this.to && !this.from && newValue && this.autoSetSiblingIfEmpty) {
                 this.from = moment(this.to).toDate(); // clone
                 return; // will come back due to valueChanged
             }

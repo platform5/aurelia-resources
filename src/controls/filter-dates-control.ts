@@ -45,7 +45,7 @@ export class FilterDatesControl {
     return value === undefined || (value && moment(value).isValid());
   }
 
-  public valueChanged() {
+  public valueChanged(newValue: any) {
     if (this.from && !this.isValid(this.from)) {
       this.from = undefined;
       return; // will come back due to valueChanged
@@ -54,11 +54,11 @@ export class FilterDatesControl {
       this.to = undefined;
       return; // will come back due to valueChanged
     }
-    if (this.from && !this.to && this.autoSetSiblingIfEmpty) {
+    if (this.from && !this.to && newValue && this.autoSetSiblingIfEmpty) {
       this.to = moment(this.from).toDate(); // clone
       return; // will come back due to valueChanged
     }
-    if (this.to && !this.from && this.autoSetSiblingIfEmpty) {
+    if (this.to && !this.from && newValue && this.autoSetSiblingIfEmpty) {
       this.from = moment(this.to).toDate(); // clone
       return; // will come back due to valueChanged
     }

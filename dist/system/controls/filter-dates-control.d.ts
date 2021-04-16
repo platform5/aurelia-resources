@@ -15,7 +15,7 @@ export declare class FilterDatesControl {
     datepickerControlTo: HTMLElement;
     constructor(element: UxInputElement, modalService: UxModalService);
     private isValid;
-    valueChanged(): void;
+    valueChanged(newValue: any): void;
     selectFrom(): Promise<void>;
     selectTo(): Promise<void>;
 }

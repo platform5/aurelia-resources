@@ -2,10 +2,6 @@
   "name": "aurelia-resources",
   "version": "2.0.6",
   "description": "Aurelia plugin grouping Custom Element, Custom Attributes, Value Converters and more to speed up Aurelia projects",
-  "keywords": [
-    "aurelia",
-    "plugin"
-  ],
   "main": "dist/commonjs/index.js",
   "typings": "dist/commonjs/index.d.ts",
   "scripts": {
@@ -73,12 +69,15 @@
     "type": "git",
     "url": "https://github.com/platform5/aurelia-resources"
   },
-  "author": "Ben Girardet",
-  "license": "AGPL",
-  "homepage": "https://platform5.ch",
+  "author": "platform5",
+  "license": "AGPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/platform5/aurelia-resources/issues"
   },
+  "keywords": [
+    "aurelia",
+    "plugin"
+  ],
   "jspm": {
     "registry": "npm",
     "jspmPackage": true,

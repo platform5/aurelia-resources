@@ -11,6 +11,7 @@ typedoc.json
 /test
 gulpfile.js
 gulpfile-watch.js
+install-last-resources.sh
 tsconfig.json
 tslint.json
 webpack.dev.js

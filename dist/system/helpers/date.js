@@ -62,6 +62,9 @@ System.register(["moment"], function (exports_1, context_1) {
                             m = moment(date);
                         }
                     }
+                    else if (date instanceof Date) {
+                        m = moment(date);
+                    }
                     else if (!moment.isMoment(date)) {
                         m = moment(date);
                         if (!m.isValid) {

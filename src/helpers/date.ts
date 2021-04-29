@@ -1,7 +1,7 @@
 import * as moment from 'moment';
 
 export class DateHelper {
-  public static moment(date: string | moment.Moment, suggestedFormat?: string | string[]): undefined | moment.Moment {
+  public static moment(date: string | Date | moment.Moment, suggestedFormat?: string | string[]): undefined | moment.Moment {
     if (!date) return undefined;
     let m: moment.Moment;
     if (typeof date === 'string') {
@@ -40,6 +40,8 @@ export class DateHelper {
       } else {
         m = moment(date);
       }
+    } else if (date instanceof Date) {
+      m = moment(date);
     } else if (!moment.isMoment(date)) {
       m = moment(date);
       if (!m.isValid) {

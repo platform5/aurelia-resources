@@ -10,6 +10,13 @@ define(["require", "exports", "moment"], function (require, exports, moment) {
                 return undefined;
             var m;
             if (typeof date === 'string') {
+                var seemsIsoString = date.includes('T') && date.includes('Z');
+                if (seemsIsoString) {
+                    m = moment(date, 'YYYY-MM-DDTHH:mm:ss.SSSSZ');
+                    if (m.isValid()) {
+                        return m;
+                    }
+                }
                 if (suggestedFormat) {
                     var formats = Array.isArray(suggestedFormat) ? suggestedFormat : [suggestedFormat];
                     for (var _i = 0, formats_1 = formats; _i < formats_1.length; _i++) {

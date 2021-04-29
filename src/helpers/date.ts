@@ -6,6 +6,14 @@ export class DateHelper {
     let m: moment.Moment;
     if (typeof date === 'string') {
 
+      const seemsIsoString = date.includes('T') && date.includes('Z');
+      if (seemsIsoString) {
+        m = moment(date, 'YYYY-MM-DDTHH:mm:ss.SSSSZ');
+        if (m.isValid()) {
+          return m;
+        }
+      }
+
       if (suggestedFormat) {
         const formats = Array.isArray(suggestedFormat) ? suggestedFormat : [suggestedFormat];
         for (const format of formats) {

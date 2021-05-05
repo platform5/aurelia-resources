@@ -32,7 +32,7 @@
 }
 
 .select-control .ux-input-component__content {
-  width: auto;
+  width: calc(100% - 32px); /* this gives space for the down arrow */
 }
 
 .select-control--chips.ux-input-component--filled .ux-chip {

@@ -205,21 +205,22 @@ export class SelectControl implements UxInputComponent {
 
   @computedFrom('value.length', 'multiple', 'options.length', 'labelKey', 'valueKey')
   public get displayedValue(): string {
-    let result = '';
+    const ifEmpty = this.placeholder || '';
+    let result = ifEmpty;
     if (this.multiple && Array.isArray(this.value)) {
       const keyValues = this.options.reduce((previousValue, currentValue) => {
         previousValue[this.computeValue(currentValue)] = this.computeLabel(currentValue);
         return previousValue;
       }, {});
       const computedLabels: Array<string> = this.value.map(v => keyValues[v]);
-      result = computedLabels.length > 0 ? computedLabels.join(', ') : '';
+      result = computedLabels.length > 0 ? computedLabels.join(', ') : ifEmpty;
     } else if (!this.multiple) {
       const keyValues = this.options.reduce((previousValue, currentValue) => {
         previousValue[this.computeValue(currentValue)] = this.computeLabel(currentValue);
         return previousValue;
       }, {});
       const value = keyValues[this.value];
-      result = value || '';
+      result = value || ifEmpty;
     }
     // we consider that the field hasValue if there is an actual value or if the field is displayed with chips
     // and even if no chips are selected, because they are displayed the label must be positionned as if there is a value

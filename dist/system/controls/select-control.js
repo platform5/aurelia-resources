@@ -256,14 +256,15 @@ System.register(["aurelia-templating", "aurelia-pal", "aurelia-binding", "aureli
                 Object.defineProperty(SelectControl.prototype, "displayedValue", {
                     get: function () {
                         var _this = this;
-                        var result = '';
+                        var ifEmpty = this.placeholder || '';
+                        var result = ifEmpty;
                         if (this.multiple && Array.isArray(this.value)) {
                             var keyValues_1 = this.options.reduce(function (previousValue, currentValue) {
                                 previousValue[_this.computeValue(currentValue)] = _this.computeLabel(currentValue);
                                 return previousValue;
                             }, {});
                             var computedLabels = this.value.map(function (v) { return keyValues_1[v]; });
-                            result = computedLabels.length > 0 ? computedLabels.join(', ') : '';
+                            result = computedLabels.length > 0 ? computedLabels.join(', ') : ifEmpty;
                         }
                         else if (!this.multiple) {
                             var keyValues = this.options.reduce(function (previousValue, currentValue) {
@@ -271,7 +272,7 @@ System.register(["aurelia-templating", "aurelia-pal", "aurelia-binding", "aureli
                                 return previousValue;
                             }, {});
                             var value = keyValues[this.value];
-                            result = value || '';
+                            result = value || ifEmpty;
                         }
                         // we consider that the field hasValue if there is an actual value or if the field is displayed with chips
                         // and even if no chips are selected, because they are displayed the label must be positionned as if there is a value

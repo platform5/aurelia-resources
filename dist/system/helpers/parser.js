@@ -112,6 +112,9 @@ System.register(["./number", "moment"], function (exports_1, context_1) {
                         if (replace === undefined && original.substr(0, 1) === '#') {
                             replace = ''; // set an empty string => it will trigger the replace
                         }
+                        if (replace === '' && original.substr(0, 1) === '!') {
+                            replace = undefined;
+                        }
                         if (replace !== undefined) {
                             text = text.replace(original, replace);
                         }

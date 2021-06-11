@@ -4,6 +4,7 @@ import {
 } from 'aurelia-validation';
 
 export class AureliaUXFormRenderer {
+  
   public render(instruction: RenderInstruction) {
     for (const { result, elements } of instruction.unrender) {
       for (const element of elements) {

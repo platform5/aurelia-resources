@@ -18,6 +18,7 @@ export declare class ImageHelpers {
     image: HTMLImageElement;
     mimetype: string;
     imageAsCanvas: HTMLCanvasElement;
+    exportQuality: number;
     static open(file: File | Blob | string): Promise<ImageHelpers>;
     static openB64(src: string): Promise<ImageHelpers>;
     static openFile(file: File | Blob): Promise<ImageHelpers>;

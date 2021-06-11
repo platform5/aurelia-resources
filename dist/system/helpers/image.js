@@ -112,6 +112,7 @@ System.register(["aurelia-logging"], function (exports_1, context_1) {
             ImageHelpers = /** @class */ (function () {
                 function ImageHelpers() {
                     this.mimetype = 'image/png';
+                    this.exportQuality = 0.6;
                 }
                 ImageHelpers.open = function (file) {
                     var promise;
@@ -355,7 +356,7 @@ System.register(["aurelia-logging"], function (exports_1, context_1) {
                     this.imageAsCanvas = ctx.canvas;
                 };
                 ImageHelpers.prototype.toDataUrl = function () {
-                    var dataUrl = this.imageAsCanvas.toDataURL(this.mimetype, 0.4);
+                    var dataUrl = this.imageAsCanvas.toDataURL(this.mimetype, this.exportQuality);
                     return dataUrl;
                 };
                 ImageHelpers.prototype.toBlob = function () {
@@ -363,7 +364,7 @@ System.register(["aurelia-logging"], function (exports_1, context_1) {
                     return new Promise(function (resolve, reject) {
                         _this.imageAsCanvas.toBlob(function (blob) {
                             resolve(blob);
-                        }, _this.mimetype, 1);
+                        }, _this.mimetype, _this.exportQuality);
                     });
                 };
                 return ImageHelpers;

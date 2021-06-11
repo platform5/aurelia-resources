@@ -124,6 +124,7 @@ export class ImageHelpers {
   image: HTMLImageElement;
   mimetype: string = 'image/png';
   imageAsCanvas: HTMLCanvasElement;
+  exportQuality = 0.6;
 
   static open(file: File | Blob | string): Promise<ImageHelpers> {
     let promise;
@@ -133,7 +134,7 @@ export class ImageHelpers {
       } else {
         promise = ImageHelpers.openFileUrl(file);
       }
-    } else if (file instanceof File || file instanceof Blob) {
+    } else if (file instanceof File || file instanceof Blob) {
       promise = ImageHelpers.openFile(file);
     } else {
       promise = Promise.reject('Invalid file');
@@ -161,7 +162,7 @@ export class ImageHelpers {
     });
   }
 
-  static openFile(file: File | Blob): Promise<ImageHelpers> {
+  static openFile(file: File | Blob): Promise<ImageHelpers> {
     return new Promise((resolve, reject) => {
       try {
         
@@ -198,7 +199,7 @@ export class ImageHelpers {
     }
   }
 
-  static mimetypeFromFile(file: File | Blob): Promise<string|null> {
+  static mimetypeFromFile(file: File | Blob): Promise<string|null> {
     return new Promise((resolve, reject) => {
       let reader = new FileReader();
       reader.onload = (e) => {
@@ -302,7 +303,7 @@ export class ImageHelpers {
     canvas.setAttribute('width', width.toString());
     canvas.setAttribute('height', height.toString());
     var ctx = canvas.getContext('2d');
-    if (this.mimetype === 'image/jpeg' || this.mimetype === 'image/jpg') {
+    if (this.mimetype === 'image/jpeg' || this.mimetype === 'image/jpg') {
         ctx.fillStyle = 'rgb(255, 255, 255)';
         ctx.fillRect(0, 0, width, height);
     }
@@ -378,7 +379,7 @@ export class ImageHelpers {
   }
 
   toDataUrl(): string {
-    let dataUrl = this.imageAsCanvas.toDataURL(this.mimetype, 0.4);
+    let dataUrl = this.imageAsCanvas.toDataURL(this.mimetype, this.exportQuality);
     return dataUrl;
   }
 
@@ -386,7 +387,7 @@ export class ImageHelpers {
     return new Promise((resolve, reject) => {
         this.imageAsCanvas.toBlob((blob) => {
             resolve(blob);
-        }, this.mimetype, 1);
+        }, this.mimetype, this.exportQuality);
     });
 
   }

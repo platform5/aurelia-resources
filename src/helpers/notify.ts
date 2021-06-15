@@ -1,10 +1,9 @@
 import { Container } from 'aurelia-framework';
-import { NotificationService } from 'aurelia-notify';
-import { Logger, getLogger } from 'aurelia-logging';
-import { ArNotification } from '../elements/ar-notification';
-import { StringStringMap } from '../interfaces/types';
+import { NotificationService } from 'aurelia-notify';
+import { Logger, getLogger } from 'aurelia-logging';
+import { ArNotification } from '../elements/ar-notification';
 import { SentryHelper } from './sentry';
-import { CaptureContext } from '@sentry/types';
+import { CaptureContext } from '@sentry/types';
 
 
 let serviceReady = false;
@@ -24,7 +23,7 @@ export interface NotifyOptions {
   timeout?: number;
   viewModel?: any;
   limit?: number;
-  type?: 'info' | 'success' | 'warning' | 'danger' | 'primary' | 'accent' | 'action';
+  type?: 'info' | 'success' | 'warning' | 'danger' | 'primary' | 'accent' | 'action';
   sendToSentry?: boolean;
   context?: {[key: string]: any};
 }
@@ -35,7 +34,7 @@ let defaultOptions: NotifyOptions = {
   type: 'info',
 };
 
-let aliases: StringStringMap = {};
+let aliases: {[key: string]: string} = {};
 
 export function addNotifyContainerAlias(alias: string, selector: string) {
   aliases[alias] = selector;
@@ -53,7 +52,7 @@ export function setNotifyDefaults(settings: NotifyOptions, setOnlyGiventKeys: bo
 
 export function notifaction(message: string, actionLabel: string, actionCallback: () => any, actionContext: any, options: NotifyOptions) {
   gettingServiceReady();
-  let type = options.type || 'action';
+  let type = options.type || 'action';
   let settings = Object.assign({}, defaultOptions, options);
   if (aliases[settings.containerSelector]) settings.containerSelector = aliases[settings.containerSelector];
   return notificationService.notify({
@@ -66,7 +65,7 @@ export function notifaction(message: string, actionLabel: string, actionCallback
 
 export function notify(message: string, options: NotifyOptions = {}) {
   gettingServiceReady();
-  let type = options.type || defaultOptions.type || 'info';
+  let type = options.type || defaultOptions.type || 'info';
   let settings = Object.assign({}, defaultOptions, options);
   if (aliases[settings.containerSelector]) settings.containerSelector = aliases[settings.containerSelector];
   // by default not sent to sentry

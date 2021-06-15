@@ -1,18 +1,3 @@
-export declare class ImageUtils {
-    static AUTO: 'auto';
-    private image;
-    private imageWidth;
-    private imageHeight;
-    private canvas;
-    constructor();
-    static loadB64(src: string): Promise<ImageUtils>;
-    static loadFile(file: File): Promise<ImageUtils>;
-    static loadFileUrl(url: string): Promise<ImageUtils>;
-    initImage(): void;
-    cover(width: any, height: any): void;
-    resize(width: any, height: any): void;
-    toDataUrl(): string;
-}
 export declare class ImageHelpers {
     static AUTO: 'auto';
     image: HTMLImageElement;

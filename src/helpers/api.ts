@@ -1,6 +1,5 @@
 import {
   inject,
-  Container
 } from 'aurelia-framework';
 import {
   HttpClient
@@ -70,7 +69,7 @@ export class Api {
   }
 
   normalizeBody(body: any, options: any) {
-    if (!options.bodyFormat ||  options.bodyFormat === 'json') {
+    if (!options.bodyFormat ||  options.bodyFormat === 'json') {
       body = JSON.stringify(body);
     }
     return body;

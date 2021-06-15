@@ -1,4 +1,4 @@
-System.register(["./helpers/sentry", "aurelia-framework", "./value-converters/numbers", "./helpers/api", "./helpers/analytics", "./helpers/analytics-google", "./helpers/cordova", "./helpers/page-visibility", "./helpers/parser", "./helpers/dom", "./helpers/string", "./helpers/image", "./helpers/countries", "./helpers/languages", "./helpers/locales", "./helpers/notify", "./helpers/date", "./helpers/number", "./helpers/ux-form-renderer", "./controls/filter-boolean-control", "./controls/filter-chips-control", "./controls/filter-date-control", "./controls/filter-dates-control", "./controls/filter-prompt-control", "./controls/filter-control", "./controls/select-control", "./controls/ux-date-time-picker", "./dialogs/confirm-dialog", "./dialogs/countries-dialog", "./dialogs/languages-dialog", "./dialogs/locales-dialog", "./dialogs/prompt-boolean-dialog", "./dialogs/prompt-date-dialog", "./dialogs/prompt-select-dialog", "./dialogs/prompt-text-dialog", "./elements/ar-breadcrumb", "./elements/ar-breadcrumb-theme", "./elements/ar-dialog", "./elements/ar-dialog-theme", "./elements/ar-dialog-prompt", "./elements/ar-drawer", "./elements/ar-drawer-theme", "./elements/ar-lang-selector", "./elements/ar-lang-selector-theme", "./elements/ar-list-item", "./elements/ar-list-theme", "./elements/ar-main-header", "./elements/ar-main-header-theme", "./elements/ar-main-footer", "./elements/ar-main-footer-theme", "./elements/ar-metadata", "./elements/ar-metadata-theme", "./elements/ar-next", "./elements/ar-next-theme", "./elements/ar-notification", "./elements/ar-parallax", "./elements/ar-progress", "./elements/ar-progress-theme", "./elements/ar-range-input", "./elements/ar-range-input-theme", "./elements/ar-select", "./elements/ar-option", "./elements/ar-select-theme", "./elements/ar-slider", "./elements/ar-slide", "./elements/ar-slider-theme", "./elements/ar-search-input", "./elements/ar-search-input-theme", "./elements/ar-smart-toolbar", "./elements/ar-smart-toolbar-theme", "./elements/ar-spinner-icon", "./elements/ar-spinner-icon-theme", "./elements/ar-spinner-line", "./elements/ar-spinner-line-theme", "./elements/ar-stripe-element", "./elements/ar-stripe-element-theme", "./elements/ar-timeline", "./elements/ar-timeline-theme", "./elements/ar-timeline-item", "./elements/ar-video", "./elements/ar-video-theme", "./elements/ux-input-int-phone", "./elements/listing/listing-head", "./elements/listing/listing-list-item", "./elements/listing/listing-list", "./elements/listing/listing-toolbar", "./attributes/smooth-scroll", "./icons"], function (exports_1, context_1) {
+System.register(["./helpers/sentry", "aurelia-framework", "./value-converters/numbers", "./helpers/api", "./helpers/analytics", "./helpers/analytics-google", "./helpers/page-visibility", "./helpers/parser", "./helpers/dom", "./helpers/string", "./helpers/image", "./helpers/countries", "./helpers/languages", "./helpers/locales", "./helpers/notify", "./helpers/date", "./helpers/number", "./helpers/ux-form-renderer", "./controls/filter-boolean-control", "./controls/filter-chips-control", "./controls/filter-date-control", "./controls/filter-dates-control", "./controls/filter-prompt-control", "./controls/filter-control", "./controls/select-control", "./controls/ux-date-time-picker", "./dialogs/confirm-dialog", "./dialogs/countries-dialog", "./dialogs/languages-dialog", "./dialogs/locales-dialog", "./dialogs/prompt-boolean-dialog", "./dialogs/prompt-date-dialog", "./dialogs/prompt-select-dialog", "./dialogs/prompt-text-dialog", "./elements/ar-dialog", "./elements/ar-dialog-theme", "./elements/ar-dialog-prompt", "./elements/ar-drawer", "./elements/ar-drawer-theme", "./elements/ar-lang-selector", "./elements/ar-lang-selector-theme", "./elements/ar-metadata", "./elements/ar-metadata-theme", "./elements/ar-next", "./elements/ar-next-theme", "./elements/ar-notification", "./elements/ar-progress", "./elements/ar-progress-theme", "./elements/ar-select", "./elements/ar-option", "./elements/ar-select-theme", "./elements/ar-search-input", "./elements/ar-search-input-theme", "./elements/ar-smart-toolbar", "./elements/ar-smart-toolbar-theme", "./elements/ar-spinner-icon", "./elements/ar-spinner-icon-theme", "./elements/ar-spinner-line", "./elements/ar-spinner-line-theme", "./elements/ar-stripe-element", "./elements/ar-stripe-element-theme", "./elements/listing/listing-head", "./elements/listing/listing-list-item", "./elements/listing/listing-list", "./elements/listing/listing-toolbar"], function (exports_1, context_1) {
     "use strict";
     var sentry_1, aurelia_framework_1, numbers_1;
     var __moduleName = context_1 && context_1.id;
@@ -32,52 +32,35 @@ System.register(["./helpers/sentry", "aurelia-framework", "./value-converters/nu
             aurelia_framework_1.PLATFORM.moduleName('./dialogs/prompt-date-dialog'),
             aurelia_framework_1.PLATFORM.moduleName('./dialogs/prompt-select-dialog'),
             aurelia_framework_1.PLATFORM.moduleName('./dialogs/prompt-text-dialog'),
-            aurelia_framework_1.PLATFORM.moduleName('./elements/ar-breadcrumb'),
-            aurelia_framework_1.PLATFORM.moduleName('./elements/ar-breadcrumb-item.html'),
             aurelia_framework_1.PLATFORM.moduleName('./elements/ar-dialog-prompt'),
             aurelia_framework_1.PLATFORM.moduleName('./elements/ar-dialog'),
             aurelia_framework_1.PLATFORM.moduleName('./elements/ar-drawer'),
             aurelia_framework_1.PLATFORM.moduleName('./elements/ar-lang-selector'),
-            aurelia_framework_1.PLATFORM.moduleName('./elements/ar-list-item'),
-            aurelia_framework_1.PLATFORM.moduleName('./elements/ar-main-header'),
-            aurelia_framework_1.PLATFORM.moduleName('./elements/ar-main-footer'),
             aurelia_framework_1.PLATFORM.moduleName('./elements/ar-metadata'),
             aurelia_framework_1.PLATFORM.moduleName('./elements/ar-next'),
             aurelia_framework_1.PLATFORM.moduleName('./elements/ar-next-item.html'),
             aurelia_framework_1.PLATFORM.moduleName('./elements/ar-notification'),
-            aurelia_framework_1.PLATFORM.moduleName('./elements/ar-parallax'),
             aurelia_framework_1.PLATFORM.moduleName('./elements/ar-progress'),
-            aurelia_framework_1.PLATFORM.moduleName('./elements/ar-range-input'),
             aurelia_framework_1.PLATFORM.moduleName('./elements/ar-select'),
             aurelia_framework_1.PLATFORM.moduleName('./elements/ar-option'),
-            aurelia_framework_1.PLATFORM.moduleName('./elements/ar-slider'),
-            aurelia_framework_1.PLATFORM.moduleName('./elements/ar-slide'),
             aurelia_framework_1.PLATFORM.moduleName('./elements/ar-search-input'),
             aurelia_framework_1.PLATFORM.moduleName('./elements/ar-smart-toolbar'),
             aurelia_framework_1.PLATFORM.moduleName('./elements/ar-spinner-icon'),
             aurelia_framework_1.PLATFORM.moduleName('./elements/ar-spinner-line'),
             aurelia_framework_1.PLATFORM.moduleName('./elements/ar-stripe-element'),
-            aurelia_framework_1.PLATFORM.moduleName('./elements/ar-timeline'),
-            aurelia_framework_1.PLATFORM.moduleName('./elements/ar-timeline-item'),
-            aurelia_framework_1.PLATFORM.moduleName('./elements/ar-video'),
             aurelia_framework_1.PLATFORM.moduleName('./elements/noie'),
-            aurelia_framework_1.PLATFORM.moduleName('./elements/ux-input-int-phone'),
             aurelia_framework_1.PLATFORM.moduleName('./value-converters/currency'),
             aurelia_framework_1.PLATFORM.moduleName('./value-converters/date'),
             aurelia_framework_1.PLATFORM.moduleName('./value-converters/first-letter-upper'),
             aurelia_framework_1.PLATFORM.moduleName('./value-converters/phone'),
             aurelia_framework_1.PLATFORM.moduleName('./value-converters/langname'),
             aurelia_framework_1.PLATFORM.moduleName('./value-converters/countryname'),
-            aurelia_framework_1.PLATFORM.moduleName('./value-converters/locale-name'),
             aurelia_framework_1.PLATFORM.moduleName('./value-converters/nl2br'),
             aurelia_framework_1.PLATFORM.moduleName('./value-converters/object-keys'),
-            // PLATFORM.moduleName('./value-converters/round'),
             numbers_1.NumStringValueConverter,
             numbers_1.RoundValueConverter,
             numbers_1.AddZeroDecimalValueConverter,
             aurelia_framework_1.PLATFORM.moduleName('./value-converters/translate'),
-            aurelia_framework_1.PLATFORM.moduleName('./attributes/smooth-scroll'),
-            aurelia_framework_1.PLATFORM.moduleName('./attributes/touch-active'),
         ]);
         config.container.registerInstance('aurelia-resources-config', pluginConfig);
     }
@@ -88,19 +71,15 @@ System.register(["./helpers/sentry", "aurelia-framework", "./value-converters/nu
         "Analytics": true,
         "AnalyticEntry": true,
         "AnalyticsGoogle": true,
-        "CordovaHelpers": true,
         "PageVisibilityHelpers": true,
         "Parser": true,
         "SentryHelper": true,
         "DomHelpers": true,
         "StringHelpers": true,
-        "ImageUtils": true,
         "ImageHelpers": true,
         "countries": true,
         "languages": true,
         "locales": true,
-        "ArBreadcrumb": true,
-        "ArBreadcrumbTheme": true,
         "ArDialog": true,
         "arDialog": true,
         "ArDialogTheme": true,
@@ -111,27 +90,15 @@ System.register(["./helpers/sentry", "aurelia-framework", "./value-converters/nu
         "ArDrawerCloseAttribute": true,
         "onDrawerStatusChanged": true,
         "ArDrawerTheme": true,
-        "ArListItem": true,
-        "ArListTheme": true,
-        "ArMainHeader": true,
-        "ArMainHeaderTheme": true,
-        "ArMainFooter": true,
-        "ArMainFooterTheme": true,
         "ArMetadata": true,
         "ArMetadataTheme": true,
         "ArNext": true,
         "ArNextTheme": true,
-        "ArParallax": true,
         "ArProgress": true,
         "ArProgressTheme": true,
-        "ArRangeInput": true,
-        "ArRangeInputTheme": true,
         "ArSelect": true,
         "ArOption": true,
         "ArSelectTheme": true,
-        "ArSlider": true,
-        "ArSlide": true,
-        "ArSliderTheme": true,
         "ArSearchInput": true,
         "ArSearchInputTheme": true,
         "ArSmartToolbar": true,
@@ -141,14 +108,7 @@ System.register(["./helpers/sentry", "aurelia-framework", "./value-converters/nu
         "ArSpinnerLine": true,
         "ArSpinnerLineTheme": true,
         "ArStripeElement": true,
-        "ArStripeElementTheme": true,
-        "ArTimeline": true,
-        "ArTimelineTheme": true,
-        "ArTimelineItem": true,
-        "ArVideo": true,
-        "ArVideoTheme": true,
-        "UxInputIntPhone": true,
-        "SmoothScroll": true
+        "ArStripeElementTheme": true
     };
     function exportStar_1(m) {
         var exports = {};
@@ -187,11 +147,6 @@ System.register(["./helpers/sentry", "aurelia-framework", "./value-converters/nu
                     "AnalyticsGoogle": analytics_google_1_1["AnalyticsGoogle"]
                 });
             },
-            function (cordova_1_1) {
-                exports_1({
-                    "CordovaHelpers": cordova_1_1["CordovaHelpers"]
-                });
-            },
             function (page_visibility_1_1) {
                 exports_1({
                     "PageVisibilityHelpers": page_visibility_1_1["PageVisibilityHelpers"]
@@ -214,7 +169,6 @@ System.register(["./helpers/sentry", "aurelia-framework", "./value-converters/nu
             },
             function (image_1_1) {
                 exports_1({
-                    "ImageUtils": image_1_1["ImageUtils"],
                     "ImageHelpers": image_1_1["ImageHelpers"]
                 });
             },
@@ -293,16 +247,6 @@ System.register(["./helpers/sentry", "aurelia-framework", "./value-converters/nu
             function (prompt_text_dialog_1_1) {
                 exportStar_1(prompt_text_dialog_1_1);
             },
-            function (ar_breadcrumb_1_1) {
-                exports_1({
-                    "ArBreadcrumb": ar_breadcrumb_1_1["ArBreadcrumb"]
-                });
-            },
-            function (ar_breadcrumb_theme_1_1) {
-                exports_1({
-                    "ArBreadcrumbTheme": ar_breadcrumb_theme_1_1["ArBreadcrumbTheme"]
-                });
-            },
             function (ar_dialog_1_1) {
                 exports_1({
                     "ArDialog": ar_dialog_1_1["ArDialog"],
@@ -339,36 +283,6 @@ System.register(["./helpers/sentry", "aurelia-framework", "./value-converters/nu
             function (ar_lang_selector_theme_1_1) {
                 exportStar_1(ar_lang_selector_theme_1_1);
             },
-            function (ar_list_item_1_1) {
-                exports_1({
-                    "ArListItem": ar_list_item_1_1["ArListItem"]
-                });
-            },
-            function (ar_list_theme_1_1) {
-                exports_1({
-                    "ArListTheme": ar_list_theme_1_1["ArListTheme"]
-                });
-            },
-            function (ar_main_header_1_1) {
-                exports_1({
-                    "ArMainHeader": ar_main_header_1_1["ArMainHeader"]
-                });
-            },
-            function (ar_main_header_theme_1_1) {
-                exports_1({
-                    "ArMainHeaderTheme": ar_main_header_theme_1_1["ArMainHeaderTheme"]
-                });
-            },
-            function (ar_main_footer_1_1) {
-                exports_1({
-                    "ArMainFooter": ar_main_footer_1_1["ArMainFooter"]
-                });
-            },
-            function (ar_main_footer_theme_1_1) {
-                exports_1({
-                    "ArMainFooterTheme": ar_main_footer_theme_1_1["ArMainFooterTheme"]
-                });
-            },
             function (ar_metadata_1_1) {
                 exports_1({
                     "ArMetadata": ar_metadata_1_1["ArMetadata"]
@@ -392,11 +306,6 @@ System.register(["./helpers/sentry", "aurelia-framework", "./value-converters/nu
             function (ar_notification_1_1) {
                 exportStar_1(ar_notification_1_1);
             },
-            function (ar_parallax_1_1) {
-                exports_1({
-                    "ArParallax": ar_parallax_1_1["ArParallax"]
-                });
-            },
             function (ar_progress_1_1) {
                 exports_1({
                     "ArProgress": ar_progress_1_1["ArProgress"]
@@ -405,16 +314,6 @@ System.register(["./helpers/sentry", "aurelia-framework", "./value-converters/nu
             function (ar_progress_theme_1_1) {
                 exports_1({
                     "ArProgressTheme": ar_progress_theme_1_1["ArProgressTheme"]
-                });
-            },
-            function (ar_range_input_1_1) {
-                exports_1({
-                    "ArRangeInput": ar_range_input_1_1["ArRangeInput"]
-                });
-            },
-            function (ar_range_input_theme_1_1) {
-                exports_1({
-                    "ArRangeInputTheme": ar_range_input_theme_1_1["ArRangeInputTheme"]
                 });
             },
             function (ar_select_1_1) {
@@ -430,21 +329,6 @@ System.register(["./helpers/sentry", "aurelia-framework", "./value-converters/nu
             function (ar_select_theme_1_1) {
                 exports_1({
                     "ArSelectTheme": ar_select_theme_1_1["ArSelectTheme"]
-                });
-            },
-            function (ar_slider_1_1) {
-                exports_1({
-                    "ArSlider": ar_slider_1_1["ArSlider"]
-                });
-            },
-            function (ar_slide_1_1) {
-                exports_1({
-                    "ArSlide": ar_slide_1_1["ArSlide"]
-                });
-            },
-            function (ar_slider_theme_1_1) {
-                exports_1({
-                    "ArSliderTheme": ar_slider_theme_1_1["ArSliderTheme"]
                 });
             },
             function (ar_search_input_1_1) {
@@ -497,36 +381,6 @@ System.register(["./helpers/sentry", "aurelia-framework", "./value-converters/nu
                     "ArStripeElementTheme": ar_stripe_element_theme_1_1["ArStripeElementTheme"]
                 });
             },
-            function (ar_timeline_1_1) {
-                exports_1({
-                    "ArTimeline": ar_timeline_1_1["ArTimeline"]
-                });
-            },
-            function (ar_timeline_theme_1_1) {
-                exports_1({
-                    "ArTimelineTheme": ar_timeline_theme_1_1["ArTimelineTheme"]
-                });
-            },
-            function (ar_timeline_item_1_1) {
-                exports_1({
-                    "ArTimelineItem": ar_timeline_item_1_1["ArTimelineItem"]
-                });
-            },
-            function (ar_video_1_1) {
-                exports_1({
-                    "ArVideo": ar_video_1_1["ArVideo"]
-                });
-            },
-            function (ar_video_theme_1_1) {
-                exports_1({
-                    "ArVideoTheme": ar_video_theme_1_1["ArVideoTheme"]
-                });
-            },
-            function (ux_input_int_phone_1_1) {
-                exports_1({
-                    "UxInputIntPhone": ux_input_int_phone_1_1["UxInputIntPhone"]
-                });
-            },
             function (listing_head_1_1) {
                 exportStar_1(listing_head_1_1);
             },
@@ -538,17 +392,10 @@ System.register(["./helpers/sentry", "aurelia-framework", "./value-converters/nu
             },
             function (listing_toolbar_1_1) {
                 exportStar_1(listing_toolbar_1_1);
-            },
-            function (smooth_scroll_1_1) {
-                exports_1({
-                    "SmoothScroll": smooth_scroll_1_1["SmoothScroll"]
-                });
-            },
-            function (icons_1_1) {
-                exportStar_1(icons_1_1);
             }
         ],
         execute: function () {
+            // export * from './icons';
         }
     };
 });

@@ -183,4 +183,5 @@ export * from './elements/listing/listing-toolbar';
 
 
 /* Expose interfaces */
-export { StringTMap, StringBooleanMap} from './interfaces/types';
+export { StringTMap, NumberTMap, StringAnyMap, NumberAnyMap, StringStringMap, NumberStringMap, StringNumberMap, NumberNumberMap, StringBooleanMap, NumberBooleanMap} from './interfaces/types';
+

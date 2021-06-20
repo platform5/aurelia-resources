@@ -1,6 +1,6 @@
 {
   "name": "aurelia-resources",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Aurelia plugin grouping Custom Element, Custom Attributes, Value Converters and more to speed up Aurelia projects",
   "main": "dist/commonjs/index.js",
   "typings": "dist/commonjs/index.d.ts",

@@ -130,4 +130,3 @@ export * from './elements/listing/listing-head';
 export * from './elements/listing/listing-list-item';
 export * from './elements/listing/listing-list';
 export * from './elements/listing/listing-toolbar';
-// export * from './icons';

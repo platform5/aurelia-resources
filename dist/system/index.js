@@ -395,7 +395,6 @@ System.register(["./helpers/sentry", "aurelia-framework", "./value-converters/nu
             }
         ],
         execute: function () {
-            // export * from './icons';
         }
     };
 });

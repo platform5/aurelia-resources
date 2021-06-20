@@ -147,4 +147,3 @@ define(["require", "exports", "./helpers/sentry", "aurelia-framework", "./value-
     __exportStar(listing_list_1, exports);
     __exportStar(listing_toolbar_1, exports);
 });
-// export * from './icons';

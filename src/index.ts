@@ -180,3 +180,7 @@ export * from './elements/listing/listing-list';
 export * from './elements/listing/listing-toolbar';
 
 // export * from './icons';
+
+
+/* Expose interfaces */
+export { StringTMap, StringBooleanMap} from './interfaces/types';

@@ -186,4 +186,3 @@ __exportStar(require("./elements/listing/listing-head"), exports);
 __exportStar(require("./elements/listing/listing-list-item"), exports);
 __exportStar(require("./elements/listing/listing-list"), exports);
 __exportStar(require("./elements/listing/listing-toolbar"), exports);
-// export * from './icons';

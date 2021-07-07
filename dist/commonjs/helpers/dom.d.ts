@@ -1,4 +1,12 @@
+import { Container } from 'aurelia-framework';
 export declare class DomHelpers {
+    static getContainer(element: HTMLElement & {
+        au?: {
+            controller?: {
+                container?: Container;
+            };
+        };
+    }): Container | undefined;
     static disablePinch(): void;
     static disableDoubleTapToZoom(): void;
     static scrollToTop(element: HTMLElement, animate?: boolean, duration?: number, operation?: typeof DomHelpers.easeOutCuaic): void;

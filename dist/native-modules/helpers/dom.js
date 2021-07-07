@@ -1,6 +1,16 @@
 var DomHelpers = /** @class */ (function () {
     function DomHelpers() {
     }
+    DomHelpers.getContainer = function (element) {
+        var _a, _b;
+        if ((_b = (_a = element === null || element === void 0 ? void 0 : element.au) === null || _a === void 0 ? void 0 : _a.controller) === null || _b === void 0 ? void 0 : _b.container) {
+            return element.au.controller.container;
+        }
+        if (element.parentElement) {
+            return DomHelpers.getContainer(element.parentElement);
+        }
+        return undefined;
+    };
     DomHelpers.disablePinch = function () {
         document.addEventListener('touchmove', function (event) {
             if (event.scale !== 1) {

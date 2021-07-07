@@ -1,4 +1,16 @@
+import { Container } from 'aurelia-framework';
+
 export class DomHelpers {
+
+  static getContainer(element: HTMLElement & {au?: {controller?: {container?: Container}}}): Container | undefined {
+    if (element?.au?.controller?.container) {
+      return element.au.controller.container;
+    }
+    if (element.parentElement) {
+      return DomHelpers.getContainer(element.parentElement);
+    }
+    return undefined;
+  }
 
   static disablePinch() {
     document.addEventListener('touchmove', function (event: any) {

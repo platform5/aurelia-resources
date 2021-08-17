@@ -1,9 +1,9 @@
 import { StringHelpers } from './string';
 import * as moment from 'moment';
 import { EventAggregator } from 'aurelia-event-aggregator';
-import { Container } from 'aurelia-framework';
+import { Container } from 'aurelia-framework';
 import { NavigationInstruction } from 'aurelia-router';
-import { Logger, getLogger } from 'aurelia-logging';
+import { Logger, getLogger } from 'aurelia-logging';
 
 let log: Logger = getLogger('analytics');
 
@@ -121,13 +121,15 @@ export class Analytics {
     });
     ea.subscribe('analytics:click', (event: any) => {
       if (event.key) {
-        this.click(event.key, event.value);
+        event.category = event.key; // for compatibility
       }
+      this.click(event.category, event.action, event.label, event.value);
     });
     ea.subscribe('analytics:event', (event: any) => {
       if (event.key) {
-        this.event(event.key, event.value);
+        event.category = event.key; // for compatibility
       }
+      this.event(event.category, event.action, event.label, event.value);
     });
     ea.subscribe('analytics:request-save', (event: any) => {
       this.save();
@@ -141,15 +143,15 @@ export class Analytics {
     if (this.saveOnNavigation) this.save();
   }
 
-  public click(key: string, value?: any) {
+  public click(category: string, action = '', label = '', value = undefined) {
     if (!this.enableClickTracking) return;
-    this.entries.push(AnalyticEntry.click(this.currentPath, key, value));
+    this.entries.push(AnalyticEntry.click(this.currentPath, category, action, label, value));
     if (this.saveOnClick) this.save();
   }
 
-  public event(key: string, value?: any) {
+  public event(category: string, action = '', label = '', value = undefined) {
     if (!this.enableEventTracking) return;
-    this.entries.push(AnalyticEntry.event(this.currentPath, key, value));
+    this.entries.push(AnalyticEntry.event(this.currentPath, category, action, label, value));
     if (this.saveOnEvent) this.save();
   }
 

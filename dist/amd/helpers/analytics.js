@@ -100,13 +100,15 @@ define(["require", "exports", "./string", "moment", "aurelia-event-aggregator", 
             });
             ea.subscribe('analytics:click', function (event) {
                 if (event.key) {
-                    _this.click(event.key, event.value);
+                    event.category = event.key; // for compatibility
                 }
+                _this.click(event.category, event.action, event.label, event.value);
             });
             ea.subscribe('analytics:event', function (event) {
                 if (event.key) {
-                    _this.event(event.key, event.value);
+                    event.category = event.key; // for compatibility
                 }
+                _this.event(event.category, event.action, event.label, event.value);
             });
             ea.subscribe('analytics:request-save', function (event) {
                 _this.save();
@@ -120,17 +122,23 @@ define(["require", "exports", "./string", "moment", "aurelia-event-aggregator", 
             if (this.saveOnNavigation)
                 this.save();
         };
-        Analytics.prototype.click = function (key, value) {
+        Analytics.prototype.click = function (category, action, label, value) {
+            if (action === void 0) { action = ''; }
+            if (label === void 0) { label = ''; }
+            if (value === void 0) { value = undefined; }
             if (!this.enableClickTracking)
                 return;
-            this.entries.push(AnalyticEntry.click(this.currentPath, key, value));
+            this.entries.push(AnalyticEntry.click(this.currentPath, category, action, label, value));
             if (this.saveOnClick)
                 this.save();
         };
-        Analytics.prototype.event = function (key, value) {
+        Analytics.prototype.event = function (category, action, label, value) {
+            if (action === void 0) { action = ''; }
+            if (label === void 0) { label = ''; }
+            if (value === void 0) { value = undefined; }
             if (!this.enableEventTracking)
                 return;
-            this.entries.push(AnalyticEntry.event(this.currentPath, key, value));
+            this.entries.push(AnalyticEntry.event(this.currentPath, category, action, label, value));
             if (this.saveOnEvent)
                 this.save();
         };

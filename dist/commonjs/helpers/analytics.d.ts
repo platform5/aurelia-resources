@@ -40,8 +40,8 @@ export declare class Analytics {
     setIdentity(identity: string): void;
     setListeners(): void;
     navigation(path: string, title?: string): void;
-    click(key: string, value?: any): void;
-    event(key: string, value?: any): void;
+    click(category: string, action?: string, label?: string, value?: any): void;
+    event(category: string, action?: string, label?: string, value?: any): void;
     private saveTimeout;
     save(onlyUnsaved?: boolean): void;
 }

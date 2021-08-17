@@ -57,7 +57,7 @@ define(["require", "exports", "aurelia-framework", "aurelia-notify", "aurelia-lo
             settings.containerSelector = aliases[settings.containerSelector];
         // by default not sent to sentry
         if (options.sendToSentry === true) {
-            var sentryContext = options.context ? { contexts: options.context } : undefined;
+            var sentryContext = options.context ? { contexts: { messageContext: options.context } } : undefined;
             aurelia_framework_1.Container.instance.get(sentry_1.SentryHelper).captureMessageIfConfigured(message, sentryContext);
         }
         return notificationService.notify(message, settings, type);
@@ -69,7 +69,7 @@ define(["require", "exports", "aurelia-framework", "aurelia-notify", "aurelia-lo
             options.type = 'warning';
         // by default send to sentry
         if (options.sendToSentry !== false) {
-            var sentryContext = options.context ? { contexts: options.context } : undefined;
+            var sentryContext = options.context ? { contexts: { errorContext: options.context } } : undefined;
             aurelia_framework_1.Container.instance.get(sentry_1.SentryHelper).captureIfConfigured(error, sentryContext);
         }
         return notify(error.message, Object.assign({}, options, { sendToSentry: false }));

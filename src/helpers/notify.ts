@@ -70,7 +70,7 @@ export function notify(message: string, options: NotifyOptions = {}) {
   if (aliases[settings.containerSelector]) settings.containerSelector = aliases[settings.containerSelector];
   // by default not sent to sentry
   if (options.sendToSentry === true) {
-    const sentryContext: CaptureContext = options.context ? {contexts: options.context} : undefined;
+    const sentryContext: CaptureContext = options.context ? {contexts: {messageContext: options.context}} : undefined;
     Container.instance.get(SentryHelper).captureMessageIfConfigured(message, sentryContext);
   }
   return notificationService.notify(message, settings, type);
@@ -80,7 +80,7 @@ export function errorify(error: Error, options: NotifyOptions = {}) {
   if (!options.type) options.type = 'warning';
   // by default send to sentry
   if (options.sendToSentry !== false) {
-    const sentryContext: CaptureContext = options.context ? {contexts: options.context} : undefined;
+    const sentryContext: CaptureContext = options.context ? {contexts: {errorContext: options.context}} : undefined;
     Container.instance.get(SentryHelper).captureIfConfigured(error, sentryContext);
   }
   return notify(error.message, Object.assign({}, options, {sendToSentry: false}));

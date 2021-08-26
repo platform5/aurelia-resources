@@ -13,31 +13,36 @@ var UxDateTimePicker = /** @class */ (function () {
         this.preventApply = false;
     }
     UxDateTimePicker.prototype.bind = function () {
-        this.applyDateToTime();
-    };
-    UxDateTimePicker.prototype.setValueAndTime = function (newValue) {
-        this.value = newValue;
-        this.applyDateToTime();
+        this.valueChanged();
     };
     UxDateTimePicker.prototype.valueChanged = function () {
-        this.requestApplyTimeToDate();
+        this.setValueAndTime(this.value);
     };
-    UxDateTimePicker.prototype.timeChanged = function (newValue, oldValue) {
-        if (newValue !== oldValue) {
-            this.applyTimeToDate();
-        }
+    UxDateTimePicker.prototype.setValueAndTime = function (newValue) {
+        this.preventApply = true;
+        this._value = newValue;
+        this.applyDateToTime();
+        this.preventApply = false;
     };
     UxDateTimePicker.prototype.applyDateToTime = function () {
-        if (!this.value) {
+        if (!this._value) {
             this.time = '';
             return;
         }
-        var m = moment(this.value);
+        var m = moment(this._value);
         if (!m.isValid()) {
             this.time = '';
             return;
         }
         this.time = m.format('HH:mm');
+    };
+    UxDateTimePicker.prototype._valueChanged = function () {
+        this.requestApplyTimeToDate();
+    };
+    UxDateTimePicker.prototype.timeChanged = function (newValue, oldValue) {
+        if (newValue !== oldValue) {
+            this._valueChanged();
+        }
     };
     UxDateTimePicker.prototype.requestApplyTimeToDate = function () {
         var _this = this;
@@ -51,11 +56,11 @@ var UxDateTimePicker = /** @class */ (function () {
         if (this.preventApply) {
             return;
         }
-        if (!this.value) {
+        if (!this._value) {
             this.time = '';
             return;
         }
-        var m = moment(this.value);
+        var m = moment(this._value);
         if (!m.isValid()) {
             this.time = '';
             return;
@@ -72,7 +77,8 @@ var UxDateTimePicker = /** @class */ (function () {
         }
         this.preventApply = true;
         m.hour(hour).minute(minutes);
-        this.value = m.toDate();
+        this._value = m.toDate();
+        this.value = this._value;
         setTimeout(function () {
             _this.preventApply = false;
             _this.notifyChange();
@@ -99,6 +105,9 @@ var UxDateTimePicker = /** @class */ (function () {
     __decorate([
         observable
     ], UxDateTimePicker.prototype, "time", void 0);
+    __decorate([
+        observable
+    ], UxDateTimePicker.prototype, "_value", void 0);
     UxDateTimePicker = __decorate([
         inject(Element)
     ], UxDateTimePicker);

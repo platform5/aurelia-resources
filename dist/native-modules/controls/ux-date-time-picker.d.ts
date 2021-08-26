@@ -6,12 +6,14 @@ export declare class UxDateTimePicker {
     label: string;
     placeholder: string;
     time: string;
+    private _value;
     constructor(element: HTMLElement);
     bind(): void;
-    setValueAndTime(newValue: Date | undefined): void;
     valueChanged(): void;
-    timeChanged(newValue: string, oldValue: string): void;
+    setValueAndTime(newValue: Date | undefined): void;
     applyDateToTime(): void;
+    _valueChanged(): void;
+    timeChanged(newValue: string, oldValue: string): void;
     private timeout;
     private requestApplyTimeToDate;
     private preventApply;

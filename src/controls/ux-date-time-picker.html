@@ -1,5 +1,5 @@
 <template class="ux-date-time-picker">
   <require from="./ux-date-time-picker.css"></require>
-  <ux-datepicker type="date" label.bind="label" placeholder.bind="placeholder" formatters.bind="{date: 'DD/MM/YYYY',time: 'LT',datetime: 'L LT'}" value.bind="value"></ux-datepicker>
+  <ux-datepicker type="date" label.bind="label" placeholder.bind="placeholder" formatters.bind="{date: 'DD/MM/YYYY',time: 'LT',datetime: 'L LT'}" value.bind="_value"></ux-datepicker>
   <ux-input type="time" step.bind="step" value.bind="time" disabled.bind="!value"></ux-input>
 </template>

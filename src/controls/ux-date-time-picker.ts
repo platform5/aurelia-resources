@@ -13,40 +13,48 @@ export class UxDateTimePicker {
 
   @observable time: string;
 
+  @observable private _value: Date;
+
   public constructor(private element: HTMLElement) {
 
   }
 
   public bind() {
-    this.applyDateToTime();
-  }
-
-  public setValueAndTime(newValue: Date | undefined) {
-    this.value = newValue;
-    this.applyDateToTime();
+    this.valueChanged();
   }
 
   public valueChanged() {
-    this.requestApplyTimeToDate();
+    this.setValueAndTime(this.value);
   }
 
-  public timeChanged(newValue: string, oldValue: string) {
-    if (newValue !== oldValue) {
-      this.applyTimeToDate();
-    }
+  public setValueAndTime(newValue: Date | undefined) {
+    this.preventApply = true;
+    this._value = newValue;
+    this.applyDateToTime();
+    this.preventApply = false;
   }
 
   public applyDateToTime() {
-    if (!this.value) {
+    if (!this._value) {
       this.time = '';
       return;
     }
-    const m = moment(this.value);
+    const m = moment(this._value);
     if (!m.isValid()) {
       this.time = '';
       return;
     }
     this.time = m.format('HH:mm');
+  }
+
+  public _valueChanged() {
+    this.requestApplyTimeToDate();
+  }
+
+  public timeChanged(newValue: string, oldValue: string) {
+    if (newValue !== oldValue) {
+      this._valueChanged();
+    }
   }
 
   private timeout;
@@ -62,11 +70,11 @@ export class UxDateTimePicker {
     if (this.preventApply) {
       return;
     }
-    if (!this.value) {
+    if (!this._value) {
       this.time = '';
       return;
     }
-    const m = moment(this.value);
+    const m = moment(this._value);
     if (!m.isValid()) {
       this.time = '';
       return;
@@ -84,7 +92,8 @@ export class UxDateTimePicker {
 
     this.preventApply = true;
     m.hour(hour).minute(minutes);
-    this.value = m.toDate();
+    this._value = m.toDate();
+    this.value = this._value;
     setTimeout(() => {
       this.preventApply = false;
       this.notifyChange();

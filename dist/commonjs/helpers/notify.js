@@ -64,6 +64,9 @@ function notify(message, options) {
         var sentryContext = options.context ? { contexts: { messageContext: options.context } } : undefined;
         aurelia_framework_1.Container.instance.get(sentry_1.SentryHelper).captureMessageIfConfigured(message, sentryContext);
     }
+    if (settings.formatter) {
+        message = settings.formatter.call(null, message);
+    }
     return notificationService.notify(message, settings, type);
 }
 exports.notify = notify;

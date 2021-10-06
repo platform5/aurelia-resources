@@ -58,6 +58,9 @@ export function notify(message, options) {
         var sentryContext = options.context ? { contexts: { messageContext: options.context } } : undefined;
         Container.instance.get(SentryHelper).captureMessageIfConfigured(message, sentryContext);
     }
+    if (settings.formatter) {
+        message = settings.formatter.call(null, message);
+    }
     return notificationService.notify(message, settings, type);
 }
 export function errorify(error, options) {

@@ -9,6 +9,7 @@ export interface NotifyOptions {
     context?: {
         [key: string]: any;
     };
+    formatter?: (msg: string) => string;
 }
 export declare function addNotifyContainerAlias(alias: string, selector: string): void;
 export declare function setNotifyDefaults(settings: NotifyOptions, setOnlyGiventKeys?: boolean): void;

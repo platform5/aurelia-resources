@@ -5,7 +5,7 @@ import { inject } from 'aurelia-dependency-injection';
 import { StyleEngine, UxInputComponent, normalizeBooleanAttribute, getBackgroundColorThroughParents, InputVariant } from '@aurelia-ux/core';
 import { SelectControlTheme } from './select-control-theme';
 import { SelectControlDefaultConfiguration } from './select-control-default-configuration';
-import { UxModalService } from '@aurelia-ux/modal';
+import { UxModalService } from '@aurelia-ux/modal';
 
 // tslint:disable-next-line: no-submodule-imports
 import '@aurelia-ux/core/components/ux-input-component.css';
@@ -126,9 +126,9 @@ export class SelectControl implements UxInputComponent {
 
   public computeLabel(option: any): string {
     if (typeof option === 'object' && this.labelKey) {
-      return option[this.labelKey] || '';
+      return option[this.labelKey] || '';
     }
-    return option || '';
+    return option || '';
   }
 
   public computeValue(option: any): any {
@@ -205,7 +205,7 @@ export class SelectControl implements UxInputComponent {
 
   @computedFrom('value.length', 'multiple', 'options.length', 'labelKey', 'valueKey')
   public get displayedValue(): string {
-    const ifEmpty = this.placeholder || '';
+    const ifEmpty = this.placeholder || '';
     let result = ifEmpty;
     if (this.multiple && Array.isArray(this.value)) {
       const keyValues = this.options.reduce((previousValue, currentValue) => {
@@ -213,19 +213,19 @@ export class SelectControl implements UxInputComponent {
         return previousValue;
       }, {});
       const computedLabels: Array<string> = this.value.map(v => keyValues[v]);
-      result = computedLabels.length > 0 ? computedLabels.join(', ') : ifEmpty;
+      result = computedLabels.length > 0 ? computedLabels.join(', ') : ifEmpty;
     } else if (!this.multiple) {
       const keyValues = this.options.reduce((previousValue, currentValue) => {
         previousValue[this.computeValue(currentValue)] = this.computeLabel(currentValue);
         return previousValue;
       }, {});
       const value = keyValues[this.value];
-      result = value || ifEmpty;
+      result = value || ifEmpty;
     }
     // we consider that the field hasValue if there is an actual value or if the field is displayed with chips
     // and even if no chips are selected, because they are displayed the label must be positionned as if there is a value
     // in the field
-    const hasValue = (result && result.length > 0) || (this.type === 'chips' && this.options.length > 0);
+    const hasValue = (result && result.length > 0) || (this.type === 'chips' && this.options.length > 0);
     this.element.classList.toggle('ux-input-component--has-value', hasValue);
     return result;
   }

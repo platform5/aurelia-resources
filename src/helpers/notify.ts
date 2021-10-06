@@ -26,6 +26,7 @@ export interface NotifyOptions {
   type?: 'info' | 'success' | 'warning' | 'danger' | 'primary' | 'accent' | 'action';
   sendToSentry?: boolean;
   context?: {[key: string]: any};
+  formatter?: (msg: string) => string;
 }
 
 let defaultOptions: NotifyOptions = {
@@ -72,6 +73,9 @@ export function notify(message: string, options: NotifyOptions = {}) {
   if (options.sendToSentry === true) {
     const sentryContext: CaptureContext = options.context ? {contexts: {messageContext: options.context}} : undefined;
     Container.instance.get(SentryHelper).captureMessageIfConfigured(message, sentryContext);
+  }
+  if (settings.formatter) {
+    message = settings.formatter.call(null, message);
   }
   return notificationService.notify(message, settings, type);
 }

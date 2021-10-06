@@ -23,10 +23,10 @@ export interface NotifyOptions {
   timeout?: number;
   viewModel?: any;
   limit?: number;
-  type?: 'info' | 'success' | 'warning' | 'danger' | 'primary' | 'accent' | 'action';
+  type?: 'info' | 'success' | 'warning' | 'error' | 'danger' | 'primary' | 'accent' | 'action';
   sendToSentry?: boolean;
   context?: {[key: string]: any};
-  formatter?: (msg: string) => string;
+  formatter?: (msg: string, options: NotifyOptions) => string;
 }
 
 let defaultOptions: NotifyOptions = {
@@ -75,13 +75,13 @@ export function notify(message: string, options: NotifyOptions = {}) {
     Container.instance.get(SentryHelper).captureMessageIfConfigured(message, sentryContext);
   }
   if (settings.formatter) {
-    message = settings.formatter.call(null, message);
+    message = settings.formatter.call(null, message, options);
   }
   return notificationService.notify(message, settings, type);
 }
 
 export function errorify(error: Error, options: NotifyOptions = {}) {
-  if (!options.type) options.type = 'warning';
+  if (!options.type) options.type = 'error';
   // by default send to sentry
   if (options.sendToSentry !== false) {
     const sentryContext: CaptureContext = options.context ? {contexts: {errorContext: options.context}} : undefined;

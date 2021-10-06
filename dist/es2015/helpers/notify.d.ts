@@ -4,12 +4,12 @@ export interface NotifyOptions {
     timeout?: number;
     viewModel?: any;
     limit?: number;
-    type?: 'info' | 'success' | 'warning' | 'danger' | 'primary' | 'accent' | 'action';
+    type?: 'info' | 'success' | 'warning' | 'error' | 'danger' | 'primary' | 'accent' | 'action';
     sendToSentry?: boolean;
     context?: {
         [key: string]: any;
     };
-    formatter?: (msg: string) => string;
+    formatter?: (msg: string, options: NotifyOptions) => string;
 }
 export declare function addNotifyContainerAlias(alias: string, selector: string): void;
 export declare function setNotifyDefaults(settings: NotifyOptions, setOnlyGiventKeys?: boolean): void;

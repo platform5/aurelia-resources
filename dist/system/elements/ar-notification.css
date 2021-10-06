@@ -25,7 +25,8 @@
   background: var(--aurelia-ux--ar-notification-info-background, var(--aurelia-ux--design-app-background));
   color: var(--aurelia-ux--ar-notification-info-foreground, var(--aurelia-ux--design-app-foreground));
 }
-.ar-notification__message.type-warning {
+.ar-notification__message.type-warning,
+.ar-notification__message.type-error {
   background: var(--aurelia-ux--ar-notification-warning-background, var(--aurelia-ux--design-accent));
   color: var(--aurelia-ux--ar-notification-warning-foreground, var(--aurelia-ux--design-accent-foreground));
 }

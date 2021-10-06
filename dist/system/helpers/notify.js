@@ -52,7 +52,7 @@ System.register(["aurelia-framework", "aurelia-notify", "aurelia-logging", "../e
             aurelia_framework_1.Container.instance.get(sentry_1.SentryHelper).captureMessageIfConfigured(message, sentryContext);
         }
         if (settings.formatter) {
-            message = settings.formatter.call(null, message);
+            message = settings.formatter.call(null, message, options);
         }
         return notificationService.notify(message, settings, type);
     }
@@ -60,7 +60,7 @@ System.register(["aurelia-framework", "aurelia-notify", "aurelia-logging", "../e
     function errorify(error, options) {
         if (options === void 0) { options = {}; }
         if (!options.type)
-            options.type = 'warning';
+            options.type = 'error';
         // by default send to sentry
         if (options.sendToSentry !== false) {
             var sentryContext = options.context ? { contexts: { errorContext: options.context } } : undefined;

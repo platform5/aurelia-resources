@@ -132,7 +132,7 @@ export class SelectControl implements UxInputComponent {
   }
 
   public computeValue(option: any): any {
-    if (typeof option === 'object' && this.valueKey) {
+    if (option !== null && typeof option === 'object' && this.valueKey) {
       return option[this.valueKey];
     }
     return option;

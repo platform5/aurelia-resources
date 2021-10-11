@@ -156,7 +156,7 @@ var SelectControl = /** @class */ (function () {
         return option || '';
     };
     SelectControl.prototype.computeValue = function (option) {
-        if (typeof option === 'object' && this.valueKey) {
+        if (option !== null && typeof option === 'object' && this.valueKey) {
             return option[this.valueKey];
         }
         return option;

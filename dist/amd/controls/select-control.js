@@ -145,7 +145,7 @@ define(["require", "exports", "aurelia-templating", "aurelia-pal", "aurelia-bind
             return option || '';
         };
         SelectControl.prototype.computeValue = function (option) {
-            if (typeof option === 'object' && this.valueKey) {
+            if (option !== null && typeof option === 'object' && this.valueKey) {
                 return option[this.valueKey];
             }
             return option;

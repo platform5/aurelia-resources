@@ -130,19 +130,19 @@ define(["require", "exports", "@aurelia-ux/modal", "aurelia-framework", "../help
             });
         };
         PromptSelectDialog.prototype.getLabel = function (option) {
-            if (typeof option === 'object' && this.labelKey) {
+            if (option !== null && typeof option === 'object' && this.labelKey) {
                 return option[this.labelKey];
             }
             return option;
         };
         PromptSelectDialog.prototype.getSecondary = function (option) {
-            if (typeof option === 'object' && this.secondaryKey) {
+            if (option !== null && typeof option === 'object' && this.secondaryKey) {
                 return option[this.secondaryKey];
             }
             return option;
         };
         PromptSelectDialog.prototype.getValue = function (option) {
-            if (typeof option === 'object' && this.valueKey) {
+            if (option !== null && typeof option === 'object' && this.valueKey) {
                 return option[this.valueKey];
             }
             return option;
@@ -210,9 +210,9 @@ define(["require", "exports", "@aurelia-ux/modal", "aurelia-framework", "../help
             filter = removeAccents(filter.toLowerCase());
             for (var _i = 0, list_1 = list; _i < list_1.length; _i++) {
                 var item = list_1[_i];
-                var label = typeof item === 'object' && labelKey ? item[labelKey] : item;
-                var secondary = typeof item === 'object' && secondaryKey ? item[secondaryKey] : item;
-                var value = typeof item === 'object' && valueKey ? item[valueKey] : item;
+                var label = item !== null && typeof item === 'object' && labelKey ? item[labelKey] : item;
+                var secondary = item !== null && typeof item === 'object' && secondaryKey ? item[secondaryKey] : item;
+                var value = item !== null && typeof item === 'object' && valueKey ? item[valueKey] : item;
                 var l = typeof label === 'string' ? removeAccents(label.toLowerCase()) : '';
                 var s = typeof secondary === 'string' ? removeAccents(secondary.toLowerCase()) : '';
                 var v = typeof value === 'string' ? removeAccents(value.toLowerCase()) : '';

@@ -132,19 +132,19 @@ var FilterControl = /** @class */ (function () {
         return this.computeLabel(option);
     };
     FilterControl.prototype.computeLabel = function (option) {
-        if (typeof option === 'object' && this.labelKey) {
+        if (option !== null && typeof option === 'object' && this.labelKey) {
             return option[this.labelKey] || '';
         }
         return option || '';
     };
     FilterControl.prototype.computeSecondary = function (option) {
-        if (typeof option === 'object' && this.secondaryKey) {
+        if (option !== null && typeof option === 'object' && this.secondaryKey) {
             return option[this.secondaryKey] || '';
         }
         return option || '';
     };
     FilterControl.prototype.computeValue = function (option) {
-        if (typeof option === 'object' && this.valueKey) {
+        if (option !== null && typeof option === 'object' && this.valueKey) {
             return option[this.valueKey];
         }
         return option;

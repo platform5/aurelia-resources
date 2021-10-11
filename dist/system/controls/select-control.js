@@ -171,7 +171,7 @@ System.register(["aurelia-templating", "aurelia-pal", "aurelia-binding", "aureli
                     return validatedValue;
                 };
                 SelectControl.prototype.computeLabel = function (option) {
-                    if (typeof option === 'object' && this.labelKey) {
+                    if (option !== null && typeof option === 'object' && this.labelKey) {
                         return option[this.labelKey] || '';
                     }
                     return option || '';

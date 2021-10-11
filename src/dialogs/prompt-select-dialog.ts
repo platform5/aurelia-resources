@@ -4,7 +4,7 @@ import { errorify } from '../helpers/notify';
 import * as removeAccents from 'remove-accents';
 
 @inject(UxModalService)
-export class PromptSelectDialog {
+export class PromptSelectDialog {
 
   public mode: 'single' | 'multiple' = 'single';
   public options: Array<any> = [];
@@ -26,7 +26,7 @@ export class PromptSelectDialog {
     if (!params) {
       throw new Error('You must provide params when opening prompt-select-dialog');
     }
-    if (!params.options || !Array.isArray(params.options)) {
+    if (!params.options || !Array.isArray(params.options)) {
       throw new Error('You must provide an array of options in params when opening prompt-select-dialog');
     }
     if (params.mode) {
@@ -89,21 +89,21 @@ export class PromptSelectDialog {
   }
 
   public getLabel(option: any): string {
-    if (typeof option === 'object' && this.labelKey) {
+    if (option !== null && typeof option === 'object' && this.labelKey) {
       return option[this.labelKey];
     }
     return option;
   }
 
   public getSecondary(option: any): string {
-    if (typeof option === 'object' && this.secondaryKey) {
+    if (option !== null && typeof option === 'object' && this.secondaryKey) {
       return option[this.secondaryKey];
     }
     return option;
   }
 
   public getValue(option: any): any {
-    if (typeof option === 'object' && this.valueKey) {
+    if (option !== null && typeof option === 'object' && this.valueKey) {
       return option[this.valueKey];
     }
     return option;
@@ -125,7 +125,7 @@ export class PromptSelectDialog {
       else this.value = value;
     }
 
-    if (this.mode === 'single' && (this.value || !this.required) && this.autoClose) {
+    if (this.mode === 'single' && (this.value || !this.required) && this.autoClose) {
       this.modalService.ok(this.value);
     }
   }
@@ -157,13 +157,13 @@ export class PromptSelectDialogFilterOptionsValueConverter {
     let newList: Array<any> = [];
     filter = removeAccents(filter.toLowerCase());
     for (let item of list) {
-      const label = typeof item === 'object' && labelKey ? item[labelKey] : item;
-      const secondary = typeof item === 'object' && secondaryKey ? item[secondaryKey] : item;
-      const value = typeof item === 'object' && valueKey ? item[valueKey] : item;
+      const label = item !== null && typeof item === 'object' && labelKey ? item[labelKey] : item;
+      const secondary = item !== null && typeof item === 'object' && secondaryKey ? item[secondaryKey] : item;
+      const value = item !== null && typeof item === 'object' && valueKey ? item[valueKey] : item;
       const l = typeof label === 'string' ? removeAccents(label.toLowerCase()) : '';
       const s = typeof secondary === 'string' ? removeAccents(secondary.toLowerCase()) : '';
       const v = typeof value === 'string' ? removeAccents(value.toLowerCase()) : '';
-      if (l.indexOf(filter) !== -1 || s.indexOf(filter) !== -1 || v.indexOf(filter) !== -1) {
+      if (l.indexOf(filter) !== -1 || s.indexOf(filter) !== -1 || v.indexOf(filter) !== -1) {
         newList.push(item);
       }
     }

@@ -2,7 +2,7 @@ import { customElement, bindable, useView } from 'aurelia-templating';
 import { DOM, PLATFORM } from 'aurelia-pal';
 import { observable, computedFrom, bindingMode } from 'aurelia-binding';
 import { inject } from 'aurelia-dependency-injection';
-import { UxModalService } from '@aurelia-ux/modal';
+import { UxModalService } from '@aurelia-ux/modal';
 import { PromptSelectDialog } from '../dialogs/prompt-select-dialog';
 
 interface UxInputElement extends HTMLElement {
@@ -98,21 +98,21 @@ export class FilterControl {
   }
 
   public computeLabel(option: any): string {
-    if (typeof option === 'object' && this.labelKey) {
-      return option[this.labelKey] || '';
+    if (option !== null && typeof option === 'object' && this.labelKey) {
+      return option[this.labelKey] || '';
     }
-    return option || '';
+    return option || '';
   }
 
   public computeSecondary(option: any): string {
-    if (typeof option === 'object' && this.secondaryKey) {
-      return option[this.secondaryKey] || '';
+    if (option !== null && typeof option === 'object' && this.secondaryKey) {
+      return option[this.secondaryKey] || '';
     }
-    return option || '';
+    return option || '';
   }
 
   public computeValue(option: any): any {
-    if (typeof option === 'object' && this.valueKey) {
+    if (option !== null && typeof option === 'object' && this.valueKey) {
       return option[this.valueKey];
     }
     return option;

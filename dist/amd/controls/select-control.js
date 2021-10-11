@@ -139,7 +139,7 @@ define(["require", "exports", "aurelia-templating", "aurelia-pal", "aurelia-bind
             return validatedValue;
         };
         SelectControl.prototype.computeLabel = function (option) {
-            if (typeof option === 'object' && this.labelKey) {
+            if (option !== null && typeof option === 'object' && this.labelKey) {
                 return option[this.labelKey] || '';
             }
             return option || '';

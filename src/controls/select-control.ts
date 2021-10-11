@@ -125,7 +125,7 @@ export class SelectControl implements UxInputComponent {
   }
 
   public computeLabel(option: any): string {
-    if (typeof option === 'object' && this.labelKey) {
+    if (option !== null && typeof option === 'object' && this.labelKey) {
       return option[this.labelKey] || '';
     }
     return option || '';

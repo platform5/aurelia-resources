@@ -72,6 +72,7 @@ export class UxDateTimePicker {
     }
     if (!this._value) {
       this.time = '';
+      this.value = null;
       return;
     }
     const m = moment(this._value);
@@ -87,6 +88,7 @@ export class UxDateTimePicker {
     const hour = parseInt(timeValues[0], 10);
     const minutes = parseInt(timeValues[1], 10);
     if (m.hour() === hour && m.minute() === minutes) {
+      this.value = this._value;
       return; // time is correct
     }
 

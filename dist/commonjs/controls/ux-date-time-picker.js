@@ -61,6 +61,7 @@ var UxDateTimePicker = /** @class */ (function () {
         }
         if (!this._value) {
             this.time = '';
+            this.value = null;
             return;
         }
         var m = moment(this._value);
@@ -76,6 +77,7 @@ var UxDateTimePicker = /** @class */ (function () {
         var hour = parseInt(timeValues[0], 10);
         var minutes = parseInt(timeValues[1], 10);
         if (m.hour() === hour && m.minute() === minutes) {
+            this.value = this._value;
             return; // time is correct
         }
         this.preventApply = true;

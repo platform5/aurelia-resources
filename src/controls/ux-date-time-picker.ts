@@ -1,5 +1,5 @@
 import { bindable, bindingMode, observable, inject } from 'aurelia-framework';
-import * as moment from 'moment';
+import moment from 'moment';
 
 @inject(Element)
 export class UxDateTimePicker {

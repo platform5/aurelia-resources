@@ -1,5 +1,5 @@
 import { StringHelpers } from './string';
-import * as moment from 'moment';
+import moment from 'moment';
 import { EventAggregator } from 'aurelia-event-aggregator';
 import { Container } from 'aurelia-framework';
 import { NavigationInstruction } from 'aurelia-router';
@@ -157,7 +157,7 @@ export class Analytics {
 
   private saveTimeout;
   public save(onlyUnsaved: boolean = true) {
-    if (this.saveTimeout) clearTimeout();
+    if (this.saveTimeout) clearTimeout(this.saveTimeout);
     this.saveTimeout = setTimeout(() => {
       let data = [];
       for (let entry of this.entries) {

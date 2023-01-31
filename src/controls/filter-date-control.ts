@@ -4,7 +4,7 @@ import { observable, computedFrom, bindingMode } from 'aurelia-binding';
 import { inject } from 'aurelia-dependency-injection';
 import { UxModalService } from '@aurelia-ux/modal';
 import { UxDatepicker } from '@aurelia-ux/datepicker';
-import * as moment from 'moment';
+import moment from 'moment';
 
 interface UxInputElement extends HTMLElement {
   value: any;

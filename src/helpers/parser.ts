@@ -1,5 +1,5 @@
 import { NumberHelper } from './number';
-import * as moment from 'moment';
+import moment from 'moment';
 
 interface Metadata {
   key: string;
